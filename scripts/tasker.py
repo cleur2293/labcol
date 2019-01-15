@@ -47,15 +47,29 @@ class Tasker:
 
 
     @classmethod
-    def get_random_task(self, psql_obj: PSQL.PSQL):
+    def get_random_task(self, psql_obj: PSQL.PSQL, person_id: str) -> bool:
 
 
 
         #return self.tasks[randrange(len(self.tasks))]
 
-        sql_req = """SELECT id,task,answer,variants,picture_path FROM ciscolive.interview.tasks"""
+        #sql_req = """SELECT id,task,answer,variants,picture_path FROM ciscolive.interview.tasks"""
 
-        sql_data = None
+        sql_req = """SELECT
+        id, task, answer, variants, picture_path
+        FROM
+        ciscolive.interview.tasks
+        WHERE id
+        NOT
+        IN(
+        SELECT task_id
+        FROM
+        ciscolive.interview.assigned_tasks
+        WHERE
+        person_id = %s
+        );"""
+
+        sql_data = (person_id,)
 
         logger.info(str(psql_obj.psql_request(sql_req, sql_data)))
 
@@ -63,7 +77,11 @@ class Tasker:
 
         logger.debug('rows:{}'.format(str(rows)))
 
-        return rows[randrange(len(rows))]
+        if len(rows) > 0:
+            # If we have results to fetch
+            return rows[randrange(len(rows))]
+        else:
+            return False
 
     @classmethod
     def assign_task(self, psql_obj: PSQL.PSQL, person_id: str,task_id: int, loc_answer: int) -> bool:
@@ -120,3 +138,73 @@ class Tasker:
         logger.debug('row:{}'.format(str(row)))
 
         return row
+
+    @classmethod
+    def save_user_answer(self,psql_obj,person_id: str, task_id: int, user_answer: int) -> bool:
+        sql_req = """UPDATE 
+                     ciscolive.interview.assigned_tasks  SET user_answer = %s 
+                     WHERE task_id = %s AND person_id = %s;
+                  """
+
+        sql_data = (user_answer,str(task_id),str(person_id))
+
+        logger.info(str(psql_obj.psql_request(sql_req, sql_data)))
+        # committing changes
+        psql_obj.Commit()
+
+        #row = psql_obj.cur.fetchone()
+
+        #logger.debug('row:{}'.format(str(row)))
+
+        return True
+
+    @classmethod
+    def get_assigned_tasks_by_person(self,psql_obj,person_id) -> Dict:
+        sql_req = """SELECT task_id,loc_answer,epoch,user_answer FROM ciscolive.interview.assigned_tasks
+         WHERE person_id = %s"""
+
+        sql_data = (person_id,)
+
+        logger.info(str(psql_obj.psql_request(sql_req, sql_data)))
+
+        rows = psql_obj.cur.fetchall()
+
+        logger.debug('rows:{}'.format(str(rows)))
+
+        return rows
+
+    @classmethod
+    def get_correct_answers(self,psql_obj,person_id) -> Dict:
+
+        sql_req = """SELECT * FROM ciscolive.interview.assigned_tasks 
+        WHERE loc_answer = user_answer
+        AND person_id = %s"""
+
+
+        sql_data = (person_id,)
+
+        logger.info(str(psql_obj.psql_request2(sql_req, sql_data)))
+
+        rows = psql_obj.cur2.fetchall()
+
+        logger.debug('rows:{}'.format(str(rows)))
+
+        return rows
+
+    @classmethod
+    def get_wrong_answers(self,psql_obj,person_id) -> Dict:
+
+        sql_req = """SELECT * FROM ciscolive.interview.assigned_tasks 
+        WHERE loc_answer != user_answer
+        AND person_id = %s"""
+
+
+        sql_data = (person_id,)
+
+        logger.info(str(psql_obj.psql_request2(sql_req, sql_data)))
+
+        rows = psql_obj.cur2.fetchall()
+
+        logger.debug('rows:{}'.format(str(rows)))
+
+        return rows

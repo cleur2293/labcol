@@ -18,6 +18,7 @@ class PSQL:
         if (conn is not None):
             # conn - if we want to create PSQL object as part of existed connection (needed for multithreading purposes)
             self.cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
+            self.cur2 = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
 
         else:
             try:
@@ -38,6 +39,7 @@ class PSQL:
 
             else:
                 self.cur = self.conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
+                self.cur2 = self.conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
 
     def getConn(self):
         return self.conn
@@ -77,6 +79,24 @@ class PSQL:
             logger.error('ERROR during SQL request:{}'.format(str(exc)))
 
         return self.cur.statusmessage
+
+    def psql_request2(self,sql_req,sql_data=None):
+        """
+        PSQL Zabbix Request with logging
+        :param sql_req: request with variables
+        :param sql_data: variables values
+        :return: psycopg2 statusmessage
+        """
+        try:
+            # cur.execute("""SELECT * from skynet.cdp_neighbors""")
+            self.cur2.execute(sql_req,sql_data)
+            logger.info(f'PSQL request: {self.cur2.query}')
+
+
+        except Exception as exc:
+            logger.error('ERROR during SQL request:{}'.format(str(exc)))
+
+        return self.cur2.statusmessage
 
     def psql_request_silent(self,sql_req,sql_data=None):
         """

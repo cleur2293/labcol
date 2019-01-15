@@ -10,26 +10,23 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="test2_bot.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test2_bot.py">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="extras.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../python37/webexteams/Lib/site-packages/psycopg2/extras.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="84" column="58" selection-start-line="84" selection-start-column="53" selection-end-line="84" selection-end-column="58" />
-              <folding>
-                <element signature="e#2102#2205#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="190">
+              <caret line="101" selection-start-line="101" selection-end-line="101" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="workflow.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/workflow.py">
+      <file leaf-file-name="test2_bot.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test2_bot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="138" selection-start-line="138" selection-end-line="138" />
+            <state relative-caret-position="321">
+              <caret line="232" column="83" selection-start-line="232" selection-start-column="83" selection-end-line="232" selection-end-column="83" />
               <folding>
-                <element signature="e#0#14#0" expanded="true" />
+                <element signature="e#2102#2205#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -38,8 +35,8 @@
       <file leaf-file-name="tasker.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/tasker.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="10" selection-end-column="13" />
+            <state relative-caret-position="180">
+              <caret line="110" column="29" selection-start-line="110" selection-start-column="29" selection-end-line="110" selection-end-column="48" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -50,8 +47,8 @@
       <file leaf-file-name="PSQL.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/PSQL.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
-              <caret line="138" selection-start-line="138" selection-end-line="140" selection-end-column="24" />
+            <state relative-caret-position="180">
+              <caret line="40" column="43" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="43" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -59,22 +56,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="extras.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../python37/webexteams/Lib/site-packages/psycopg2/extras.py">
+      <file leaf-file-name="workflow.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/workflow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="140" selection-start-line="140" selection-end-line="140" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="setinitial.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/setinitial.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+            <state relative-caret-position="326">
+              <caret line="138" selection-start-line="138" selection-end-line="138" />
               <folding>
-                <element signature="e#0#9#0" expanded="true" />
+                <element signature="e#0#14#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -83,29 +71,8 @@
       <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../python37/webexteams/Lib/site-packages/flask/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
+            <state relative-caret-position="612">
               <caret line="65" selection-start-line="65" selection-end-line="65" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test3_bot.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test3_bot.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" selection-start-line="3" selection-end-line="13" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ispeakciscobot.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ispeakciscobot.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="62" column="35" selection-start-line="62" selection-start-column="31" selection-end-line="62" selection-end-column="35" />
-              <folding>
-                <element signature="e#98#177#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -113,7 +80,7 @@
       <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../python37/webexteams/Lib/site-packages/webexteamssdk/api/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
+            <state relative-caret-position="646">
               <caret line="60" column="35" selection-start-line="60" selection-start-column="23" selection-end-line="60" selection-end-column="35" />
             </state>
           </provider>
@@ -130,13 +97,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>api</find>
-      <find>message</find>
-      <find>webhooks</find>
-      <find>db</find>
-      <find>start_polling</find>
-      <find>WebexTeamsAPI(</find>
-      <find>logger.</find>
       <find>NEW ME</find>
       <find>body</find>
       <find>created</find>
@@ -160,6 +120,13 @@
       <find>WHERE</find>
       <find>digit</find>
       <find>token</find>
+      <find>get_assi</find>
+      <find>prepare_markdown_quiz_task</find>
+      <find>psql_request</find>
+      <find>get_assigned_task_by_id</find>
+      <find>get_assigned_tasks_by_person</find>
+      <find>sort</find>
+      <find>order</find>
     </findStrings>
     <replaceStrings>
       <replace>io.StringIO</replace>
@@ -173,37 +140,27 @@
         <option value="$PROJECT_DIR$/../python37/webexteams/Lib/site-packages/itty.py" />
         <option value="$PROJECT_DIR$/test3_bot.py" />
         <option value="$PROJECT_DIR$/scripts/setinitial.py" />
+        <option value="$PROJECT_DIR$/workflow.py" />
         <option value="$PROJECT_DIR$/scripts/PSQL.py" />
         <option value="$PROJECT_DIR$/scripts/tasker.py" />
         <option value="$PROJECT_DIR$/test2_bot.py" />
-        <option value="$PROJECT_DIR$/workflow.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="270" />
-    <option name="y" value="-1018" />
-    <option name="width" value="1929" />
-    <option name="height" value="1048" />
+    <option name="x" value="-52" />
+    <option name="y" value="-1080" />
+    <option name="width" value="2586" />
+    <option name="height" value="1466" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
-            <path>
-              <item name="webexteams" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webexteams" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webexteams" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webexteams" type="462c0819:PsiDirectoryNode" />
-              <item name="scripts" type="462c0819:PsiDirectoryNode" />
-            </path>
             <path>
               <item name="webexteams" type="b2602c69:ProjectViewProjectNode" />
               <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
@@ -217,12 +174,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/asazhin/PycharmProjects/webexteams/scripts/PSQL.py" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Properties" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/test2_bot.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/scripts/tasker.py" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -295,24 +253,25 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="278" y="-1088" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16614583" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5554382" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Python Console" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Python Console" order="7" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34213305" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39915523" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -332,17 +291,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/scripts/PSQL.py</url>
-          <line>25</line>
+          <line>26</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/scripts/tasker.py</url>
-          <line>61</line>
+          <line>75</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/scripts/tasker.py</url>
-          <line>115</line>
+          <line>133</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -404,6 +363,57 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../python37/webexteams/Lib/site-packages/psycopg2/extras.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2431">
+          <caret line="143" column="23" selection-start-line="143" selection-start-column="23" selection-end-line="143" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test2_bot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2703">
+          <caret line="159" column="55" selection-start-line="159" selection-start-column="55" selection-end-line="159" selection-end-column="55" />
+          <folding>
+            <element signature="e#2102#2205#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/PSQL.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2346">
+          <caret line="138" selection-start-line="138" selection-end-line="140" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../python37/webexteams/Lib/site-packages/flask/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1105">
+          <caret line="65" selection-start-line="65" selection-end-line="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../python37/webexteams/Lib/site-packages/webexteamssdk/api/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="60" column="35" selection-start-line="60" selection-start-column="23" selection-end-line="60" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workflow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2091">
+          <caret line="123" column="30" selection-start-line="123" selection-start-column="19" selection-end-line="123" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.properties">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -425,9 +435,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="507">
           <caret line="598" column="26" selection-start-line="598" selection-start-column="26" selection-end-line="598" selection-end-column="26" />
-          <folding>
-            <element signature="e#511#524#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -445,50 +452,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test3_bot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="13" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test1_bot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="117" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="117" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/test3_bot.py" />
+    <entry file="file://$PROJECT_DIR$/test1_bot.py" />
     <entry file="file://$PROJECT_DIR$/scripts/setinitial.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ispeakciscobot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="62" column="35" selection-start-line="62" selection-start-column="31" selection-end-line="62" selection-end-column="35" />
-          <folding>
-            <element signature="e#98#177#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../python37/webexteams/Lib/site-packages/psycopg2/extras.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="140" selection-start-line="140" selection-end-line="140" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ispeakciscobot.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/typing.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="206">
@@ -530,6 +503,115 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
           <caret line="84" column="58" selection-start-line="84" selection-start-column="53" selection-end-line="84" selection-end-column="58" />
+          <folding>
+            <element signature="e#2102#2205#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../python37/webexteams/Lib/site-packages/psycopg2/extras.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="140" selection-start-line="140" selection-end-line="140" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/wsgiref/simple_server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/wsgiref/handlers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="179" selection-start-line="179" selection-end-line="179" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../python37/webexteams/Lib/site-packages/itty.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="507">
+          <caret line="598" column="26" selection-start-line="598" selection-start-column="26" selection-end-line="598" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../python37/webexteams/Lib/site-packages/webexteamssdk/api/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="60" column="35" selection-start-line="60" selection-start-column="23" selection-end-line="60" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../python37/webexteams/Lib/site-packages/flask/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="65" selection-start-line="65" selection-end-line="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test3_bot.py" />
+    <entry file="file://$PROJECT_DIR$/test1_bot.py" />
+    <entry file="file://$PROJECT_DIR$/scripts/setinitial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ispeakciscobot.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/typing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="204" selection-start-line="204" selection-end-line="204" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workflow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="138" selection-start-line="138" selection-end-line="138" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../python37/webexteams/Lib/site-packages/psycopg2/extras.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="101" selection-start-line="101" selection-end-line="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/PSQL.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="40" column="43" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/tasker.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="110" column="29" selection-start-line="110" selection-start-column="29" selection-end-line="110" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test2_bot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="232" column="83" selection-start-line="232" selection-start-column="83" selection-end-line="232" selection-end-column="83" />
           <folding>
             <element signature="e#2102#2205#0" expanded="true" />
           </folding>

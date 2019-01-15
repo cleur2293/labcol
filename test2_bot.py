@@ -34,6 +34,9 @@ SOFTWARE.
 """
 
 
+# TODO: divide operational functions and messaging to the customer
+# TODO: check that input is in range of the valid answers (1..3 if we have 3 answers' options)
+
 # Use future for Python v2 and v3 compatibility
 from __future__ import (
     absolute_import,
@@ -156,13 +159,37 @@ def process_message(api: WebexTeamsAPI, message:Message, room:Room) -> str:
             # check if that user already has task assigned
             has_task = Tasker.has_task(psql_obj,message.personId)
 
-            logger.info(has_task)
-            api.messages.create(room.id, text="You already have the task. Please answer it first",
-                                markdown="You already have the task. Please answer it first")
+            logger.info(f'That user has task? - {has_task}')
 
-            task = Tasker.get_assigned_task_by_id(psql_obj, message.personId,has_task)
-            api.messages.create(room.id, text="Your current task:",
-                            markdown=prepare_markdown_quiz_task(task))
+            if has_task:
+                api.messages.create(room.id, text="You already have the task. Please answer it first",
+                                    markdown="You already have the task. Please answer it first")
+
+                task = Tasker.get_assigned_task_by_id(psql_obj, message.personId,has_task)
+                api.messages.create(room.id, text="Your current task:",
+                                markdown=prepare_markdown_quiz_task(task))
+            else:
+
+                logger.error('We have that user in persons table, but don\'t have assigned tasks for him')
+                logger.error('Assigning task for him')
+
+                assign_new_task(api, psql_obj, room, message)
+
+                #task = Tasker.get_random_task(psql_obj,message.personId)
+
+                #logger.info(task)
+
+                #api.messages.create(room.id, text="The first question for you:",
+                #                    markdown=prepare_markdown_quiz_task(task))
+
+
+
+
+
+                #if Tasker.assign_task(psql_obj, message.personId ,task["id"], task["answer"]):
+                #    logger.info("Added task to the assigned_tasks table successfully")
+                #else:
+                #    logger.info("Error in addition to assigned_tasks table")
 
         # user does not exist, create it and assign the task
         else:
@@ -177,19 +204,7 @@ def process_message(api: WebexTeamsAPI, message:Message, room:Room) -> str:
 
             if psql_obj.add_person(message.personId,person_name,person_surname,message.personEmail):
                 logger.info('Created user successfully')
-
-                task = Tasker.get_random_task(psql_obj)
-
-                logger.info(task)
-
-                api.messages.create(room.id, text="The first question for you:",
-                                    markdown=prepare_markdown_quiz_task(task))
-
-                # TODO: we are not randomizing tasks' answer list now
-                if Tasker.assign_task(psql_obj, message.personId ,task["id"], task["answer"]):
-                    logger.info("Added task to the assigned_tasks table successfully")
-                else:
-                    logger.info("Error in addition to assigned_tasks table")
+                assign_new_task(api, psql_obj, room, message)
 
             else:
                 logger.error('User creation failed')
@@ -201,33 +216,109 @@ def process_message(api: WebexTeamsAPI, message:Message, room:Room) -> str:
     elif message.text in "12345678":
         logger.info("FOUND '[digit]'")
 
+        save_user_answer(psql_obj, message)
+
         api.messages.create(room.id, text=message.text, markdown="Thank you, your answer was accepted")
 
+        if is_enough(psql_obj,message.personId):
+            report_dict = {}
 
-        assign_new_task(api,psql_obj,room,message)
+            api.messages.create(room.id, text=message.text, markdown="You have completed the interview. "
+                                                                     "Preparing score for you")
+            report_dict = generate_report_dict(psql_obj, message.personId)
+
+            api.messages.create(room.id, text=message.text, markdown="Correct answers:")
+
+            for correct_answer in report_dict['correct']:
+                api.messages.create(room.id, text=message.text, markdown=f'task_id={correct_answer["task_id"]}')
+
+            api.messages.create(room.id, text=message.text, markdown="Wrong answers:")
+
+            for wrong_answer in report_dict['wrong']:
+                api.messages.create(room.id, text=message.text, markdown=f'task_id={wrong_answer["task_id"]}')
+
+        else:
+            assign_new_task(api,psql_obj,room,message)
 
         return 'OK'
 
 def assign_new_task(api,psql_obj,room,message) -> bool:
 
-    # TODO increment task id in message to the customer (now it 'first' only)
+    # incrementing task id in message to the customer
 
-    task = Tasker.get_random_task(psql_obj)
-    api.messages.create(room.id, text="The $first$ question for you:",
-                        markdown=prepare_markdown_quiz_task(task))
+    all_user_tasks = Tasker.get_assigned_tasks_by_person(psql_obj, message.personId)
+    logger.info(all_user_tasks)
 
-    # TODO: we are not randomizing tasks' answer list now
-    if Tasker.assign_task(psql_obj, message.personId, task["id"], task["answer"]):
-        logger.info("Added task to the assigned_tasks table successfully")
+    task_number = len(all_user_tasks) + 1
+
+    task = Tasker.get_random_task(psql_obj,message.personId)
+
+    if task:
+        api.messages.create(room.id, text=f"The {task_number} question for you:",
+                            markdown=prepare_markdown_quiz_task(task,task_number))
+
+        # TODO: we are not randomizing tasks' answer list now
+        if Tasker.assign_task(psql_obj, message.personId, task["id"], task["answer"]):
+            logger.info("Added task to the assigned_tasks table successfully")
+        else:
+            logger.info("Error in addition to assigned_tasks table")
+            return False
+
     else:
-        logger.info("Error in addition to assigned_tasks table")
-        return False
+        api.messages.create(room.id, text="You have answered all the question that we have",
+                            markdown="You have answered all the question that we have")
 
     return True
 
-def prepare_markdown_quiz_task(task: Dict) -> str:
+def save_user_answer(psql_obj,message) -> bool:
 
-    result_str = f'The first question for you:<br/> {task["task"]}<br/>'
+    # check if that user already has task assigned
+    has_task = Tasker.has_task(psql_obj, message.personId)
+    logger.debug(f'Found current task id:{has_task}')
+
+    task = Tasker.get_assigned_task_by_id(psql_obj, message.personId, has_task)
+
+    if Tasker.save_user_answer(psql_obj, message.personId, task["id"], message.text):
+        logger.info('Successfully saved user answer')
+        return True
+    else:
+        logger.info('Error saving user answer')
+        return False
+
+def is_enough(psql_obj,person_id) -> bool:
+    # Check whether we need to assign next question to the user
+
+    all_user_tasks = Tasker.get_assigned_tasks_by_person(psql_obj, person_id)
+    logger.info(all_user_tasks)
+
+    if len(all_user_tasks) > 3:
+        return True
+    else:
+        return False
+
+def generate_report_dict(psql_obj,person_id) -> Dict:
+    # Generate report for the user
+
+    # creating dict for report
+    dict_report = {'correct':[],'wrong':[]}
+
+    all_user_tasks = Tasker.get_assigned_tasks_by_person(psql_obj, person_id)
+    logger.info(all_user_tasks)
+
+    dict_report['correct'] = Tasker.get_correct_answers(psql_obj, person_id)
+    dict_report['wrong'] = Tasker.get_wrong_answers(psql_obj, person_id)
+
+    print(dict_report)
+
+    return dict_report
+
+
+
+
+
+def prepare_markdown_quiz_task(task: Dict, task_number:int) -> str:
+
+    result_str = f'The #{task_number} question for you:<br/> {task["task"]}<br/>'
 
     i = 1 # options' counter
 
