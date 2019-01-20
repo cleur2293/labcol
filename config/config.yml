@@ -4,3 +4,7 @@ bot_access_token: "ODhiZTA2N2QtYTM2NS00NjUwLTgxNjItZmMxNTkwY2EzMDA2NzRkMWFiOGEtN
 db_host: "10.81.127.149"
 db_login: "ciscolive"
 db_password: "cisco.123"
+
+pictures_folder: "pictures/"
+# Number of tasks per user
+tasks_num: 3

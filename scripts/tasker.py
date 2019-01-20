@@ -47,7 +47,7 @@ class Tasker:
 
 
     @classmethod
-    def get_random_task(self, psql_obj: PSQL.PSQL, person_id: str) -> bool:
+    def get_random_task(self, psql_obj: PSQL.PSQL, person_id: str) -> Dict:
 
 
 
@@ -81,7 +81,7 @@ class Tasker:
             # If we have results to fetch
             return rows[randrange(len(rows))]
         else:
-            return False
+            return {}
 
     @classmethod
     def assign_task(self, psql_obj: PSQL.PSQL, person_id: str,task_id: int, loc_answer: int) -> bool:
@@ -161,7 +161,7 @@ class Tasker:
     @classmethod
     def get_assigned_tasks_by_person(self,psql_obj,person_id) -> Dict:
         sql_req = """SELECT task_id,loc_answer,epoch,user_answer FROM ciscolive.interview.assigned_tasks
-         WHERE person_id = %s"""
+         WHERE person_id = %s ORDER BY epoch DESC"""
 
         sql_data = (person_id,)
 
@@ -178,7 +178,7 @@ class Tasker:
 
         sql_req = """SELECT * FROM ciscolive.interview.assigned_tasks 
         WHERE loc_answer = user_answer
-        AND person_id = %s"""
+        AND person_id = %s ORDER BY epoch ASC"""
 
 
         sql_data = (person_id,)
@@ -196,7 +196,7 @@ class Tasker:
 
         sql_req = """SELECT * FROM ciscolive.interview.assigned_tasks 
         WHERE loc_answer != user_answer
-        AND person_id = %s"""
+        AND person_id = %s ORDER BY epoch ASC"""
 
 
         sql_data = (person_id,)

@@ -35,7 +35,7 @@ SOFTWARE.
 
 
 # TODO: divide operational functions and messaging to the customer
-# TODO: check that input is in range of the valid answers (1..3 if we have 3 answers' options)
+# TODO: when I enter /start and I have already answered all the questions, should notify user about that
 
 # Use future for Python v2 and v3 compatibility
 from __future__ import (
@@ -49,6 +49,7 @@ from builtins import *
 from flask import Flask, request
 import requests
 import yaml
+import os
 import logging
 from typing import Dict, Any
 
@@ -65,10 +66,6 @@ logger = logging.getLogger(__name__)
 
 
 from webexteamssdk import WebexTeamsAPI, Webhook, Message, Room
-
-
-# Module constants
-CAT_FACTS_URL = 'https://catfact.ninja/fact'
 
 
 config = {}  # create dictionary for config
@@ -88,31 +85,7 @@ flask_app = Flask(__name__)
 api = WebexTeamsAPI( access_token=config['bot_access_token'])
 
 
-#"""
-Persons = All_persons(
-    {'Y2lzY29zcGFyazovL3VzL1dFQkhPT0svNDNkNDQ0Y2YtYmZlNi00ZjcxLWJmMmUtYmQ4MDQ2MjFlMTZj':
-    Person(
-        'Y2lzY29zcGFyazovL3VzL1dFQkhPT0svNDNkNDQ0Y2YtYmZlNi00ZjcxLWJmMmUtYmQ4MDQ2MjFlMTZj',
-        'Alexey',
-        'Sazhin',
-        'asazhin@cisco.com'
-           )
-    }
-)
-#"""
-#Persons = All_persons()
-
-
 # Helper functions
-def get_catfact():
-    """Get a cat fact from catfact.ninja and return it as a string.
-    Functions for Soundhound, Google, IBM Watson, or other APIs can be added
-    to create the desired functionality into this bot.
-    """
-    response = requests.get(CAT_FACTS_URL, verify=False)
-    response.raise_for_status()
-    json_data = response.json()
-    return json_data['fact']
 
 def create_webhook_obj(request_json: str) -> Webhook:
     # Get the POST data sent from Webex Teams
@@ -134,164 +107,528 @@ def process_message(api: WebexTeamsAPI, message:Message, room:Room) -> str:
 
     logger.info(f'Connected to DB:{config["db_login"]}@{config["db_host"]}/ciscolive')
 
-    if "/CAT" in message.text:
-        logger.info("FOUND '/CAT'")
-        # Get a cat fact
-        cat_fact = get_catfact()
-        logger.info("SENDING CAT FACT '{}'".format(cat_fact))
-        # Post the fact to the room where the request was received
-        api.messages.create(room.id, text=cat_fact)
 
+    try:
+        if len(message.files) > 0:
+
+            logger.error("Found attachment in user's input. Notifiying him that attachments are not supported")
+
+            api.messages.create(room.id, text="You can't send messages with attachments to me",
+                                markdown="You can't send messages with attachments to me")
+            return 'OK'
+    except TypeError:
+        logger.debug("Not found attachment in user's input - OK")
+
+    if "/test" in message.text.lower():
+        logger.info("FOUND '/test'")
         return 'OK'
 
-    elif "/TEST" in message.text:
-        logger.info("FOUND '/TEST'")
-        return 'OK'
 
-    elif "/START" in message.text:
-        logger.info("FOUND '/START'")
+    #if "/RERUN" in message.text:
+    #    logger.info(f"FOUND '\/RERUN', deleting all the assigned tasks for the user: {message.personId}")
+
+
+    #    return 'OK'
+
+    elif "/start" in message.text.lower():
+        logger.info(f'{message.personId}:FOUND "/start"')
 
 
         # check if that users exists
         if psql_obj.is_person_exists(message.personId):
-            logger.info("This is existing user")
+            logger.info(f'{message.personId}:This is existing user')
 
             # check if that user already has task assigned
             has_task = Tasker.has_task(psql_obj,message.personId)
 
-            logger.info(f'That user has task? - {has_task}')
+            logger.info(f'{message.personId}:That user has task? - {has_task}')
 
             if has_task:
-                api.messages.create(room.id, text="You already have the task. Please answer it first",
+
+                is_enough_flag = is_enough(psql_obj, message.personId)
+                is_answered_flag = answer_received_for_current_task(psql_obj, message.personId)
+                task_dict = {}  # dictionary structure for the task
+                task_dict = get_current_task(psql_obj, message.personId, has_task)
+
+                if is_answered_flag and is_enough_flag:
+                    # If the user already completed all that tasks, we should not save answer from him
+
+                    logger.info(f'{message.personId}:User has already answered for all the questions. Letting him know about that')
+                    api.messages.create(room.id, text=message.text, markdown="You already answered all the tasks")
+
+                elif task_dict['files']:
+
+                    api.messages.create(room.id, text="You already have the task. Please answer it first",
                                     markdown="You already have the task. Please answer it first")
 
-                task = Tasker.get_assigned_task_by_id(psql_obj, message.personId,has_task)
-                api.messages.create(room.id, text="Your current task:",
-                                markdown=prepare_markdown_quiz_task(task))
+                    # exception handling in case can't find attachment
+
+                    logger.info(f'{message.personId}:Picture path is not null,'
+                                f' trying to add picture as attachment:{task_dict["files"]}')
+
+                    try:
+                        api.messages.create(room.id, text="Your current task:",
+                                            markdown=prepare_markdown_quiz_task(task_dict, task_dict['task_number']),
+                                            files=task_dict['files'])
+                    except ValueError:
+                        logger.error(f'{message.personId}:Can\'t open file to attach:{task_dict["files"]}')
+
+                        api.messages.create(room.id,
+                                            markdown=f'<<Error: Can\'t open file to attach:{task_dict["files"]}>>')
+                        api.messages.create(room.id, text=f"The {task_dict['task_number']} question for you:",
+                            markdown=prepare_markdown_quiz_task(task_dict,task_dict['task_number']))
+
+                # If no attachment picture
+                else:
+                    api.messages.create(room.id, text="You already have the task. Please answer it first",
+                                    markdown="You already have the task. Please answer it first")
+
+                    logger.info(f'{message.personId}:Picture path is null, sending task without attachment')
+                    api.messages.create(room.id, text=f"The {task_dict['task_number']} question for you:",
+                                        markdown=prepare_markdown_quiz_task(task_dict, task_dict['task_number']))
+
             else:
 
-                logger.error('We have that user in persons table, but don\'t have assigned tasks for him')
-                logger.error('Assigning task for him')
+                logger.error(f'{message.personId}:We have that user'
+                             f' in persons table, but don\'t have assigned tasks for him')
+                logger.error(f'{message.personId}:Assigning task for him')
 
-                assign_new_task(api, psql_obj, room, message)
+                #assign_new_task(api, psql_obj, room, message)
 
-                #task = Tasker.get_random_task(psql_obj,message.personId)
+                task_dict = {} # dictionary structure for the task
+                try:
+                    task_dict = assign_new_task(psql_obj, message.personId)
+                except RuntimeError:
+                    #Error in addition to assigned_tasks table
+                    pass
+                    return 'NOK'
+                except KeyError:
+                    #User have answered all the question that we have
+                    api.messages.create(room.id, text="You have answered all the question that we have",
+                                    markdown="You have answered all the question that we have")
+                    return 'OK'
 
-                #logger.info(task)
+                if task_dict['files']:
+                    # exception handling in case can't find attachment
 
-                #api.messages.create(room.id, text="The first question for you:",
-                #                    markdown=prepare_markdown_quiz_task(task))
+                    logger.info(f'{message.personId}:Picture path is not null,'
+                                f' trying to add picture as attachment:{task_dict["files"]}')
 
+                    try:
+                        api.messages.create(room.id, text="The {task_number} question for you:",
+                                            markdown=prepare_markdown_quiz_task(task_dict, task_dict['task_number']),
+                                            files=task_dict['files'])
+                    except ValueError:
+                        logger.error(f'{message.personId}:Can\'t open file '
+                                     f'to attach:{task_dict["files"]}')
 
+                        api.messages.create(room.id,
+                                            markdown=f'<<Error: Can\'t open file to attach:{task_dict["files"]}>>')
+                        api.messages.create(room.id, text=f"The {task_dict['task_number']} question for you:",
+                            markdown=prepare_markdown_quiz_task(task_dict,task_dict['task_number']))
 
+                # If no attachment picture
+                else:
+                    logger.info(f'{message.personId}:Picture path is null, sending task without attachment')
+                    api.messages.create(room.id, text=f"The {task_dict['task_number']} question for you:",
+                                        markdown=prepare_markdown_quiz_task(task_dict, task_dict['task_number']))
 
-
-                #if Tasker.assign_task(psql_obj, message.personId ,task["id"], task["answer"]):
-                #    logger.info("Added task to the assigned_tasks table successfully")
-                #else:
-                #    logger.info("Error in addition to assigned_tasks table")
 
         # user does not exist, create it and assign the task
         else:
-            logger.info("This is new user")
-            api.messages.create(room.id, text="You are new user", markdown="You are **new** user)")
+            logger.info(f'{message.personId}:This is new user')
+            api.messages.create(room.id, text="You are new user", markdown="You are **new** user")
 
             #Creating new user
             person_name = api.people.get(message.personId).firstName
             person_surname = api.people.get(message.personId).lastName
 
-            Persons.addPerson(message.personId,person_name,person_surname,message.personEmail)
-
             if psql_obj.add_person(message.personId,person_name,person_surname,message.personEmail):
-                logger.info('Created user successfully')
-                assign_new_task(api, psql_obj, room, message)
+                logger.info(f'{message.personId}:User {message.personId} created user successfully')
+                #assign_new_task(api, psql_obj, room, message)
+
+
+                task_dict = {} # dictionary structure for the task
+                try:
+                    task_dict = assign_new_task(psql_obj, message.personId)
+                except RuntimeError:
+                    #Error in addition to assigned_tasks table
+                    pass
+                    return 'NOK'
+                except KeyError:
+                    #User have answered all the question that we have
+                    api.messages.create(room.id, text="You have answered all the question that we have",
+                                    markdown="You have answered all the question that we have")
+                    return 'OK'
+
+                if task_dict['files']:
+                    # exception handling in case can't find attachment
+
+                    logger.info(f'{message.personId}:Picture path is not null,'
+                                f' trying to add picture as attachment:{task_dict["files"]}')
+
+                    try:
+                        api.messages.create(room.id, text="The {task_number} question for you:",
+                                            markdown=prepare_markdown_quiz_task(task_dict, task_dict['task_number']),
+                                            files=task_dict['files'])
+                    except ValueError:
+                        logger.error(f'{message.personId}:Can\'t open file to attach:{task_dict["files"]}')
+
+                        api.messages.create(room.id,
+                                            markdown=f'<<Error: Can\'t open file to attach:{task_dict["files"]}>>')
+                        api.messages.create(room.id, text=f"The {task_dict['task_number']} question for you:",
+                            markdown=prepare_markdown_quiz_task(task_dict,task_dict['task_number']))
+
+                # If no attachment picture
+                else:
+                    logger.info(f'{message.personId}:Picture path is null, sending task without attachment')
+                    api.messages.create(room.id, text=f"The {task_dict['task_number']} question for you:",
+                                        markdown=prepare_markdown_quiz_task(task_dict, task_dict['task_number']))
 
             else:
-                logger.error('User creation failed')
+                logger.error(f'{message.personId}:User {message.personId} creation failed')
 
 
         return 'OK'
 
 
-    elif message.text in "12345678":
-        logger.info("FOUND '[digit]'")
+    elif message.text in "123456789":
+        logger.info(f'{message.personId}:FOUND "[digit]" in message:{message.text}')
 
-        save_user_answer(psql_obj, message)
+        # If answer in range of the expected answers
+        check_answer = check_answer_in_range(psql_obj, message.personId, int(message.text))
 
-        api.messages.create(room.id, text=message.text, markdown="Thank you, your answer was accepted")
+        is_enough_flag = is_enough(psql_obj, message.personId)
+        is_answered_flag = answer_received_for_current_task(psql_obj, message.personId)
 
-        if is_enough(psql_obj,message.personId):
-            report_dict = {}
+        if is_answered_flag and is_enough_flag:
+            # If the user already completed all that tasks, we should not save answer from him
 
-            api.messages.create(room.id, text=message.text, markdown="You have completed the interview. "
-                                                                     "Preparing score for you")
-            report_dict = generate_report_dict(psql_obj, message.personId)
+            logger.info(f'{message.personId}:User has already answered for'
+                        f' all the questions. Letting him know about that')
+            api.messages.create(room.id, text=message.text, markdown="You already answered all the tasks")
 
-            api.messages.create(room.id, text=message.text, markdown="Correct answers:")
 
-            for correct_answer in report_dict['correct']:
-                api.messages.create(room.id, text=message.text, markdown=f'task_id={correct_answer["task_id"]}')
+        # If user's answer is in expected range
+        elif check_answer == 0:
+            save_user_answer(psql_obj, message)
 
-            api.messages.create(room.id, text=message.text, markdown="Wrong answers:")
+            api.messages.create(room.id, text=message.text, markdown="Thank you, your answer was accepted")
 
-            for wrong_answer in report_dict['wrong']:
-                api.messages.create(room.id, text=message.text, markdown=f'task_id={wrong_answer["task_id"]}')
+            # Check that user has answered all questions and we need to prepare report for him
+            if is_enough_flag:
+                report_dict = {}
 
+                api.messages.create(room.id, text=message.text, markdown="You have completed the interview. "
+                                                                         "Preparing score for you")
+                report_dict = generate_report_dict(psql_obj, message.personId)
+
+                api.messages.create(room.id, text=message.text, markdown="**Answered correctly:**")
+
+                for correct_answer in report_dict['correct']:
+                    task = Tasker.get_assigned_task_by_id(psql_obj, message.personId, correct_answer["task_id"])
+
+                    api.messages.create(room.id, text=message.text, markdown=f'- {task["task"][0:20]}<...>')
+
+
+                api.messages.create(room.id, text=message.text,
+                                    markdown="**Answered incorrectly [your_answer -> right answer]:**")
+
+                for wrong_answer in report_dict['wrong']:
+                    task = Tasker.get_assigned_task_by_id(psql_obj, message.personId, wrong_answer["task_id"])
+                    text = f'- {task["task"][0:20]}<...> [{wrong_answer["user_answer"]}->{wrong_answer["loc_answer"]}]'
+
+                    #api.messages.create(room.id, text=message.text, markdown=f'{task["task"][0:20]}...')
+                    api.messages.create(room.id, text=message.text, markdown=text)
+
+            else:
+                task_dict = {} # dictionary structure for the task
+                try:
+                    task_dict = assign_new_task(psql_obj, message.personId)
+                except RuntimeError:
+                    #Error in addition to assigned_tasks table
+                    pass
+                    return 'NOK'
+                except KeyError:
+                    #User have answered all the question that we have
+                    api.messages.create(room.id, text="You have answered all the question that we have",
+                                    markdown="You have answered all the question that we have")
+                    return 'OK'
+
+                if task_dict['files']:
+                    # exception handling in case can't find attachment
+
+                    logger.info(f'{message.personId}:Picture path is not null, '
+                                f'trying to add picture as attachment:{task_dict["files"]}')
+
+                    try:
+                        api.messages.create(room.id, text="The {task_number} question for you:",
+                                            markdown=prepare_markdown_quiz_task(task_dict, task_dict['task_number']),
+                                            files=task_dict['files'])
+                    except ValueError:
+                        logger.error(f'{message.personId}:Can\'t open file to attach:{task_dict["files"]}')
+
+                        api.messages.create(room.id,
+                                            markdown=f'<<Error: Can\'t open file to attach:{task_dict["files"]}>>')
+                        api.messages.create(room.id, text=f"The {task_dict['task_number']} question for you:",
+                            markdown=prepare_markdown_quiz_task(task_dict,task_dict['task_number']))
+
+                # If no attachment picture
+                else:
+                    logger.info(f'{message.personId}:Picture path is null, sending task without attachment')
+                    api.messages.create(room.id, text=f"The {task_dict['task_number']} question for you:",
+                                        markdown=prepare_markdown_quiz_task(task_dict, task_dict['task_number']))
+
+        # If user doesn't have tasks assigned
+        elif check_answer == -1:
+            logger.info(f'{message.personId}:User does not have tasks assigned')
+            api.messages.create(room.id, text=message.text, markdown=
+            f'You don\t have tasks assigned, send me /START first')
+
+        # If user's answer is not in range of the expected answers
         else:
-            assign_new_task(api,psql_obj,room,message)
+            logger.info(f'{message.personId}:User\'s answer is not in range of '
+                        f'the expected answers (1 to {check_answer})')
+            api.messages.create(room.id, text=message.text, markdown=f'You should answer 1 to {check_answer}')
 
         return 'OK'
 
-def assign_new_task(api,psql_obj,room,message) -> bool:
+    elif "/repeat" in message.text.lower():
+        logger.info(f'{message.personId}:FOUND "/repeat"')
+
+
+
+        # check if that users exists
+        if psql_obj.is_person_exists(message.personId):
+            logger.info(f'{message.personId}:This is existing user')
+
+
+
+
+            # check if that user already has task assigned
+            has_task = Tasker.has_task(psql_obj,message.personId)
+
+            logger.info(f'{message.personId}:That user has task? - {has_task}')
+
+            if has_task:
+
+                is_enough_flag = is_enough(psql_obj, message.personId)
+                is_answered_flag = answer_received_for_current_task(psql_obj, message.personId)
+                task_dict = {}  # dictionary structure for the task
+                task_dict = get_current_task(psql_obj, message.personId, has_task)
+
+                if is_answered_flag and is_enough_flag:
+                    # If the user already completed all that tasks, we should not save answer from him
+
+                    logger.info(f'{message.personId}:User has already answered for all the questions.'
+                                f' Letting him know about that')
+                    api.messages.create(room.id, text=message.text, markdown="You already answered all the tasks")
+
+                elif task_dict['files']:
+                    # exception handling in case can't find attachment
+
+                    logger.info(f'{message.personId}:Picture path is not null, '
+                                f'trying to add picture as attachment:{task_dict["files"]}')
+
+                    try:
+                        api.messages.create(room.id, text="Your current task:",
+                                            markdown=prepare_markdown_quiz_task(task_dict, task_dict['task_number']),
+                                            files=task_dict['files'])
+                    except ValueError:
+                        logger.error(f'{message.personId}:Can\'t open file to attach:{task_dict["files"]}')
+
+                        api.messages.create(room.id,
+                                            markdown=f'<<Error: Can\'t open file to attach:{task_dict["files"]}>>')
+                        api.messages.create(room.id, text=f"The {task_dict['task_number']} question for you:",
+                            markdown=prepare_markdown_quiz_task(task_dict,task_dict['task_number']))
+
+                # If no attachment picture
+                else:
+                    logger.info(f'{message.personId}:Picture path is null, sending task without attachment')
+                    api.messages.create(room.id, text=f"The {task_dict['task_number']} question for you:",
+                                        markdown=prepare_markdown_quiz_task(task_dict, task_dict['task_number']))
+
+            else:
+
+                logger.error(f'{message.personId}:We have that user in persons table, but don\'t have tasks assigned. '
+                             'Notify him about that')
+
+                api.messages.create(room.id, text="You don't have tasks assigned",
+                                    markdown="You don't have tasks assigned")
+
+        # user does not exist, create it and assign the task
+        else:
+            logger.info(f'{message.personId}:This is new user, no tasks assigned. Notify him about that')
+            api.messages.create(room.id, text="You don't have tasks assigned", markdown="You don't have tasks assigned")
+
+        return 'OK'
+
+    elif "/help" in message.text.lower():
+        logger.info(f'{message.personId}:FOUND "/help"')
+
+        help_str = "**Commands supported:**\n" \
+                   " * /start - start quiz's process\n" \
+                   " * /repeat - repeat current question\n" \
+                   " * [1-9] - send digit to chose an answer for the question\n"
+
+        api.messages.create(room.id, text=help_str, markdown=help_str)
+
+        return 'OK'
+
+    else:
+        logger.error(f'{message.personId}:Not valid option {message.text}, you can send only: /START or [digits]')
+
+        api.messages.create(room.id, text="Not valid option, you can send only: /START or [digits]",
+                            markdown="Not valid option, you can send only: /START or [digits]")
+        return 'OK'
+
+def get_current_task(psql_obj,person_id, task_id: int) -> dict:
+
+    dict_result = {
+        'task':'',
+        'task_id':'',
+        'task_number':'',
+        'files' : [],
+        'variants' : []
+    }
+
+
+    all_user_tasks = Tasker.get_assigned_tasks_by_person(psql_obj, person_id)
+    logger.info(f'{person_id}:All user tasks:{all_user_tasks}')
+
+    task_number = len(all_user_tasks)
+
+    task = Tasker.get_assigned_task_by_id(psql_obj, person_id, task_id)
+    #dict_result = task
+
+    dict_result['task'] = task['task']
+    dict_result['task_id'] = task['id']
+    dict_result['task_number'] = task_number
+    dict_result['variants'] = task['variants']
+
+
+    # Check whether we need to add attachment in message
+    if task["picture_path"]:
+        # exception handling in case can't find attachment
+        full_pict_path = os.path.join(config["pictures_folder"], task["picture_path"])
+        logger.info(f'{person_id}:Picture path is not null,'
+                    f' trying to add picture as attachment:{full_pict_path}')
+
+        dict_result['files'] = [full_pict_path]
+    # If no attachment picture
+    else:
+        logger.info(f'{person_id}:Picture path is null, sending task without attachment')
+
+
+    return dict_result
+
+
+
+def assign_new_task(psql_obj,person_id) -> dict:
+
+    dict_result = {
+        'task':'',
+        'task_id':'',
+        'task_number':'',
+        'files' : [],
+        'variants' : []
+    }
+
 
     # incrementing task id in message to the customer
 
-    all_user_tasks = Tasker.get_assigned_tasks_by_person(psql_obj, message.personId)
-    logger.info(all_user_tasks)
+    all_user_tasks = Tasker.get_assigned_tasks_by_person(psql_obj, person_id)
+    logger.info(f'{person_id}:All user tasks:{all_user_tasks}')
 
     task_number = len(all_user_tasks) + 1
 
-    task = Tasker.get_random_task(psql_obj,message.personId)
+    task = Tasker.get_random_task(psql_obj,person_id)
 
     if task:
-        api.messages.create(room.id, text=f"The {task_number} question for you:",
-                            markdown=prepare_markdown_quiz_task(task,task_number))
+        #dict_result['task'] = task['task']
+        #dict_result['task_id'] = task['id']
+        #dict_result['task_number'] = task_number
+        #dict_result['variants'] = task['variants']
+
+        # Check whether we need to add attachment in message
+        #if task["picture_path"]:
+        #    # exception handling in case can't find attachment
+        #    full_pict_path = os.path.join(config["pictures_folder"], task["picture_path"])
+        #    logger.info(f'Picture path is not null, trying to add picture as attachment:{full_pict_path}')
+
+        #    dict_result['files'] = [full_pict_path]
+        # If no attachment picture
+        #else:
+        #    logger.info('Picture path is null, sending task without attachment')
+
+        ##return dict_result
+
+        """
+        # Check whether we need to add attachment in message
+        if task["picture_path"]:
+            # exception handling in case can't find attachment
+            full_pict_path = os.path.join(config["pictures_folder"],task["picture_path"])
+            logger.info(f'Picture path is not null, trying to add picture as attachment:{full_pict_path}')
+
+            try:
+               api.messages.create(room.id, text=f"The {task_number} question for you:",
+                                markdown=prepare_markdown_quiz_task(task,task_number),files=
+                                [f'{full_pict_path}'])
+            except ValueError:
+                logger.error(f'Can\'t open file to attach:{task["picture_path"]}')
+
+                api.messages.create(room.id,markdown=f'<<Error: Can\'t open file to attach:{full_pict_path}>>')
+                api.messages.create(room.id, text=f"The {task_number} question for you:",
+                                    markdown=prepare_markdown_quiz_task(task, task_number))
+
+        # If no attachment picture
+        else:
+            logger.info('Picture path is null, sending task without attachment')
+            api.messages.create(room.id, text=f"The {task_number} question for you:",
+                                markdown=prepare_markdown_quiz_task(task,task_number))
+        """
+
 
         # TODO: we are not randomizing tasks' answer list now
-        if Tasker.assign_task(psql_obj, message.personId, task["id"], task["answer"]):
-            logger.info("Added task to the assigned_tasks table successfully")
+        if Tasker.assign_task(psql_obj,person_id, task["id"], task["answer"]):
+            logger.info(f'{person_id}:Added task to the assigned_tasks table successfully')
         else:
-            logger.info("Error in addition to assigned_tasks table")
-            return False
+            logger.info(f'{person_id}:Error in addition to assigned_tasks table')
+            #return False
+            # raise erorr if we could not add task to PSQL table, to catch this error at the upper level
+            raise RuntimeError
 
     else:
-        api.messages.create(room.id, text="You have answered all the question that we have",
-                            markdown="You have answered all the question that we have")
+        logger.info(f'{person_id}:User have answered all the question that we have')
+        raise KeyError
+        #api.messages.create(room.id, text="You have answered all the question that we have",
+        #                    markdown="You have answered all the question that we have")
 
-    return True
+    return get_current_task(psql_obj,person_id,task["id"])
+        #.assign_task(psql_obj,person_id, task["id"], task["answer"])
 
 def save_user_answer(psql_obj,message) -> bool:
 
     # check if that user already has task assigned
     has_task = Tasker.has_task(psql_obj, message.personId)
-    logger.debug(f'Found current task id:{has_task}')
+    logger.debug(f'{message.personId}:Found current task id:{has_task}')
 
     task = Tasker.get_assigned_task_by_id(psql_obj, message.personId, has_task)
 
     if Tasker.save_user_answer(psql_obj, message.personId, task["id"], message.text):
-        logger.info('Successfully saved user answer')
+        logger.info(f'{message.personId}:Successfully saved user answer')
         return True
     else:
-        logger.info('Error saving user answer')
+        logger.info(f'{message.personId}:Error saving user answer')
         return False
 
 def is_enough(psql_obj,person_id) -> bool:
     # Check whether we need to assign next question to the user
 
     all_user_tasks = Tasker.get_assigned_tasks_by_person(psql_obj, person_id)
-    logger.info(all_user_tasks)
+    logger.info(f'{person_id}:All user tasks:{all_user_tasks}')
 
-    if len(all_user_tasks) > 3:
+    if len(all_user_tasks) >= config['tasks_num']:
         return True
     else:
         return False
@@ -303,7 +640,7 @@ def generate_report_dict(psql_obj,person_id) -> Dict:
     dict_report = {'correct':[],'wrong':[]}
 
     all_user_tasks = Tasker.get_assigned_tasks_by_person(psql_obj, person_id)
-    logger.info(all_user_tasks)
+    logger.info(f'{person_id}:All user tasks:{all_user_tasks}')
 
     dict_report['correct'] = Tasker.get_correct_answers(psql_obj, person_id)
     dict_report['wrong'] = Tasker.get_wrong_answers(psql_obj, person_id)
@@ -312,8 +649,46 @@ def generate_report_dict(psql_obj,person_id) -> Dict:
 
     return dict_report
 
+def check_answer_in_range(psql_obj,person_id,answer_num:int) -> int:
+
+    all_user_tasks = Tasker.get_assigned_tasks_by_person(psql_obj, person_id)
+
+    if len(all_user_tasks) > 0:
+
+        # Get task id for the latest task
+
+        task_id = all_user_tasks[0]["task_id"]
+        logger.info(f'{person_id}:Latest task_id for the user {person_id}:{task_id}')
 
 
+        task = Tasker.get_assigned_task_by_id(psql_obj, person_id, task_id)
+
+        if answer_num in range(1,len(task["variants"])+1):
+            return 0
+        else:
+            return len(task["variants"])
+
+    else:
+        # No assigned tasks found
+        return -1
+
+def answer_received_for_current_task(psql_obj,person_id) -> bool:
+    # Check that we have received answer for the assigned task
+
+    all_user_tasks = Tasker.get_assigned_tasks_by_person(psql_obj, person_id)
+
+
+    if len(all_user_tasks) > 0:
+        # Get task id for the latest task
+
+        if all_user_tasks[0]["user_answer"] == None:
+            return False
+
+        else:
+            return True
+
+    else:
+        return False
 
 
 def prepare_markdown_quiz_task(task: Dict, task_number:int) -> str:
@@ -338,31 +713,14 @@ def prepare_markdown_quiz_task(task: Dict, task_number:int) -> str:
 #@flask_app.route('/events', methods=['GET', 'POST'])
 @flask_app.route('/messages', methods=['GET', 'POST'])
 def webex_teams_webhook_messages():
-    logger.info("TEST")
+    logger.info(f'{message.personId}:TEST')
     return True
 
 @flask_app.route('/', methods=['GET', 'POST'])
 def webex_teams_webhook_events():
     """Processes incoming requests to the '/' URI."""
-    if request.method == 'GET':
-        return ("""<!DOCTYPE html>
-                   <html lang="en">
-                       <head>
-                           <meta charset="UTF-8">
-                           <title>Webex Teams Bot served via Flask</title>
-                       </head>
-                   <body>
-                   <p>
-                   <strong>Your Flask web server is up and running!</strong>
-                   </p>
-                   <p>
-                   Here is a nice Cat Fact for you:
-                   </p>
-                   <blockquote>{}</blockquote>
-                   </body>
-                   </html>
-                """.format(get_catfact()))
-    elif request.method == 'POST':
+
+    if request.method == 'POST':
         """Respond to inbound webhook JSON HTTP POST from Webex Teams."""
 
 
