@@ -1,0 +1,419 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 9.5.14
+-- Dumped by pg_dump version 9.5.14
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- Name: interview; Type: SCHEMA; Schema: -; Owner: ciscolive
+--
+
+CREATE SCHEMA interview;
+
+
+ALTER SCHEMA interview OWNER TO ciscolive;
+
+--
+-- Name: marketing; Type: SCHEMA; Schema: -; Owner: ciscolive
+--
+
+CREATE SCHEMA marketing;
+
+
+ALTER SCHEMA marketing OWNER TO ciscolive;
+
+--
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+
+
+--
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- Name: assigned_tasks; Type: TABLE; Schema: interview; Owner: ciscolive
+--
+
+CREATE TABLE interview.assigned_tasks (
+    task_id integer NOT NULL,
+    loc_answer integer,
+    epoch integer NOT NULL,
+    person_id character varying(1000) NOT NULL,
+    user_answer integer
+);
+
+
+ALTER TABLE interview.assigned_tasks OWNER TO ciscolive;
+
+--
+-- Name: assigned_tasks_epoch_seq; Type: SEQUENCE; Schema: interview; Owner: ciscolive
+--
+
+CREATE SEQUENCE interview.assigned_tasks_epoch_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE interview.assigned_tasks_epoch_seq OWNER TO ciscolive;
+
+--
+-- Name: assigned_tasks_epoch_seq; Type: SEQUENCE OWNED BY; Schema: interview; Owner: ciscolive
+--
+
+ALTER SEQUENCE interview.assigned_tasks_epoch_seq OWNED BY interview.assigned_tasks.epoch;
+
+
+--
+-- Name: persons; Type: TABLE; Schema: interview; Owner: ciscolive
+--
+
+CREATE TABLE interview.persons (
+    current_task integer,
+    name character varying,
+    surname character varying,
+    email character varying,
+    id character varying(1000) NOT NULL
+);
+
+
+ALTER TABLE interview.persons OWNER TO ciscolive;
+
+--
+-- Name: TABLE persons; Type: COMMENT; Schema: interview; Owner: ciscolive
+--
+
+COMMENT ON TABLE interview.persons IS 'This is table to store information about webex''s users that are taking interview';
+
+
+--
+-- Name: tasks; Type: TABLE; Schema: interview; Owner: ciscolive
+--
+
+CREATE TABLE interview.tasks (
+    task text,
+    picture_path character varying(200),
+    answer integer,
+    variants character varying[],
+    id integer NOT NULL
+);
+
+
+ALTER TABLE interview.tasks OWNER TO ciscolive;
+
+--
+-- Name: TABLE tasks; Type: COMMENT; Schema: interview; Owner: ciscolive
+--
+
+COMMENT ON TABLE interview.tasks IS 'This is table to store tasks for interview';
+
+
+--
+-- Name: tasks_id_seq; Type: SEQUENCE; Schema: interview; Owner: ciscolive
+--
+
+CREATE SEQUENCE interview.tasks_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE interview.tasks_id_seq OWNER TO ciscolive;
+
+--
+-- Name: tasks_id_seq; Type: SEQUENCE OWNED BY; Schema: interview; Owner: ciscolive
+--
+
+ALTER SEQUENCE interview.tasks_id_seq OWNED BY interview.tasks.id;
+
+
+--
+-- Name: assigned_tasks; Type: TABLE; Schema: marketing; Owner: ciscolive
+--
+
+CREATE TABLE marketing.assigned_tasks (
+    task_id integer NOT NULL,
+    person_id character varying(1000) NOT NULL,
+    received_photos character varying[],
+    received_links character varying[],
+    status character varying(10) DEFAULT 'sent'::character varying,
+    epoch integer NOT NULL
+);
+
+
+ALTER TABLE marketing.assigned_tasks OWNER TO ciscolive;
+
+--
+-- Name: assigned_tasks_epoch_seq; Type: SEQUENCE; Schema: marketing; Owner: ciscolive
+--
+
+CREATE SEQUENCE marketing.assigned_tasks_epoch_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE marketing.assigned_tasks_epoch_seq OWNER TO ciscolive;
+
+--
+-- Name: assigned_tasks_epoch_seq; Type: SEQUENCE OWNED BY; Schema: marketing; Owner: ciscolive
+--
+
+ALTER SEQUENCE marketing.assigned_tasks_epoch_seq OWNED BY marketing.assigned_tasks.epoch;
+
+
+--
+-- Name: persons; Type: TABLE; Schema: marketing; Owner: ciscolive
+--
+
+CREATE TABLE marketing.persons (
+    current_task integer,
+    name character varying,
+    surname character varying,
+    email character varying,
+    id character varying(1000) NOT NULL,
+    room_id character varying(1000) NOT NULL
+);
+
+
+ALTER TABLE marketing.persons OWNER TO ciscolive;
+
+--
+-- Name: tasks; Type: TABLE; Schema: marketing; Owner: ciscolive
+--
+
+CREATE TABLE marketing.tasks (
+    task text,
+    id integer NOT NULL
+);
+
+
+ALTER TABLE marketing.tasks OWNER TO ciscolive;
+
+--
+-- Name: tasks_id_seq; Type: SEQUENCE; Schema: marketing; Owner: ciscolive
+--
+
+CREATE SEQUENCE marketing.tasks_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE marketing.tasks_id_seq OWNER TO ciscolive;
+
+--
+-- Name: tasks_id_seq; Type: SEQUENCE OWNED BY; Schema: marketing; Owner: ciscolive
+--
+
+ALTER SEQUENCE marketing.tasks_id_seq OWNED BY marketing.tasks.id;
+
+
+--
+-- Name: epoch; Type: DEFAULT; Schema: interview; Owner: ciscolive
+--
+
+ALTER TABLE ONLY interview.assigned_tasks ALTER COLUMN epoch SET DEFAULT nextval('interview.assigned_tasks_epoch_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: interview; Owner: ciscolive
+--
+
+ALTER TABLE ONLY interview.tasks ALTER COLUMN id SET DEFAULT nextval('interview.tasks_id_seq'::regclass);
+
+
+--
+-- Name: epoch; Type: DEFAULT; Schema: marketing; Owner: ciscolive
+--
+
+ALTER TABLE ONLY marketing.assigned_tasks ALTER COLUMN epoch SET DEFAULT nextval('marketing.assigned_tasks_epoch_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: marketing; Owner: ciscolive
+--
+
+ALTER TABLE ONLY marketing.tasks ALTER COLUMN id SET DEFAULT nextval('marketing.tasks_id_seq'::regclass);
+
+
+--
+-- Data for Name: assigned_tasks; Type: TABLE DATA; Schema: interview; Owner: ciscolive
+--
+
+COPY interview.assigned_tasks (task_id, loc_answer, epoch, person_id, user_answer) FROM stdin;
+9	1	97	Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg	2
+6	3	98	Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg	3
+8	3	99	Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg	2
+3	3	100	Y2lzY29zcGFyazovL3VzL1BFT1BMRS81ODkyZWQ2NC0wZjJhLTQwYmEtYjFkZi1jMjhiNmM2NTBjZmM	\N
+\.
+
+
+--
+-- Name: assigned_tasks_epoch_seq; Type: SEQUENCE SET; Schema: interview; Owner: ciscolive
+--
+
+SELECT pg_catalog.setval('interview.assigned_tasks_epoch_seq', 100, true);
+
+
+--
+-- Data for Name: persons; Type: TABLE DATA; Schema: interview; Owner: ciscolive
+--
+
+COPY interview.persons (current_task, name, surname, email, id) FROM stdin;
+\N	Alexey	Sazhin	asazhin@cisco.com	Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg
+\N	Sergey	Sazhin	sesazhin@cisco.com	Y2lzY29zcGFyazovL3VzL1BFT1BMRS82ZTgyNTVkYS1jMzIyLTQ4ZDgtYjlhYi03ZGEyM2VhMWZmYWE
+\N	Vladimir	Savostin	vsavosti@cisco.com	Y2lzY29zcGFyazovL3VzL1BFT1BMRS81ODkyZWQ2NC0wZjJhLTQwYmEtYjFkZi1jMjhiNmM2NTBjZmM
+\N	Stanislav	Braichuk	sbraichu@cisco.com	Y2lzY29zcGFyazovL3VzL1BFT1BMRS82ZTUzOWU0Ny05YWM3LTQ5MzUtOTU5Zi04NDYzYzgyYjY5MTI
+\.
+
+
+--
+-- Data for Name: tasks; Type: TABLE DATA; Schema: interview; Owner: ciscolive
+--
+
+COPY interview.tasks (task, picture_path, answer, variants, id) FROM stdin;
+This is task2	10_40_58.jpg	2	{ans1,ans2,ans3}	1
+This is task3	10_40_58.jpg	3	{ans2,ans4,ans5}	2
+This is task5	10_40_58.jpg	3	{ans7,ans8,ans9}	3
+This is task6	10_40_58.jpg	1	{ans2,ans1,ans5}	4
+This is task4		2	{ans5,ans6,ans7}	5
+\.
+
+
+--
+-- Name: tasks_id_seq; Type: SEQUENCE SET; Schema: interview; Owner: ciscolive
+--
+
+SELECT pg_catalog.setval('interview.tasks_id_seq', 5, true);
+
+
+--
+-- Data for Name: assigned_tasks; Type: TABLE DATA; Schema: marketing; Owner: ciscolive
+--
+
+COPY marketing.assigned_tasks (task_id, person_id, received_photos, received_links, status, epoch) FROM stdin;
+4	Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg	\N	\N	sent	1
+\.
+
+
+--
+-- Name: assigned_tasks_epoch_seq; Type: SEQUENCE SET; Schema: marketing; Owner: ciscolive
+--
+
+SELECT pg_catalog.setval('marketing.assigned_tasks_epoch_seq', 1, true);
+
+
+--
+-- Data for Name: persons; Type: TABLE DATA; Schema: marketing; Owner: ciscolive
+--
+
+COPY marketing.persons (current_task, name, surname, email, id, room_id) FROM stdin;
+\N	Alexey	Sazhin	asazhin@cisco.com	Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg	Y2lzY29zcGFyazovL3VzL1JPT00vMDc1NmMwYTYtMDg1My0zZDVjLTg1ZTItZGM0ZjRlYTA5YWU3
+\.
+
+
+--
+-- Data for Name: tasks; Type: TABLE DATA; Schema: marketing; Owner: ciscolive
+--
+
+COPY marketing.tasks (task, id) FROM stdin;
+This is task1	1
+This is task2	2
+This is task3	3
+This is task4	4
+This is task5	5
+This is task6	6
+This is task7	7
+\.
+
+
+--
+-- Name: tasks_id_seq; Type: SEQUENCE SET; Schema: marketing; Owner: ciscolive
+--
+
+SELECT pg_catalog.setval('marketing.tasks_id_seq', 7, true);
+
+
+--
+-- Name: assigned_tasks_pkey; Type: CONSTRAINT; Schema: interview; Owner: ciscolive
+--
+
+ALTER TABLE ONLY interview.assigned_tasks
+    ADD CONSTRAINT assigned_tasks_pkey PRIMARY KEY (person_id, task_id);
+
+
+--
+-- Name: persons_pkey; Type: CONSTRAINT; Schema: interview; Owner: ciscolive
+--
+
+ALTER TABLE ONLY interview.persons
+    ADD CONSTRAINT persons_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: tasks_pkey; Type: CONSTRAINT; Schema: interview; Owner: ciscolive
+--
+
+ALTER TABLE ONLY interview.tasks
+    ADD CONSTRAINT tasks_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: assigned_tasks_pkey; Type: CONSTRAINT; Schema: marketing; Owner: ciscolive
+--
+
+ALTER TABLE ONLY marketing.assigned_tasks
+    ADD CONSTRAINT assigned_tasks_pkey PRIMARY KEY (task_id, person_id);
+
+
+--
+-- Name: tasks_pkey; Type: CONSTRAINT; Schema: marketing; Owner: ciscolive
+--
+
+ALTER TABLE ONLY marketing.tasks
+    ADD CONSTRAINT tasks_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: SCHEMA public; Type: ACL; Schema: -; Owner: postgres
+--
+
+REVOKE ALL ON SCHEMA public FROM PUBLIC;
+REVOKE ALL ON SCHEMA public FROM postgres;
+GRANT ALL ON SCHEMA public TO postgres;
+GRANT ALL ON SCHEMA public TO PUBLIC;
+
+
+--
+-- PostgreSQL database dump complete
+--
+
