@@ -33,10 +33,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-
-# TODO: divide operational functions and messaging to the customer
-# TODO: when I enter /start and I have already answered all the questions, should notify user about that
-
 # Use future for Python v2 and v3 compatibility
 from __future__ import (
     absolute_import,
@@ -132,6 +128,8 @@ def process_message(api: WebexTeamsAPI, message:Message, room:Room) -> str:
 
     elif "/start" in message.text.lower():
         logger.info(f'{message.personId}:FOUND "/start"')
+
+        print(message.roomId)
 
 
         # check if that users exists

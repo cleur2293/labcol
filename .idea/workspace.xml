@@ -11,11 +11,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test2_bot.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test2_bot.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test2_bot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-915">
-              <caret line="486" column="19" selection-start-line="486" selection-start-column="19" selection-end-line="486" selection-end-column="19" />
+            <state relative-caret-position="155">
+              <caret line="326" column="57" selection-start-line="326" selection-start-column="20" selection-end-line="326" selection-end-column="57" />
               <folding>
                 <element signature="e#2170#2273#0" expanded="true" />
               </folding>
@@ -23,23 +23,44 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tasker.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/tasker.py">
+      <file leaf-file-name="test3_bot.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test3_bot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="404">
-              <caret line="86" column="19" selection-start-line="86" selection-start-column="8" selection-end-line="86" selection-end-column="19" />
+            <state relative-caret-position="304">
+              <caret line="126" column="21" selection-start-line="126" selection-start-column="21" selection-end-line="126" selection-end-column="21" />
               <folding>
-                <element signature="e#0#14#0" expanded="true" />
+                <element signature="e#2275#2378#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PSQL.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/PSQL.py">
+      <file leaf-file-name="test_req.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test_req.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1088">
-              <caret line="64" column="20" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="20" />
+            <state relative-caret-position="45">
+              <caret line="100" column="40" selection-start-line="100" selection-start-column="32" selection-end-line="100" selection-end-column="40" />
+              <folding>
+                <element signature="e#2102#2205#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PSQL_marketing.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/PSQL_marketing.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="159">
+              <caret line="117" column="18" selection-start-line="117" selection-start-column="18" selection-end-line="117" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tasker_marketing.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/tasker_marketing.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="261">
+              <caret line="62" column="12" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -47,7 +68,7 @@
       <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../python37/webexteams/Lib/site-packages/flask/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
+            <state relative-caret-position="105">
               <caret line="1798" selection-start-line="1798" selection-end-line="1798" />
             </state>
           </provider>
@@ -73,36 +94,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>10_</find>
-      <find>get_assigned_tasks</find>
-      <find>generate_report_dict</find>
-      <find>send me</find>
-      <find>persons</find>
-      <find>update</find>
-      <find>get_ass</find>
-      <find>answers</find>
-      <find>correct</find>
-      <find>randrange</find>
-      <find>loc_answer</find>
-      <find>prepare_markdown_quiz_task</find>
-      <find>api.messages.create</find>
-      <find>message</find>
-      <find>WebexTeamsAPI</find>
-      <find>get_assigned_task_by_id</find>
-      <find>files</find>
-      <find>get_assigned_tasks_by_person</find>
       <find>variants</find>
       <find>api.messa</find>
       <find>get_random_task(</find>
-      <find>get_random_task</find>
       <find>message.person</find>
       <find>assign_new_task(</find>
-      <find>assign_new_task</find>
       <find>if task_dict['files']</find>
       <find>try</find>
       <find>assign_new</find>
       <find>/repeat</find>
       <find>if has_task</find>
+      <find>question for you</find>
+      <find>prepare_markdown_quiz_task</find>
+      <find>get_random_task</find>
+      <find>tasks_num</find>
+      <find>is_person_exists</find>
+      <find>PSQL</find>
+      <find>add_person</find>
+      <find>assign_new_task</find>
+      <find>get_assigned_tasks_by_person</find>
+      <find>get_current_task</find>
+      <find>get_current_task(</find>
+      <find>task = Tasker.get_assigned_task_by_id</find>
+      <find>get_assigned_task_by_id</find>
+      <find>setini</find>
+      <find>assign_task</find>
+      <find>access_token</find>
+      <find>saved</find>
+      <find>content-di</find>
+      <find>content_disp</find>
+      <find>disp</find>
     </findStrings>
     <replaceStrings>
       <replace>io.StringIO</replace>
@@ -114,20 +135,23 @@
       <list>
         <option value="$PROJECT_DIR$/test1_bot.py" />
         <option value="$PROJECT_DIR$/../python37/webexteams/Lib/site-packages/itty.py" />
-        <option value="$PROJECT_DIR$/test3_bot.py" />
         <option value="$PROJECT_DIR$/scripts/setinitial.py" />
         <option value="$PROJECT_DIR$/workflow.py" />
         <option value="$PROJECT_DIR$/scripts/PSQL.py" />
         <option value="$PROJECT_DIR$/scripts/tasker.py" />
         <option value="$PROJECT_DIR$/test2_bot.py" />
+        <option value="$PROJECT_DIR$/scripts/PSQL_marketing.py" />
+        <option value="$PROJECT_DIR$/scripts/tasker_marketing.py" />
+        <option value="$PROJECT_DIR$/test3_bot.py" />
+        <option value="$PROJECT_DIR$/test_req.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-18" />
-    <option name="y" value="-1030" />
-    <option name="width" value="2570" />
-    <option name="height" value="1371" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-12" />
+    <option name="y" value="-12" />
+    <option name="width" value="2586" />
+    <option name="height" value="1386" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -137,6 +161,15 @@
       <pane id="ProjectPane">
         <subPane>
           <expand>
+            <path>
+              <item name="webexteams" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webexteams" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webexteams" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webexteams" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+            </path>
             <path>
               <item name="webexteams" type="b2602c69:ProjectViewProjectNode" />
               <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
@@ -156,8 +189,14 @@
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/asazhin/PycharmProjects/webexteams/scripts/PSQL.py" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Properties" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/scripts/PSQL.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/test_req.py" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\asazhin\PycharmProjects\webexteams\scripts" />
+      <recent name="C:\Users\asazhin\PycharmProjects\webexteams" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -190,7 +229,7 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="test2_bot" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="test3_bot" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="webexteams" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -202,7 +241,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test2_bot.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_req.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -210,7 +249,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test2_bot" />
+        <item itemvalue="Python.test3_bot" />
       </list>
     </recent_temporary>
   </component>
@@ -228,15 +267,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="278" y="-1088" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-6" y="-6" width="1293" height="693" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16614583" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24941361" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4846885" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.6967632" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -280,8 +318,18 @@
           <line>133</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test3_bot.py</url>
+          <line>205</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test_req.py</url>
+          <line>92</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="12" />
+      <option name="time" value="15" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
@@ -573,7 +621,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test3_bot.py" />
     <entry file="file://$PROJECT_DIR$/test1_bot.py" />
     <entry file="file://$PROJECT_DIR$/scripts/setinitial.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -597,20 +644,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/PSQL.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1088">
-          <caret line="64" column="20" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../python37/webexteams/Lib/site-packages/flask/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1798" selection-start-line="1798" selection-end-line="1798" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../python37/webexteams/Lib/site-packages/psycopg2/extras.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -628,12 +661,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/PSQL.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="149" column="24" selection-start-line="149" selection-start-column="8" selection-end-line="149" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../python37/webexteams/Lib/site-packages/flask/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="1798" selection-start-line="1798" selection-end-line="1798" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test2_bot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-915">
-          <caret line="486" column="19" selection-start-line="486" selection-start-column="19" selection-end-line="486" selection-end-column="19" />
+        <state relative-caret-position="155">
+          <caret line="326" column="57" selection-start-line="326" selection-start-column="20" selection-end-line="326" selection-end-column="57" />
           <folding>
             <element signature="e#2170#2273#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/PSQL_marketing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="117" column="18" selection-start-line="117" selection-start-column="18" selection-end-line="117" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/tasker_marketing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="62" column="12" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test3_bot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="126" column="21" selection-start-line="126" selection-start-column="21" selection-end-line="126" selection-end-column="21" />
+          <folding>
+            <element signature="e#2275#2378#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_req.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="100" column="40" selection-start-line="100" selection-start-column="32" selection-end-line="100" selection-end-column="40" />
+          <folding>
+            <element signature="e#2102#2205#0" expanded="true" />
           </folding>
         </state>
       </provider>
