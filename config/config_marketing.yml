@@ -1,10 +1,32 @@
 #Device default login/password
 bot_access_token: "ZDczMjNmOTUtZjgxZC00OGFhLWEwYzEtZjUyNjQzMjQwZjNhNjY0NmViNDQtOGQw_PF84_1eb65fdf-9643-417f-9974-ad72cae0e10f"
+webhook_name: "webhook_marketing"
 
 db_host: "10.81.127.149"
 db_login: "ciscolive"
 db_password: "cisco.123"
 
-pictures_folder: "pictures/"
-# Number of tasks per user
-tasks_num: 3
+#folder to store users pictures
+rec_pictures_folder: "received_pictures/"
+
+#Email configuration
+addrFrom: webexbotsender1@gmail.com
+addrTo: alsazhin777@gmail.com
+addrCc: asazhin@cisco.com
+smtp_server: smtp.gmail.com
+smtp_port: 465
+mail_login: webexbotsender1
+mail_pass: C15coecats
+subject: "Message from WebexTeams bot"
+
+#Campaign configuration
+#number of tasks per user
+marketing_runs: 2
+#interval (seconds) between runs
+interval_runs: 60
+
+social_media:
+ - 'https://.*facebook.com/'
+ - 'https://.*fb.com/'
+ - 'https://.*instagram.com/'
+ - 'https://.*twitter.com/'
