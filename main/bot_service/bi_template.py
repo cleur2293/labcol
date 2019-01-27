@@ -6,10 +6,6 @@ from webexteamssdk import WebexTeamsAPI
 
 logger = logging.getLogger(__name__) # Creating logger for logging across this module
 
-
-# Create the Webex Teams API connection object
-api = WebexTeamsAPI(access_token='MTVmMGE3Y2YtYzdiNi00ZGI2LTgzYjUtMjg2ZmNhMzEwZTM1MmZiNWQyOGItZWEy_PF84_1eb65fdf-9643-417f-9974-ad72cae0e10f')
-
 # Module constants
 AUTH_API_URL = 'https://cloudsso.cisco.com/as/token.oauth2'
 HELLO_API_URL = 'https://api.cisco.com/hello'
@@ -39,6 +35,8 @@ def get_bug_api(bug_id):
     Functions for Soundhound, Google, IBM Watson, or other APIs can be added
     to create the desired functionality into this bot.
     """
+    requests.packages.urllib3.disable_warnings()
+    
     headers = {'Accept': 'application/json', 'Authorization': get_auth_token()}
     response = requests.get(BUG_API_URL+bug_id, headers=headers, verify=False)
     response.raise_for_status()
