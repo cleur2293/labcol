@@ -11,8 +11,6 @@ AUTH_API_URL = 'https://cloudsso.cisco.com/as/token.oauth2'
 HELLO_API_URL = 'https://api.cisco.com/hello'
 BUG_API_URL = 'https://api.cisco.com/bug/v2.0/bugs/bug_ids/'
 
-# CLIENT_ID = 'c6vfxn47gs8du5qhgya77que'
-# CLIENT_SECRET = '8qCgCxuyBFkx5HkzhEuqwrZ6'
 CLIENT_ID = 'edatpdtwgvn5scwv23mcdnqs'
 CLIENT_SECRET = 'YPTJDBZ5MMBudUh6HSwcQCqx'
 
