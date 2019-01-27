@@ -101,7 +101,7 @@ def process_command(params):
     except TypeError as e:
         logger.info('Not found attached photo, proceeding with commands parsing')
 
-    command = params['message'].text.lower.split()[0]
+    command = params['message'].text.lower().split()[0]
     logger.info(f'command={command}')
 
     if command[0] == '/' and f'cmd_{command[1:]}' in globals():
