@@ -1,3 +1,3 @@
-# webexteams
+# labcol
 
-This is project for bots for webexteams
+WebexTeams bot for Collaboration lab on CLEUR 2019 live here

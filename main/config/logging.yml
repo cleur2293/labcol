@@ -1,0 +1,27 @@
+version: 1
+disable_existing_loggers: False
+formatters:
+  simple:
+    format: '%(asctime)s.%(msecs)03d-%(levelname)s-[%(module)s]-[%(funcName)s]-%(message)s'
+    datefmt: '%Y-%m-%d %H:%M:%S'
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: simple
+    stream: ext://sys.stdout
+  file:
+    class : logging.handlers.RotatingFileHandler
+    formatter: simple
+    level: DEBUG
+    filename: log/log.log
+    maxBytes: 70000000
+    backupCount: 1
+loggers:
+  logger_root:
+    level: INFO
+    handlers: [console, file]
+    propagate: yes
+root:
+  level: DEBUG
+  handlers: [console,file]
