@@ -1,0 +1,10 @@
+#Device default login/password
+bot_access_token: "MTVmMGE3Y2YtYzdiNi00ZGI2LTgzYjUtMjg2ZmNhMzEwZTM1MmZiNWQyOGItZWEy_PF84_1eb65fdf-9643-417f-9974-ad72cae0e10f"
+
+db_host: "127.0.0.1"
+db_login: "ciscolive"
+db_password: "cisco.123"
+
+pictures_folder: "pictures/"
+# Number of tasks per user
+tasks_num: 3
