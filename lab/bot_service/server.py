@@ -6,13 +6,14 @@ from flask import Flask, request
 from webexteamssdk import WebexTeamsAPI, Webhook, Message, Room
 
 #<put import process_message>
-from utils import webhook
-from utils import setinitial
 
 # To be able to load modules from parent directory
 currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
 parentdir = os.path.dirname(currentdir)
 sys.path.insert(0,parentdir)
+
+from utils import webhook
+from utils import setinitial
 
 # Initializing logger
 setinitial.setup_logging()
