@@ -11,9 +11,8 @@ AUTH_API_URL = 'https://cloudsso.cisco.com/as/token.oauth2'
 HELLO_API_URL = 'https://api.cisco.com/hello'
 BUG_API_URL = 'https://api.cisco.com/bug/v2.0/bugs/bug_ids/'
 
-CLIENT_ID = 'c6vfxn47gs8du5qhgya77que'
-CLIENT_SECRET = '8qCgCxuyBFkx5HkzhEuqwrZ6'
-
+CLIENT_ID = 'edatpdtwgvn5scwv23mcdnqs'
+CLIENT_SECRET = 'YPTJDBZ5MMBudUh6HSwcQCqx'
 
 # Auth function
 def get_auth_token():
@@ -51,7 +50,7 @@ def cmd_bug(params):
     bug_id = params['message'].text.split()[1].strip()
     # Get a response
     bug_headline, bug_description = get_bug_api(bug_id)
-    print("SENDING RESPONSE FROM HELLO API '{}'".format(bug_headline))
+    print("SENDING RESPONSE FROM BUG API '{}'".format(bug_headline))
     # Post the response to the room where the request was received
     results = list()
     results.append('**'+bug_id+': '+bug_headline+'**')
