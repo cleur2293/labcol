@@ -40,7 +40,3 @@ except IOError as exc:
 
 # main function code goes here
 #<create main function>
-
-#<cmd_bug function>
-
-#<cmd_help function>

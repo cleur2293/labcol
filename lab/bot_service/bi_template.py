@@ -44,6 +44,6 @@ def get_bug_api(bug_id):
         return json_data['bugs'][0]['headline'], json_data['bugs'][0]['description']
 
 
-# cmd_bug() function goes here
+#<cmd_bug function>
 
-# cmd_help() functions goes here
+#<cmd_help function>
