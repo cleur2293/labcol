@@ -127,7 +127,7 @@ class Tasker:
 
     @classmethod
     def get_assigned_task_by_id(self,psql_obj,person_id: str, task_id: int) -> Dict:
-        sql_req = """SELECT id,task,answer,variants,picture_path FROM ciscolive.interview.tasks WHERE id = %s"""
+        sql_req = """SELECT id,task,answer,variants,picture_path,explain FROM ciscolive.interview.tasks WHERE id = %s"""
 
         sql_data = (task_id,)
 

@@ -52,9 +52,6 @@ def attachment_not_supported(params: Dict) -> List[str]:
     result_list = []
 
     logger.error("Found attachment in user's input. Notifiying him that attachments are not supported")
-
-    #api.messages.create(room.id, text="You can't send messages with attachments to me",
-    #                    markdown="You can't send messages with attachments to me")
     result_list.append('You can\'t send messages with attachments to me')
 
     return result_list
@@ -78,8 +75,6 @@ def cmd_start(params) -> List[str]:
 
     logger.info(f'{message.personId}:FOUND "/start"')
 
-    #print(message.roomId)
-
     # check if that users exists
     if psql_obj.is_person_exists(message.personId):
         logger.info(f'{message.personId}:This is existing user')
@@ -101,13 +96,9 @@ def cmd_start(params) -> List[str]:
 
                 logger.info(f'{message.personId}:User has already'
                             f' answered for all the questions. Letting him know about that')
-                #api.messages.create(room.id, text=message.text, markdown="You already answered all the tasks")
                 result_list.append("You already answered all the tasks")
 
             elif task_dict['files']:
-
-                #api.messages.create(room.id, text="You already have the task. Please answer it first",
-                #                    markdown="You already have the task. Please answer it first")
                 result_list.append("You already have the task. Please answer it first")
 
                 # exception handling in case can't find attachment
@@ -115,32 +106,14 @@ def cmd_start(params) -> List[str]:
                 logger.info(f'{message.personId}:Picture path is not null,'
                             f' trying to add picture as attachment:{task_dict["files"]}')
 
-                #try:
-                    #api.messages.create(room.id, text="Your current task:",
-                    #                    markdown=prepare_markdown_quiz_task(task_dict, task_dict['task_number']),
-                    #                    files=task_dict['files'])
-                    #TODO: integrate files in return
                 result_list.append([prepare_markdown_quiz_task(task_dict, task_dict['task_number']),
                                     task_dict['files']])
-                #except ValueError:
-                #    logger.error(f'{message.personId}:Can\'t open file to attach:{task_dict["files"]}')
-
-                    #api.messages.create(room.id,
-                    #                    markdown=f'<<Error: Can\'t open file to attach:{task_dict["files"]}>>')
-                    #api.messages.create(room.id, text=f"The {task_dict['task_number']} question for you:",
-                    #                    markdown=prepare_markdown_quiz_task(task_dict, task_dict['task_number']))
-                #    result_list.append(f'<<Error: Can\'t open file to attach:{task_dict["files"]}>>')
-                #    result_list.append(prepare_markdown_quiz_task(task_dict, task_dict['task_number']))
 
             # If no attachment picture
             else:
-                #api.messages.create(room.id, text="You already have the task. Please answer it first",
-                #                    markdown="You already have the task. Please answer it first")
                 result_list.append("You already have the task. Please answer it first")
 
                 logger.info(f'{message.personId}:Picture path is null, sending task without attachment')
-                #api.messages.create(room.id, text=f"The {task_dict['task_number']} question for you:",
-                #                    markdown=prepare_markdown_quiz_task(task_dict, task_dict['task_number']))
                 result_list.append(prepare_markdown_quiz_task(task_dict, task_dict['task_number']))
 
         else:
@@ -149,8 +122,6 @@ def cmd_start(params) -> List[str]:
                 logger.error(f'{message.personId}:We have that user'
                              f' in persons table, but don\'t have assigned tasks for him')
                 logger.error(f'{message.personId}:Assigning task for him')
-
-                # assign_new_task(api, psql_obj, room, message)
 
                 task_dict = {}  # dictionary structure for the task
                 try:
@@ -162,8 +133,7 @@ def cmd_start(params) -> List[str]:
                     return result_list
                 except KeyError:
                     # User have answered all the question that we have
-                    #api.messages.create(room.id, text="You have answered all the question that we have",
-                    #                    markdown="You have answered all the question that we have")
+
                     result_list.append("You have answered all the question that we have")
                     return result_list
 
@@ -173,29 +143,12 @@ def cmd_start(params) -> List[str]:
                     logger.info(f'{message.personId}:Picture path is not null,'
                                 f' trying to add picture as attachment:{task_dict["files"]}')
 
-                    #try:
-                        #api.messages.create(room.id, text="The {task_number} question for you:",
-                        #                    markdown=prepare_markdown_quiz_task(task_dict, task_dict['task_number']),
-                        #                    files=task_dict['files'])
-                        #TODO: integrate files in return
                     result_list.append([prepare_markdown_quiz_task(task_dict, task_dict['task_number'])
                                        ,task_dict['files']])
-                    #except ValueError:
-                    #    logger.error(f'{message.personId}:Can\'t open file '
-                    #                 f'to attach:{task_dict["files"]}')
-
-                        #api.messages.create(room.id,
-                        #                    markdown=f'<<Error: Can\'t open file to attach:{task_dict["files"]}>>')
-                        #api.messages.create(room.id, text=f"The {task_dict['task_number']} question for you:",
-                        #                    markdown=prepare_markdown_quiz_task(task_dict, task_dict['task_number']))
-                    #    result_list.append(f'<<Error: Can\'t open file to attach:{task_dict["files"]}>>')
-                    #    result_list.append(prepare_markdown_quiz_task(task_dict, task_dict['task_number']))
 
                 # If no attachment picture
                 else:
                     logger.info(f'{message.personId}:Picture path is null, sending task without attachment')
-                    #api.messages.create(room.id, text=f"The {task_dict['task_number']} question for you:",
-                    #                    markdown=prepare_markdown_quiz_task(task_dict, task_dict['task_number']))
                     result_list.append(prepare_markdown_quiz_task(task_dict, task_dict['task_number']))
             else:
                 result_list.extend(get_all_tech(params))
@@ -203,13 +156,9 @@ def cmd_start(params) -> List[str]:
     # user does not exist, create it and assign the task
     else:
         logger.info(f'{message.personId}:This is new user')
-        #api.messages.create(room.id, text="You are new user", markdown="You are **new** user")
         result_list.append("You are **new** user")
 
         # Creating new user
-        #person_name = api.people.get(message.personId).firstName
-        #person_surname = api.people.get(message.personId).lastName
-
         if psql_obj.add_person(message.personId, person_name, person_surname, message.personEmail):
             logger.info(f'{message.personId}:User {message.personId} created user successfully')
             # assign_new_task(api, psql_obj, room, message)
@@ -244,8 +193,6 @@ def create_first_task(params):
         return result_list
     except KeyError:
         # User have answered all the question that we have
-        # api.messages.create(room.id, text="You have answered all the question that we have",
-        #                    markdown="You have answered all the question that we have")
         result_list.append("You have answered all the question that we have")
         return result_list
 
@@ -254,21 +201,13 @@ def create_first_task(params):
 
         logger.info(f'{message.personId}:Picture path is not null,'
                     f' trying to add picture as attachment:{task_dict["files"]}')
-        # TODO: move try to attachment to the upper layer
-        # TODO: integrate files in return
-        # try:
-        # api.messages.create(room.id, text="The {task_number} question for you:",
-        #                    markdown=prepare_markdown_quiz_task(task_dict, task_dict['task_number']),
-        #                    files=task_dict['files'])
+
         result_list.append([prepare_markdown_quiz_task(task_dict, task_dict['task_number']),
                             task_dict['files']])
-
 
     # If no attachment picture
     else:
         logger.info(f'{message.personId}:Picture path is null, sending task without attachment')
-        # api.messages.create(room.id, text=f"The {task_dict['task_number']} question for you:",
-        #                    markdown=prepare_markdown_quiz_task(task_dict, task_dict['task_number']))
         result_list.append(prepare_markdown_quiz_task(task_dict, task_dict['task_number']))
 
     return result_list
@@ -301,46 +240,38 @@ def process_input_digit(params) -> List[str]:
 
         logger.info(f'{message.personId}:User has already answered for'
                     f' all the questions. Letting him know about that')
-        #api.messages.create(room.id, text=message.text, markdown="You already answered all the tasks")
         result_list.append("You already answered all the tasks")
-
 
     # If user's answer is in expected range
     elif check_answer == 0:
         save_user_answer(psql_obj, message)
 
-        #api.messages.create(room.id, text=message.text, markdown="Thank you, your answer was accepted")
         result_list.append("Thank you, your answer was accepted")
 
         # Check that user has answered all questions and we need to prepare report for him
         if is_enough_flag:
             report_dict = {}
 
-            #api.messages.create(room.id, text=message.text, markdown="You have completed the interview. "
-            #                                                         "Preparing score for you")
             result_list.append("You have completed the quiz. Preparing score for you")
-
             report_dict = generate_report_dict(psql_obj, message.personId)
-
-            #api.messages.create(room.id, text=message.text, markdown="**Answered correctly:**")
             result_list.append("**Answered correctly:**")
 
             for correct_answer in report_dict['correct']:
                 task = Tasker.get_assigned_task_by_id(psql_obj, message.personId, correct_answer["task_id"])
 
-                #api.messages.create(room.id, text=message.text, markdown=f'- {task["task"][0:20]}<...>')
                 result_list.append(f'- {task["task"][0:100]}<...>')
 
-            #api.messages.create(room.id, text=message.text,
-            #                    markdown="**Answered incorrectly [your_answer -> right answer]:**")
             result_list.append("**Answered incorrectly [your_answer -> right answer]:**")
 
             for wrong_answer in report_dict['wrong']:
                 task = Tasker.get_assigned_task_by_id(psql_obj, message.personId, wrong_answer["task_id"])
-                text = f'- {task["task"]}<...> [{wrong_answer["user_answer"]}->{wrong_answer["loc_answer"]}]'
+                text = f'- {task["task"]} [{wrong_answer["user_answer"]}->{wrong_answer["loc_answer"]}]'
 
-                #api.messages.create(room.id, text=message.text, markdown=f'{task["task"][0:20]}...')
-                #api.messages.create(room.id, text=message.text, markdown=text)
+                if task['explain'] is not None:
+                    # Task has explanation attached. Add it to the wrong answers
+                    logger.info('Task has explanation attached. Add it to the wrong answers')
+                    text += f'<br/>**Explanation:**<br/>{task["explain"]}'
+
                 result_list.append(text)
 
         else:
@@ -354,8 +285,7 @@ def process_input_digit(params) -> List[str]:
                 return result_list
             except KeyError:
                 #User have answered all the question that we have
-                #api.messages.create(room.id, text="You have answered all the question that we have",
-                #                markdown="You have answered all the question that we have")
+
                 result_list.append("You have answered all the question that we have")
                 return result_list
 
@@ -365,43 +295,23 @@ def process_input_digit(params) -> List[str]:
                 logger.info(f'{message.personId}:Picture path is not null, '
                             f'trying to add picture as attachment:{task_dict["files"]}')
 
-                #try:
-                    #api.messages.create(room.id, text="The {task_number} question for you:",
-                    #                    markdown=prepare_markdown_quiz_task(task_dict, task_dict['task_number']),
-                    #                    files=task_dict['files'])
                 result_list.append([prepare_markdown_quiz_task(task_dict, task_dict['task_number']),
                                     task_dict['files']])
-
-                #except ValueError:
-                #    logger.error(f'{message.personId}:Can\'t open file to attach:{task_dict["files"]}')
-
-                    #api.messages.create(room.id,
-                    #                    markdown=f'<<Error: Can\'t open file to attach:{task_dict["files"]}>>')
-                    #api.messages.create(room.id, text=f"The {task_dict['task_number']} question for you:",
-                    #    markdown=prepare_markdown_quiz_task(task_dict,task_dict['task_number']))
-                #    result_list.append(f'<<Error: Can\'t open file to attach:{task_dict["files"]}>>')
-                #    result_list.append(prepare_markdown_quiz_task(task_dict,task_dict['task_number']))
-
 
             # If no attachment picture
             else:
                 logger.info(f'{message.personId}:Picture path is null, sending task without attachment')
-                #api.messages.create(room.id, text=f"The {task_dict['task_number']} question for you:",
-                #                    markdown=prepare_markdown_quiz_task(task_dict, task_dict['task_number']))
                 result_list.append(prepare_markdown_quiz_task(task_dict, task_dict['task_number']))
 
     # If user doesn't have tasks assigned
     elif check_answer == -1:
         logger.info(f'{message.personId}:User does not have tasks assigned')
-        #api.messages.create(room.id, text=message.text, markdown=
-        #f'You don\t have tasks assigned, send me /START first')
         result_list.append(f'You don\'t have tasks assigned, send me /start first')
 
     # If user's answer is not in range of the expected answers
     else:
         logger.info(f'{message.personId}:User\'s answer is not in range of '
                     f'the expected answers (1 to {check_answer})')
-        #api.messages.create(room.id, text=message.text, markdown=f'You should answer 1 to {check_answer}')
         result_list.append(f'You should answer 1 to {check_answer}')
 
     return result_list
@@ -447,7 +357,6 @@ def cmd_repeat(params) -> List[str]:
 
                 logger.info(f'{message.personId}:User has already answered for all the questions.'
                             f' Letting him know about that')
-                #api.messages.create(room.id, text=message.text, markdown="You already answered all the tasks")
                 result_list.append("You already answered all the tasks")
 
             elif task_dict['files']:
@@ -456,28 +365,13 @@ def cmd_repeat(params) -> List[str]:
                 logger.info(f'{message.personId}:Picture path is not null, '
                             f'trying to add picture as attachment:{task_dict["files"]}')
 
-                #TODO: add integration for files attachment
-                #try:
-                    #api.messages.create(room.id, text="Your current task:",
-                    #                    markdown=prepare_markdown_quiz_task(task_dict, task_dict['task_number']),
-                    #                    files=task_dict['files'])
                 result_list.append([prepare_markdown_quiz_task(task_dict, task_dict['task_number']),
                                     task_dict['files']])
-                #except ValueError:
-                #    logger.error(f'{message.personId}:Can\'t open file to attach:{task_dict["files"]}')
-
-                    #api.messages.create(room.id,
-                    #                    markdown=f'<<Error: Can\'t open file to attach:{task_dict["files"]}>>')
-                    #api.messages.create(room.id, text=f"The {task_dict['task_number']} question for you:",
-                    #    markdown=prepare_markdown_quiz_task(task_dict,task_dict['task_number']))
-                #    result_list.append(f'<<Error: Can\'t open file to attach:{task_dict["files"]}>>')
-                #    result_list.append(prepare_markdown_quiz_task(task_dict,task_dict['task_number']))
 
             # If no attachment picture
             else:
                 logger.info(f'{message.personId}:Picture path is null, sending task without attachment')
-                #api.messages.create(room.id, text=f"The {task_dict['task_number']} question for you:",
-                #                    markdown=prepare_markdown_quiz_task(task_dict, task_dict['task_number']))
+
                 result_list.append(prepare_markdown_quiz_task(task_dict, task_dict['task_number']))
 
         else:
@@ -485,17 +379,15 @@ def cmd_repeat(params) -> List[str]:
             logger.error(f'{message.personId}:We have that user in persons table, but don\'t have tasks assigned. '
                          'Notify him about that')
 
-            #api.messages.create(room.id, text="You don't have tasks assigned",
-            #                    markdown="You don't have tasks assigned")
             result_list.append("You don't have tasks assigned")
 
     # user does not exist, create it and assign the task
     else:
         logger.info(f'{message.personId}:This is new user, no tasks assigned. Notify him about that')
-        #api.messages.create(room.id, text="You don't have tasks assigned", markdown="You don't have tasks assigned")
         result_list.append("You don't have tasks assigned")
 
     return result_list
+
 
 def cmd_help(params) -> List[str]:
     """**/help** - print list of supported commands"""
@@ -505,6 +397,7 @@ def cmd_help(params) -> List[str]:
             results.append(globals()[obj].__doc__)
     results.append("[1-9] - send digit to chose an answer for the question")
     return results
+
 
 def cmd_default(params) -> List[str]:
     """
@@ -523,8 +416,6 @@ def cmd_default(params) -> List[str]:
 
     logger.error(f'{message.personId}:Not valid option {message.text}, you can send only: /START or [digits]')
 
-    #api.messages.create(room.id, text="Not valid option, you can send only: /START or [digits]",
-    #                    markdown="Not valid option, you can send only: /START or [digits]")
     result_list.append("Not valid option, you can send only. List of supported commands:")
     result_list.extend(cmd_help(params))
 
@@ -564,16 +455,16 @@ def get_all_tech(params) -> List[str]:
     psql_obj = params['psql_obj']
 
     result_list = []
-    #result_list.append('Enter # of technology for which you want to receive tasks:<br/>')
 
     i = 0
     str_tech = 'Enter # of technology for which you want to receive tasks:<br/>'
     for tech in Tasker.get_tech_list(psql_obj):
         i += 1
         str_tech += f'{i}. {tech[0]}<br/>'
-        #result_list.append(f'{i}. {tech[0]}<br/>')
+
     result_list.append(str_tech)
     return result_list
+
 
 def get_current_task(psql_obj,person_id, task_id: int) -> dict:
 
@@ -585,20 +476,17 @@ def get_current_task(psql_obj,person_id, task_id: int) -> dict:
         'variants' : []
     }
 
-
     all_user_tasks = Tasker.get_assigned_tasks_by_person(psql_obj, person_id)
     logger.info(f'{person_id}:All user tasks:{all_user_tasks}')
 
     task_number = len(all_user_tasks)
 
     task = Tasker.get_assigned_task_by_id(psql_obj, person_id, task_id)
-    #dict_result = task
 
     dict_result['task'] = task['task']
     dict_result['task_id'] = task['id']
     dict_result['task_number'] = task_number
     dict_result['variants'] = task['variants']
-
 
     # Check whether we need to add attachment in message
     if task["picture_path"]:
@@ -612,7 +500,6 @@ def get_current_task(psql_obj,person_id, task_id: int) -> dict:
     else:
         logger.info(f'{person_id}:Picture path is null, sending task without attachment')
 
-
     return dict_result
 
 
@@ -625,7 +512,6 @@ def assign_new_task(psql_obj,person_id,tech) -> dict:
         'files' : [],
         'variants' : []
     }
-
 
     # incrementing task id in message to the customer
 
@@ -642,18 +528,15 @@ def assign_new_task(psql_obj,person_id,tech) -> dict:
             logger.info(f'{person_id}:Added task to the assigned_tasks table successfully')
         else:
             logger.info(f'{person_id}:Error in addition to assigned_tasks table')
-            #return False
+
             # raise erorr if we could not add task to PSQL table, to catch this error at the upper level
             raise RuntimeError
 
     else:
         logger.info(f'{person_id}:User have answered all the question that we have')
         raise KeyError
-        #api.messages.create(room.id, text="You have answered all the question that we have",
-        #                    markdown="You have answered all the question that we have")
 
     return get_current_task(psql_obj,person_id,task["id"])
-        #.assign_task(psql_obj,person_id, task["id"], task["answer"])
 
 
 def save_user_answer(psql_obj,message) -> bool:
@@ -712,7 +595,6 @@ def check_answer_in_range(psql_obj,person_id,answer_num:int) -> int:
         task_id = all_user_tasks[0]["task_id"]
         logger.info(f'{person_id}:Latest task_id for the user {person_id}:{task_id}')
 
-
         task = Tasker.get_assigned_task_by_id(psql_obj, person_id, task_id)
 
         if answer_num in range(1,len(task["variants"])+1):
@@ -730,11 +612,10 @@ def answer_received_for_current_task(psql_obj,person_id) -> bool:
 
     all_user_tasks = Tasker.get_assigned_tasks_by_person(psql_obj, person_id)
 
-
     if len(all_user_tasks) > 0:
         # Get task id for the latest task
 
-        if all_user_tasks[0]["user_answer"] == None:
+        if all_user_tasks[0]["user_answer"] is None:
             return False
 
         else:
@@ -754,8 +635,8 @@ def prepare_markdown_quiz_task(task: Dict, task_number:int) -> str:
     i = 1 # options' counter
 
     for option in task["variants"]:
-      result_str += f'{i}. {option}<br/>'
-      i += 1
+        result_str += f'{i}. {option}<br/>'
+        i += 1
 
     result_str += f'----------------------------------------------------<br/>'
     result_str += f'Choose your answer (1 to {i-1}):'

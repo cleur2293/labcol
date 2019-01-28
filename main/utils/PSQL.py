@@ -1,11 +1,10 @@
 import psycopg2
 import psycopg2.extras
-
+import re
 import logging
 
 logger = logging.getLogger(__name__) # Creating logger for logging across this module
 
-import re
 
 class PSQL:
     def __init__(self, dbname='ciscolive',host='10.81.127.49',user='ciscolive',password='cisco.123',conn=None):
@@ -61,6 +60,7 @@ class PSQL:
     def Commit(self) -> bool:
         logger.info('Commit done')
         self.conn.commit()
+        return True
 
     def psql_request(self,sql_req,sql_data=None):
         """
