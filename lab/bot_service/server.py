@@ -23,7 +23,7 @@ logger = logging.getLogger(__name__)
 
 config = {}  # create dictionary for config
 try:
-    config = setinitial.setup_config('../config/config_service.yml')  # populate config from yaml file
+    config = setinitial.setup_config('config/config_service.yml')  # populate config from yaml file
 except yaml.YAMLError as exc:
     logger.fatal("Error in yaml file: " + str(exc))
     exit(2)
