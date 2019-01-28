@@ -1,4 +1,3 @@
-import webhook as webhook
 from webexteamssdk import WebexTeamsAPI, Webhook
 from flask import Flask, request
 from builtins import *
@@ -11,14 +10,27 @@ from urllib.parse import urljoin
 flask_app = Flask(__name__)
 # Create the Webex Teams API connection object
 
+# You need to change bot access token to the value provided by Pinacolada bot
 bot_access_token = 'SAMPLE'
-webhook_name = "ngrok_webhook"
+
+# Constants
+NGROK_CLIENT_API_BASE_URL = "http://localhost:4040/api"
+WEBHOOK_NAME = "webhook_samplebot"
+WEBHOOK_URL_SUFFIX = "/events"
+WEBHOOK_RESOURCE = "messages"
+WEBHOOK_EVENT = "created"
+
+
+try:
+    assert(bot_access_token!='SAMPLE')
+except AssertionError:
+    print('Fatal: Please change \'bot_access_token\' variable in bot-sample.py to the value provided by Pinacolada bot')
+    exit(-1)
 
 #
 #
 #
-#
-#<put code for main business logic of rhe bot here>
+#<put code for main business logic of the bot here>#
 #
 #
 #
@@ -99,7 +111,7 @@ if __name__ == '__main__':
     api = WebexTeamsAPI(bot_access_token)
 
     """Delete previous webhooks. If local ngrok tunnel, create a webhook."""
-    if create_webhook(api,webhook_name):
+    if create_webhook(api,WEBHOOK_NAME):
         ngrok_port = get_ngrok_port()
         print('Get ngrok port={}.Starting Flask server on it'.format(ngrok_port))
 

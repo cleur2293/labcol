@@ -40,8 +40,9 @@ def get_ngrok_port():
 def delete_webhooks_with_name(api, name):
     """Find a webhook by name."""
     for webhook in api.webhooks.list():
-        if webhook.name == name:
-            print('Deleting Webhook:{}{}'.format(webhook.name,webhook.targetUrl))
+        if webhook.name == name or True:
+            # True to delete all webhooks
+            print('Deleting Webhook:{} {}'.format(webhook.name,webhook.targetUrl))
             api.webhooks.delete(webhook.id)
 
 
