@@ -50,7 +50,7 @@ def cmd_bug(params):
     bug_id = params['message'].text.split()[1].strip()
     # Get a response
     bug_headline, bug_description = get_bug_api(bug_id)
-    print("SENDING RESPONSE FROM HELLO API '{}'".format(bug_headline))
+    print("SENDING RESPONSE FROM BUG API '{}'".format(bug_headline))
     # Post the response to the room where the request was received
     results = list()
     results.append('**'+bug_id+': '+bug_headline+'**')
