@@ -62,6 +62,7 @@ def webex_teams_webhook_events():
 
 
 if __name__ == '__main__':
+    logger.info(f'Start using token:{config["bot_access_token"]}')
     api = WebexTeamsAPI(config['bot_access_token'])
     webhook_name = config['webhook_name']
 
