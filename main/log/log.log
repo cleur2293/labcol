@@ -2541,3 +2541,118 @@ AttributeError: 'Room' object has no attribute 'roomType'
 2019-01-29 12:11:07.202-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/me HTTP/1.1" 200 None
 2019-01-29 12:11:07.203-INFO-[bot]-[process_message]-Found message sent to me. Do not respond
 2019-01-29 12:11:07.204-INFO-[_internal]-[_log]-127.0.0.1 - - [29/Jan/2019 12:11:07] "POST /events HTTP/1.1" 200 -
+2019-01-29 13:36:36.172-INFO-[setinitial]-[setup_logging]-Creating abs path for logging file: C:\Users\asazhin\Documents\git\webexteams_colab\main\log/log.log
+2019-01-29 13:36:36.225-INFO-[setinitial]-[setup_logging]-Creating abs path for logging file: C:\Users\asazhin\Documents\git\webexteams_colab\main\log/log.log
+2019-01-29 13:36:38.554-INFO-[server]-[<module>]-Connected to DB:ciscolive@10.81.127.149/ciscolive
+2019-01-29 13:36:38.555-INFO-[server]-[<module>]-Start using token:MDllNTEyNDgtMWQyOS00OWIzLThjNzYtMWEzZmM1MTY4MzllMmYyMTFlNGItMzA4_PF84_1eb65fdf-9643-417f-9974-ad72cae0e10f
+2019-01-29 13:36:38.564-DEBUG-[connectionpool]-[_new_conn]-Starting new HTTPS connection (1): api.ciscospark.com:443
+2019-01-29 13:36:40.122-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/webhooks HTTP/1.1" 200 None
+2019-01-29 13:36:40.133-DEBUG-[connectionpool]-[_new_conn]-Starting new HTTP connection (1): localhost:4040
+2019-01-29 13:36:41.157-DEBUG-[connectionpool]-[_make_request]-http://localhost:4040 "GET /api/tunnels HTTP/1.1" 200 967
+2019-01-29 13:36:41.159-INFO-[cl_webhook]-[get_ngrok_public_url]-Found ngrok public HTTP URL:http://fe73954c.ngrok.io
+2019-01-29 13:36:41.159-INFO-[cl_webhook]-[create_ngrok_webhook]-Creating Webhook for messages resource...webhook_quiz
+2019-01-29 13:36:41.464-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "POST /v1/webhooks HTTP/1.1" 200 None
+2019-01-29 13:36:41.465-INFO-[cl_webhook]-[create_ngrok_webhook]-Webex Teams Webhook:
+{
+  "id": "Y2lzY29zcGFyazovL3VzL1dFQkhPT0svM2I5OTBmY2UtZmU0ZC00ZThkLWEyODItNzY2MWQ0MzIwYjk4",
+  "name": "webhook_quiz",
+  "targetUrl": "http://fe73954c.ngrok.io/events",
+  "resource": "messages",
+  "event": "created",
+  "orgId": "Y2lzY29zcGFyazovL3VzL09SR0FOSVpBVElPTi8xZWI2NWZkZi05NjQzLTQxN2YtOTk3NC1hZDcyY2FlMGUxMGY",
+  "createdBy": "Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI",
+  "appId": "Y2lzY29zcGFyazovL3VzL0FQUExJQ0FUSU9OL0MzMmM4MDc3NDBjNmU3ZGYxMWRhZjE2ZjIyOGRmNjI4YmJjYTQ5YmE1MmZlY2JiMmM3ZDUxNWNiNGEwY2M5MWFh",
+  "ownedBy": "creator",
+  "status": "active",
+  "created": "2019-01-29T10:36:41.306Z"
+}
+2019-01-29 13:36:41.465-INFO-[cl_webhook]-[create_ngrok_webhook]-Webhook successfully created.
+2019-01-29 13:36:41.466-INFO-[cl_webhook]-[create_ngrok_webhook]-Creating Webhook for memberships resource...webhook_quiz_memberships
+2019-01-29 13:36:41.747-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "POST /v1/webhooks HTTP/1.1" 200 None
+2019-01-29 13:36:41.748-INFO-[cl_webhook]-[create_ngrok_webhook]-Webex Teams Webhook:
+{
+  "id": "Y2lzY29zcGFyazovL3VzL1dFQkhPT0svZTcwNDA1YTAtMWI1YS00ODZjLWI0N2ItMjlhNWI5OGFiNmY2",
+  "name": "webhook_quiz_memberships",
+  "targetUrl": "http://fe73954c.ngrok.io/memberships",
+  "resource": "memberships",
+  "event": "created",
+  "orgId": "Y2lzY29zcGFyazovL3VzL09SR0FOSVpBVElPTi8xZWI2NWZkZi05NjQzLTQxN2YtOTk3NC1hZDcyY2FlMGUxMGY",
+  "createdBy": "Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI",
+  "appId": "Y2lzY29zcGFyazovL3VzL0FQUExJQ0FUSU9OL0MzMmM4MDc3NDBjNmU3ZGYxMWRhZjE2ZjIyOGRmNjI4YmJjYTQ5YmE1MmZlY2JiMmM3ZDUxNWNiNGEwY2M5MWFh",
+  "ownedBy": "creator",
+  "status": "active",
+  "created": "2019-01-29T10:36:41.667Z"
+}
+2019-01-29 13:36:41.749-INFO-[cl_webhook]-[create_ngrok_webhook]-Webhook successfully created.
+2019-01-29 13:36:41.751-DEBUG-[connectionpool]-[_new_conn]-Starting new HTTP connection (1): localhost:4040
+2019-01-29 13:36:42.765-DEBUG-[connectionpool]-[_make_request]-http://localhost:4040 "GET /api/tunnels HTTP/1.1" 200 967
+2019-01-29 13:36:42.766-INFO-[server]-[<module>]-Get ngrok port=5000.Starting Flask server on it
+2019-01-29 13:36:43.562-INFO-[_internal]-[_log]- * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2019-01-29 13:37:06.165-INFO-[setinitial]-[setup_logging]-Creating abs path for logging file: C:\Users\asazhin\Documents\git\webexteams_colab\main\log/log.log
+2019-01-29 13:37:06.203-INFO-[setinitial]-[setup_logging]-Creating abs path for logging file: C:\Users\asazhin\Documents\git\webexteams_colab\main\log/log.log
+2019-01-29 13:37:08.672-INFO-[server]-[<module>]-Connected to DB:ciscolive@10.81.127.149/ciscolive
+2019-01-29 13:37:08.673-INFO-[server]-[<module>]-Start using token:MDllNTEyNDgtMWQyOS00OWIzLThjNzYtMWEzZmM1MTY4MzllMmYyMTFlNGItMzA4_PF84_1eb65fdf-9643-417f-9974-ad72cae0e10f
+2019-01-29 13:37:08.679-DEBUG-[connectionpool]-[_new_conn]-Starting new HTTPS connection (1): api.ciscospark.com:443
+2019-01-29 13:37:10.271-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/webhooks HTTP/1.1" 200 None
+2019-01-29 13:37:10.272-INFO-[cl_webhook]-[delete_webhooks_with_name]-Deleting Webhook:webhook_quiz http://fe73954c.ngrok.io/events
+2019-01-29 13:37:10.611-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "DELETE /v1/webhooks/Y2lzY29zcGFyazovL3VzL1dFQkhPT0svM2I5OTBmY2UtZmU0ZC00ZThkLWEyODItNzY2MWQ0MzIwYjk4 HTTP/1.1" 204 0
+2019-01-29 13:37:10.611-INFO-[cl_webhook]-[delete_webhooks_with_name]-Deleting Webhook:webhook_quiz_memberships http://fe73954c.ngrok.io/memberships
+2019-01-29 13:37:10.910-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "DELETE /v1/webhooks/Y2lzY29zcGFyazovL3VzL1dFQkhPT0svZTcwNDA1YTAtMWI1YS00ODZjLWI0N2ItMjlhNWI5OGFiNmY2 HTTP/1.1" 204 0
+2019-01-29 13:37:10.919-DEBUG-[connectionpool]-[_new_conn]-Starting new HTTP connection (1): localhost:4040
+2019-01-29 13:37:11.933-DEBUG-[connectionpool]-[_make_request]-http://localhost:4040 "GET /api/tunnels HTTP/1.1" 200 968
+2019-01-29 13:37:11.934-INFO-[cl_webhook]-[get_ngrok_public_url]-Found ngrok public HTTP URL:http://fe73954c.ngrok.io
+2019-01-29 13:37:11.934-INFO-[cl_webhook]-[create_ngrok_webhook]-Creating Webhook for messages resource...webhook_quiz
+2019-01-29 13:37:12.881-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "POST /v1/webhooks HTTP/1.1" 200 None
+2019-01-29 13:37:12.882-INFO-[cl_webhook]-[create_ngrok_webhook]-Webex Teams Webhook:
+{
+  "id": "Y2lzY29zcGFyazovL3VzL1dFQkhPT0svMTQwZDhmNDktMjY2MS00MjQ0LTllOTEtZjYyYjE5YjVmYmFh",
+  "name": "webhook_quiz",
+  "targetUrl": "http://fe73954c.ngrok.io/events",
+  "resource": "messages",
+  "event": "created",
+  "orgId": "Y2lzY29zcGFyazovL3VzL09SR0FOSVpBVElPTi8xZWI2NWZkZi05NjQzLTQxN2YtOTk3NC1hZDcyY2FlMGUxMGY",
+  "createdBy": "Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI",
+  "appId": "Y2lzY29zcGFyazovL3VzL0FQUExJQ0FUSU9OL0MzMmM4MDc3NDBjNmU3ZGYxMWRhZjE2ZjIyOGRmNjI4YmJjYTQ5YmE1MmZlY2JiMmM3ZDUxNWNiNGEwY2M5MWFh",
+  "ownedBy": "creator",
+  "status": "active",
+  "created": "2019-01-29T10:37:12.085Z"
+}
+2019-01-29 13:37:12.882-INFO-[cl_webhook]-[create_ngrok_webhook]-Webhook successfully created.
+2019-01-29 13:37:12.882-INFO-[cl_webhook]-[create_ngrok_webhook]-Creating Webhook for memberships resource...webhook_quiz_memberships
+2019-01-29 13:37:13.332-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "POST /v1/webhooks HTTP/1.1" 200 None
+2019-01-29 13:37:13.409-INFO-[cl_webhook]-[create_ngrok_webhook]-Webex Teams Webhook:
+{
+  "id": "Y2lzY29zcGFyazovL3VzL1dFQkhPT0svYTY4ODE0OGEtYzU2Yy00ZTI3LWJiZmYtMDZjNTNiM2Q3MzM1",
+  "name": "webhook_quiz_memberships",
+  "targetUrl": "http://fe73954c.ngrok.io/memberships",
+  "resource": "memberships",
+  "event": "created",
+  "orgId": "Y2lzY29zcGFyazovL3VzL09SR0FOSVpBVElPTi8xZWI2NWZkZi05NjQzLTQxN2YtOTk3NC1hZDcyY2FlMGUxMGY",
+  "createdBy": "Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI",
+  "appId": "Y2lzY29zcGFyazovL3VzL0FQUExJQ0FUSU9OL0MzMmM4MDc3NDBjNmU3ZGYxMWRhZjE2ZjIyOGRmNjI4YmJjYTQ5YmE1MmZlY2JiMmM3ZDUxNWNiNGEwY2M5MWFh",
+  "ownedBy": "creator",
+  "status": "active",
+  "created": "2019-01-29T10:37:13.031Z"
+}
+2019-01-29 13:37:13.410-INFO-[cl_webhook]-[create_ngrok_webhook]-Webhook successfully created.
+2019-01-29 13:37:13.412-DEBUG-[connectionpool]-[_new_conn]-Starting new HTTP connection (1): localhost:4040
+2019-01-29 13:37:14.424-DEBUG-[connectionpool]-[_make_request]-http://localhost:4040 "GET /api/tunnels HTTP/1.1" 200 966
+2019-01-29 13:37:14.426-INFO-[server]-[<module>]-Get ngrok port=5000.Starting Flask server on it
+2019-01-29 13:37:15.141-INFO-[_internal]-[_log]- * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2019-01-29 13:37:17.834-INFO-[server]-[webex_teams_webhook_memberships]-WEBHOOK POST RECEIVED:
+2019-01-29 13:37:17.835-INFO-[server]-[webex_teams_webhook_memberships]-{'id': 'Y2lzY29zcGFyazovL3VzL1dFQkhPT0svYTY4ODE0OGEtYzU2Yy00ZTI3LWJiZmYtMDZjNTNiM2Q3MzM1', 'name': 'webhook_quiz_memberships', 'targetUrl': 'http://fe73954c.ngrok.io/memberships', 'resource': 'memberships', 'event': 'created', 'orgId': 'Y2lzY29zcGFyazovL3VzL09SR0FOSVpBVElPTi8xZWI2NWZkZi05NjQzLTQxN2YtOTk3NC1hZDcyY2FlMGUxMGY', 'createdBy': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'appId': 'Y2lzY29zcGFyazovL3VzL0FQUExJQ0FUSU9OL0MzMmM4MDc3NDBjNmU3ZGYxMWRhZjE2ZjIyOGRmNjI4YmJjYTQ5YmE1MmZlY2JiMmM3ZDUxNWNiNGEwY2M5MWFh', 'ownedBy': 'creator', 'status': 'active', 'created': '2019-01-29T10:37:13.031Z', 'actorId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg', 'data': {'id': 'Y2lzY29zcGFyazovL3VzL01FTUJFUlNISVAvNjk2YzdhMWUtMzk3Yy00MDI2LTg3MDItNzJjYWM3MGRkMTQyOjMyYzg0YmEwLWY3MjgtMTFlOC1hMGM4LTBkYmYwY2UxYjZiYQ', 'roomId': 'Y2lzY29zcGFyazovL3VzL1JPT00vMzJjODRiYTAtZjcyOC0xMWU4LWEwYzgtMGRiZjBjZTFiNmJh', 'roomType': 'group', 'personId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'personEmail': 'asazhin_bot1@webex.bot', 'personDisplayName': 'asazhin_bot1', 'personOrgId': 'Y2lzY29zcGFyazovL3VzL09SR0FOSVpBVElPTi8xZWI2NWZkZi05NjQzLTQxN2YtOTk3NC1hZDcyY2FlMGUxMGY', 'isModerator': False, 'isMonitor': False, 'isRoomHidden': False, 'created': '2019-01-29T10:37:16.638Z'}}
+2019-01-29 13:37:18.451-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vMzJjODRiYTAtZjcyOC0xMWU4LWEwYzgtMGRiZjBjZTFiNmJh HTTP/1.1" 200 None
+2019-01-29 13:37:18.584-INFO-[bot]-[welcome_message]-sleeping 5 sec
+2019-01-29 13:37:23.586-INFO-[bot]-[welcome_message]-membership message received in group message, sending welcome message
+2019-01-29 13:37:23.923-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "POST /v1/messages HTTP/1.1" 200 None
+2019-01-29 13:37:24.402-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "POST /v1/messages HTTP/1.1" 200 None
+2019-01-29 13:37:24.403-INFO-[_internal]-[_log]-127.0.0.1 - - [29/Jan/2019 13:37:24] "POST /memberships HTTP/1.1" 200 -
+2019-01-29 13:37:24.464-INFO-[server]-[webex_teams_webhook_events]-WEBHOOK POST RECEIVED:
+2019-01-29 13:37:24.464-INFO-[server]-[webex_teams_webhook_events]-{'id': 'Y2lzY29zcGFyazovL3VzL1dFQkhPT0svMTQwZDhmNDktMjY2MS00MjQ0LTllOTEtZjYyYjE5YjVmYmFh', 'name': 'webhook_quiz', 'targetUrl': 'http://fe73954c.ngrok.io/events', 'resource': 'messages', 'event': 'created', 'orgId': 'Y2lzY29zcGFyazovL3VzL09SR0FOSVpBVElPTi8xZWI2NWZkZi05NjQzLTQxN2YtOTk3NC1hZDcyY2FlMGUxMGY', 'createdBy': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'appId': 'Y2lzY29zcGFyazovL3VzL0FQUExJQ0FUSU9OL0MzMmM4MDc3NDBjNmU3ZGYxMWRhZjE2ZjIyOGRmNjI4YmJjYTQ5YmE1MmZlY2JiMmM3ZDUxNWNiNGEwY2M5MWFh', 'ownedBy': 'creator', 'status': 'active', 'created': '2019-01-29T10:37:12.085Z', 'actorId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'data': {'id': 'Y2lzY29zcGFyazovL3VzL01FU1NBR0UvZGQyNzg4ZDAtMjNiMS0xMWU5LTljMWMtMjU0YzVlYWQ3NmQz', 'roomId': 'Y2lzY29zcGFyazovL3VzL1JPT00vMzJjODRiYTAtZjcyOC0xMWU4LWEwYzgtMGRiZjBjZTFiNmJh', 'roomType': 'group', 'personId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'personEmail': 'asazhin_bot1@webex.bot', 'created': '2019-01-29T10:37:23.805Z'}}
+2019-01-29 13:37:25.032-INFO-[server]-[webex_teams_webhook_events]-WEBHOOK POST RECEIVED:
+2019-01-29 13:37:25.032-INFO-[server]-[webex_teams_webhook_events]-{'id': 'Y2lzY29zcGFyazovL3VzL1dFQkhPT0svMTQwZDhmNDktMjY2MS00MjQ0LTllOTEtZjYyYjE5YjVmYmFh', 'name': 'webhook_quiz', 'targetUrl': 'http://fe73954c.ngrok.io/events', 'resource': 'messages', 'event': 'created', 'orgId': 'Y2lzY29zcGFyazovL3VzL09SR0FOSVpBVElPTi8xZWI2NWZkZi05NjQzLTQxN2YtOTk3NC1hZDcyY2FlMGUxMGY', 'createdBy': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'appId': 'Y2lzY29zcGFyazovL3VzL0FQUExJQ0FUSU9OL0MzMmM4MDc3NDBjNmU3ZGYxMWRhZjE2ZjIyOGRmNjI4YmJjYTQ5YmE1MmZlY2JiMmM3ZDUxNWNiNGEwY2M5MWFh', 'ownedBy': 'creator', 'status': 'active', 'created': '2019-01-29T10:37:12.085Z', 'actorId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'data': {'id': 'Y2lzY29zcGFyazovL3VzL01FU1NBR0UvZGQ2MjQ3ZTAtMjNiMS0xMWU5LTgxNTctNWY0ZWFmMjkwNTkz', 'roomId': 'Y2lzY29zcGFyazovL3VzL1JPT00vMzJjODRiYTAtZjcyOC0xMWU4LWEwYzgtMGRiZjBjZTFiNmJh', 'roomType': 'group', 'personId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'personEmail': 'asazhin_bot1@webex.bot', 'created': '2019-01-29T10:37:24.190Z'}}
+2019-01-29 13:37:25.034-DEBUG-[connectionpool]-[_new_conn]-Starting new HTTPS connection (2): api.ciscospark.com:443
+2019-01-29 13:37:25.435-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vMzJjODRiYTAtZjcyOC0xMWU4LWEwYzgtMGRiZjBjZTFiNmJh HTTP/1.1" 200 None
+2019-01-29 13:37:25.704-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/messages/Y2lzY29zcGFyazovL3VzL01FU1NBR0UvZGQyNzg4ZDAtMjNiMS0xMWU5LTljMWMtMjU0YzVlYWQ3NmQz HTTP/1.1" 200 None
+2019-01-29 13:37:25.706-INFO-[bot]-[process_message]-message text received:Hey! I'm quiz bot sitting in that room. Click my icon and send /start to start an amazing quiz!
+2019-01-29 13:37:26.231-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI HTTP/1.1" 200 None

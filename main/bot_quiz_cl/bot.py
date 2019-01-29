@@ -17,6 +17,7 @@ import yaml
 import logging
 import os,sys,inspect
 from typing import Dict, Any
+from time import sleep
 from webexteamssdk import WebexTeamsAPI, Webhook, Message, Room
 
 # To be able to load modules from parent directory
@@ -109,6 +110,10 @@ def welcome_message(api: WebexTeamsAPI, config:Dict, json_data) -> str:
     # Get the room details
     room = api.rooms.get(webhook_obj.data.roomId)
     # Get the message details
+
+
+    logger.info('sleeping 5 sec')
+    sleep(5)
 
     if room.type == 'group':
         logger.info('membership message received in group message, sending welcome message')
