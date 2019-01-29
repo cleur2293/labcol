@@ -110,8 +110,12 @@ def welcome_message(api: WebexTeamsAPI, config:Dict, json_data) -> str:
     room = api.rooms.get(webhook_obj.data.roomId)
     # Get the message details
 
-    api.messages.create(room.id, markdown="Hey! I'm quiz bot sitting in that room. Click my icon and send **/start** to start an amazing quiz!")
-    api.messages.create(room.id, markdown="> Want to make the same bot? Take the lab **LABCOL-2293 at WISP** (we are just in front of you)")
+    if room.type == 'group':
+        logger.info('membership message received in group message, sending welcome message')
+        api.messages.create(room.id, markdown="Hey! I'm quiz bot sitting in that room. Click my icon and send **/start** to start an amazing quiz!")
+        api.messages.create(room.id, markdown="> Want to make the same bot? Take the lab **LABCOL-2293 at WISP** (we are just in front of the clinic)")
+    else:
+        logger.info('membership message received in direct message, ignoring it')
 
     return 'OK'
 
