@@ -37,7 +37,7 @@ logger = logging.getLogger(__name__)
 
 config = {}  # create dictionary for config
 try:
-    config = setinitial.setup_config('config/config_quiz.yml')  # populate config from yaml file
+    config = setinitial.setup_config('config/config_quiz_cl.yml')  # populate config from yaml file
 except yaml.YAMLError as exc:
     logger.fatal("Error in yaml file: " + str(exc))
     exit(2)
@@ -45,24 +45,18 @@ except IOError as exc:
     logger.fatal("IOError:" + str(exc))
     exit(2)
 
-def process_message(api: WebexTeamsAPI, config:Dict, json_data) -> str:
+def process_message(api: WebexTeamsAPI, config:Dict, json_data, psql_obj) -> str:
     # Create a Webhook object from the JSON data
     webhook_obj = Webhook(json_data)
     # Get the room details
     room = api.rooms.get(webhook_obj.data.roomId)
     # Get the message details
+
     message = api.messages.get(webhook_obj.data.id)
+    logger.info(f'message text received:{message.text}')
     # Get the sender's details
     person = api.people.get(message.personId)
 
-    try:
-        psql_obj = PSQL.PSQL('ciscolive', config["db_host"],
-                             config["db_login"], config["db_password"])
-    except IndexError:
-        logger.fatal(f'Can\'t connect to Database:{config["db_login"]}@{config["db_host"]}/ciscolive')
-        return 'FATAL'
-
-    logger.info(f'Connected to DB:{config["db_login"]}@{config["db_host"]}/ciscolive')
 
     # loop prevention control step.
     # If you respond to all messages...  You will respond to the messages
@@ -71,6 +65,12 @@ def process_message(api: WebexTeamsAPI, config:Dict, json_data) -> str:
     if message.personId == me.id:
         # Message was sent by me (bot); do not respond.
         logger.info(f'Found message sent to me. Do not respond')
+        return 'OK'
+
+    elif room.type == 'group':
+        # If bot mentioned in group
+        api.messages.create(room.id, markdown='Let\'s not spam into that room, '
+                                              'just click my icon and send **/start** to start an amazing quiz!')
         return 'OK'
 
     else:
@@ -103,6 +103,17 @@ def process_message(api: WebexTeamsAPI, config:Dict, json_data) -> str:
 
         return 'OK'
 
+def welcome_message(api: WebexTeamsAPI, config:Dict, json_data) -> str:
+    # Create a Webhook object from the JSON data
+    webhook_obj = Webhook(json_data)
+    # Get the room details
+    room = api.rooms.get(webhook_obj.data.roomId)
+    # Get the message details
+
+    api.messages.create(room.id, markdown="Hey! I'm quiz bot sitting in that room. Click my icon and send **/start** to start an amazing quiz!")
+    api.messages.create(room.id, markdown="> Want to make the same bot? Take the lab **LABCOL-2293 at WISP** (we are just in front of you)")
+
+    return 'OK'
 
 def process_command(params):
 

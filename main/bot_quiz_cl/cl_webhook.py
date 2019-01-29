@@ -48,6 +48,7 @@ logger = logging.getLogger(__name__) # Creating logger for logging across this m
 NGROK_CLIENT_API_BASE_URL = "http://localhost:4040/api"
 WEBHOOK_NAME = "ngrok_webhook"
 WEBHOOK_URL_SUFFIX = "/events"
+WEBHOOK_URL_SUFFIX2 = "/memberships"
 WEBHOOK_RESOURCE = "messages"
 WEBHOOK_EVENT = "created"
 
@@ -98,15 +99,25 @@ def delete_webhooks_with_name(api, name):
             api.webhooks.delete(webhook.id)
 
 
-def create_ngrok_webhook(api, ngrok_public_url, webhook_name):
+def create_ngrok_webhook(api, ngrok_public_url, webhook_name, memberships_resource=''):
     """Create a Webex Teams webhook pointing to the public ngrok URL."""
-    logger.info(f'Creating Webhook...{webhook_name}')
-    webhook = api.webhooks.create(
-        name=webhook_name,
-        targetUrl=urljoin(ngrok_public_url, WEBHOOK_URL_SUFFIX),
-        resource=WEBHOOK_RESOURCE,
-        event=WEBHOOK_EVENT,
-    )
+
+    if memberships_resource == '':
+        logger.info(f'Creating Webhook for messages resource...{webhook_name}')
+        webhook = api.webhooks.create(
+            name=webhook_name,
+            targetUrl=urljoin(ngrok_public_url, WEBHOOK_URL_SUFFIX),
+            resource=WEBHOOK_RESOURCE,
+            event=WEBHOOK_EVENT,
+        )
+    else:
+        logger.info(f'Creating Webhook for memberships resource...{webhook_name}')
+        webhook = api.webhooks.create(
+            name=webhook_name,
+            targetUrl=urljoin(ngrok_public_url, WEBHOOK_URL_SUFFIX2),
+            resource='memberships',
+            event=WEBHOOK_EVENT,
+        )
     logger.info(webhook)
     logger.info("Webhook successfully created.")
     return webhook
@@ -120,6 +131,8 @@ def create_webhook(api: WebexTeamsAPI, webhook_name:str) -> bool:
     public_url = get_ngrok_public_url()
     if public_url is not None:
         create_ngrok_webhook(api, public_url, webhook_name)
+
+        create_ngrok_webhook(api, public_url, webhook_name + '_memberships','memberships')
         return True
     else:
         return False
