@@ -106,6 +106,9 @@ def process_message(api: WebexTeamsAPI, config:Dict, json_data, psql_obj) -> str
 
 def welcome_message(api: WebexTeamsAPI, config:Dict, json_data) -> str:
     # Create a Webhook object from the JSON data
+
+
+
     webhook_obj = Webhook(json_data)
     # Get the room details
     room = api.rooms.get(webhook_obj.data.roomId)
@@ -115,7 +118,19 @@ def welcome_message(api: WebexTeamsAPI, config:Dict, json_data) -> str:
     logger.info('sleeping 5 sec')
     sleep(5)
 
-    if room.type == 'group':
+    me = api.people.me()
+    my_person_id = me.id # person id of the bot
+
+    added_person_id = webhook_obj.json_data['data']['personId']
+
+    added_fname = api.people.get(added_person_id).firstName
+    added_lname = api.people.get(added_person_id).lastName
+
+
+    if my_person_id != added_person_id:
+        logger.info(f'Added to the room personId:{webhook_obj.json_data["data"]["personId"]}')
+        logger.info(f'Added person_id ({added_fname} {added_lname}) is not mine. Skipping any actions')
+    elif room.type == 'group':
         logger.info('membership message received in group message, sending welcome message')
         api.messages.create(room.id, markdown="Hey! I'm quiz bot sitting in that room. Click my icon and send **/start** to start an amazing quiz!")
         api.messages.create(room.id, markdown="> Want to make the same bot? Take the lab **LABCOL-2293 at WISP** (we are just in front of the clinic)")
