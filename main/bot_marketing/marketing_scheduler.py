@@ -46,8 +46,8 @@ from builtins import *
 import yaml
 import logging
 
-from scripts import setinitial
-from scripts import PSQL_marketing
+from utils import setinitial
+from utils import PSQL_marketing
 
 # Initializing logger
 setinitial.setup_logging()
@@ -66,7 +66,7 @@ import json
 from bot import assign_new_task
 from bot import prepare_markdown_quiz_task
 from bot import is_enough
-from scripts.tasker_marketing import Tasker
+from utils.tasker_marketing import Tasker
 
 try:
     config = setinitial.setup_config('config/config_marketing.yml')  # populate config from yaml file

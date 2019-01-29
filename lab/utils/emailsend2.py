@@ -12,7 +12,7 @@ from socket import error as socket_error
 import logging
 import yaml
 
-from scripts import setinitial
+from utils import setinitial
 
 logger = logging.getLogger(__name__) # Creating logger for logging across this module
 

@@ -5,7 +5,7 @@ from typing import Dict
 from random import randrange
 logger = logging.getLogger(__name__) # Creating logger for logging across this module
 
-from scripts import PSQL
+from utils import PSQL
 
 @dataclass
 class Person:
