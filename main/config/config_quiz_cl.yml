@@ -1,6 +1,6 @@
 #Device default login/password
 bot_access_token: "MDllNTEyNDgtMWQyOS00OWIzLThjNzYtMWEzZmM1MTY4MzllMmYyMTFlNGItMzA4_PF84_1eb65fdf-9643-417f-9974-ad72cae0e10f"
-webhook_name: "webhook_quiz"
+webhook_name: "webhook_quiz_cl"
 
 db_host: "10.81.127.149"
 db_login: "ciscolive"

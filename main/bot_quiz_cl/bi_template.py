@@ -261,11 +261,13 @@ def process_input_digit(params) -> List[str]:
 
                 result_list.append(f'- {task["task"][0:100]}<...>')
 
-            result_list.append("**Answered incorrectly [your_answer -> right answer]:**")
+            result_list.append("**Answered incorrectly:**")
 
             for wrong_answer in report_dict['wrong']:
                 task = Tasker.get_assigned_task_by_id(psql_obj, message.personId, wrong_answer["task_id"])
-                text = f'- {task["task"]} [{wrong_answer["user_answer"]}->{wrong_answer["loc_answer"]}]'
+                #text = f'- {task["task"]} [{wrong_answer["user_answer"]}->{wrong_answer["loc_answer"]}]'
+                text = f'- {task["task"]}<br/>**Correct answer:**<br/>'
+                text += f'{task["variants"][wrong_answer["loc_answer"]-1]}'
 
                 if task['explain'] is not None:
                     # Task has explanation attached. Add it to the wrong answers

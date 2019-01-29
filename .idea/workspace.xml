@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="398e62e4-e756-4ccf-aab4-dd8bf8662f36" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flask_sample.py'" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/bot_quiz_cl/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/bot_quiz_cl/bot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/bot_quiz_cl/bi_template.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/bot_quiz_cl/bi_template.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/config/config_quiz_cl.yml" beforeDir="false" afterPath="$PROJECT_DIR$/main/config/config_quiz_cl.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/log/log.log" beforeDir="false" afterPath="$PROJECT_DIR$/main/log/log.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,6 +16,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="tasker.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/utils/tasker.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-528">
+              <caret line="214" column="72" lean-forward="true" selection-start-line="214" selection-start-column="21" selection-end-line="214" selection-end-column="72" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="server.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/bot_quiz_cl/server.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -27,20 +36,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bot.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="bot.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/bot_quiz_cl/bot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="130" column="65" selection-start-line="130" selection-start-column="65" selection-end-line="130" selection-end-column="65" />
+            <state relative-caret-position="163">
+              <caret line="130" column="21" selection-start-line="130" selection-start-column="21" selection-end-line="130" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bi_template.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="bi_template.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/bot_quiz_cl/bi_template.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="69" column="36" selection-start-line="69" selection-start-column="28" selection-end-line="69" selection-end-column="36" />
+            <state relative-caret-position="106">
+              <caret line="269" column="73" selection-start-line="269" selection-start-column="73" selection-end-line="269" selection-end-column="73" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PSQL.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/utils/PSQL.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="148" lean-forward="true" selection-start-line="148" selection-end-line="148" />
             </state>
           </provider>
         </entry>
@@ -50,6 +68,15 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>person</find>
+      <find>correct</find>
+      <find>report_dict</find>
+      <find>get_wrong_answers</find>
+      <find>tasks</find>
+      <find>task</find>
+      <find>wrong</find>
+      <find>get_ra</find>
+      <find>tech</find>
+      <find>get_tech_list</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -60,6 +87,8 @@
       <list>
         <option value="$PROJECT_DIR$/lab/bot_sample/bot-sample.py" />
         <option value="$PROJECT_DIR$/main/bot_quiz_cl/bot.py" />
+        <option value="$PROJECT_DIR$/main/utils/tasker.py" />
+        <option value="$PROJECT_DIR$/main/bot_quiz_cl/bi_template.py" />
       </list>
     </option>
   </component>
@@ -105,7 +134,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/main/bot_quiz_cl/bi_template.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/main/utils/tasker.py" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -167,11 +196,11 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33901194" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.40374786" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.33049405" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.52640545" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -189,15 +218,55 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main/bot_quiz_cl/bot.py</url>
-          <line>128</line>
+          <line>129</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main/bot_quiz_cl/bi_template.py</url>
+          <line>269</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>task[&quot;variants&quot;][wrong_answer[&quot;loc_answer&quot;]-1]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>task[&quot;variants&quot;][wrong_answer[&quot;loc_answer&quot;]]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>wrong_answer[&quot;loc_answer&quot;]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>task[&quot;loc_answer&quot;]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>task</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>loc_answer</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>task[&quot;variants&quot;]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>api.people.me()</expression-string>
         <language-id>Python</language-id>
@@ -208,45 +277,17 @@
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>webhook_obj.json_data['data'].personId</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>webhook_obj.json_data['data']</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>webhook_obj.json_data</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>webhook_obj.json_data.data</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>webhook_obj.json_data.data['personId']</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>webhook_obj.json_data.data['personid']</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>webhook_obj.json_data.personId</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/lab/bot_sample/bot-sample.py" />
+    <entry file="file://$PROJECT_DIR$/main/bot_quiz_cl/bot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="130" column="21" selection-start-line="130" selection-start-column="21" selection-end-line="130" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main/bot_quiz_cl/server.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1428">
@@ -256,17 +297,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/bot_quiz_cl/bi_template.py">
+    <entry file="file://$PROJECT_DIR$/main/utils/PSQL.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="69" column="36" selection-start-line="69" selection-start-column="28" selection-end-line="69" selection-end-column="36" />
+        <state relative-caret-position="390">
+          <caret line="148" lean-forward="true" selection-start-line="148" selection-end-line="148" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/bot_quiz_cl/bot.py">
+    <entry file="file://$PROJECT_DIR$/main/utils/tasker.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="130" column="65" selection-start-line="130" selection-start-column="65" selection-end-line="130" selection-end-column="65" />
+        <state relative-caret-position="-528">
+          <caret line="214" column="72" lean-forward="true" selection-start-line="214" selection-start-column="21" selection-end-line="214" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/bot_quiz_cl/bi_template.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="269" column="73" selection-start-line="269" selection-start-column="73" selection-end-line="269" selection-end-column="73" />
         </state>
       </provider>
     </entry>
