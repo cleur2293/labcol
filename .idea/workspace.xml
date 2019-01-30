@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="398e62e4-e756-4ccf-aab4-dd8bf8662f36" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/bot_quiz_cl/bi_template.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/bot_quiz_cl/bi_template.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/config/config_quiz_cl.yml" beforeDir="false" afterPath="$PROJECT_DIR$/main/config/config_quiz_cl.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/log/log.log" beforeDir="false" afterPath="$PROJECT_DIR$/main/log/log.log" afterDir="false" />
-    </list>
+    <list default="true" id="398e62e4-e756-4ccf-aab4-dd8bf8662f36" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,7 +15,7 @@
         <entry file="file://$PROJECT_DIR$/main/utils/tasker.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-528">
-              <caret line="214" column="72" lean-forward="true" selection-start-line="214" selection-start-column="21" selection-end-line="214" selection-end-column="72" />
+              <caret line="214" column="72" selection-start-line="214" selection-start-column="21" selection-end-line="214" selection-end-column="72" />
             </state>
           </provider>
         </entry>
@@ -48,8 +43,8 @@
       <file leaf-file-name="bi_template.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/bot_quiz_cl/bi_template.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="269" column="73" selection-start-line="269" selection-start-column="73" selection-end-line="269" selection-end-column="73" />
+            <state relative-caret-position="4300">
+              <caret line="272" column="48" selection-start-line="272" selection-start-column="48" selection-end-line="272" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -58,7 +53,7 @@
         <entry file="file://$PROJECT_DIR$/main/utils/PSQL.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="390">
-              <caret line="148" lean-forward="true" selection-start-line="148" selection-end-line="148" />
+              <caret line="148" selection-start-line="148" selection-end-line="148" />
             </state>
           </provider>
         </entry>
@@ -196,11 +191,11 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.40374786" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31175467" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.52640545" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.52640545" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -300,21 +295,21 @@
     <entry file="file://$PROJECT_DIR$/main/utils/PSQL.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
-          <caret line="148" lean-forward="true" selection-start-line="148" selection-end-line="148" />
+          <caret line="148" selection-start-line="148" selection-end-line="148" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main/utils/tasker.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-528">
-          <caret line="214" column="72" lean-forward="true" selection-start-line="214" selection-start-column="21" selection-end-line="214" selection-end-column="72" />
+          <caret line="214" column="72" selection-start-line="214" selection-start-column="21" selection-end-line="214" selection-end-column="72" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main/bot_quiz_cl/bi_template.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="269" column="73" selection-start-line="269" selection-start-column="73" selection-end-line="269" selection-end-column="73" />
+        <state relative-caret-position="4300">
+          <caret line="272" column="48" selection-start-line="272" selection-start-column="48" selection-end-line="272" selection-end-column="48" />
         </state>
       </provider>
     </entry>
