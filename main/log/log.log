@@ -6287,3 +6287,475 @@ webexteamssdk.exceptions.ApiError: [409] Conflict - Unable to upload content to 
 2019-01-29 21:20:27.892-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/me HTTP/1.1" 200 None
 2019-01-29 21:20:27.894-INFO-[bot]-[process_message]-Found message sent to me. Do not respond
 2019-01-29 21:20:27.894-INFO-[_internal]-[_log]-127.0.0.1 - - [29/Jan/2019 21:20:27] "POST /events HTTP/1.1" 200 -
+2019-01-30 15:59:05.079-INFO-[setinitial]-[setup_logging]-Creating abs path for logging file: C:\Users\asazhin\Documents\git\webexteams_colab\main\log/log.log
+2019-01-30 15:59:05.148-INFO-[setinitial]-[setup_logging]-Creating abs path for logging file: C:\Users\asazhin\Documents\git\webexteams_colab\main\log/log.log
+2019-01-30 15:59:07.349-INFO-[server]-[<module>]-Connected to DB:ciscolive@10.81.127.149/ciscolive
+2019-01-30 15:59:07.350-INFO-[server]-[<module>]-Start using token:MDllNTEyNDgtMWQyOS00OWIzLThjNzYtMWEzZmM1MTY4MzllMmYyMTFlNGItMzA4_PF84_1eb65fdf-9643-417f-9974-ad72cae0e10f
+2019-01-30 15:59:07.360-DEBUG-[connectionpool]-[_new_conn]-Starting new HTTPS connection (1): api.ciscospark.com:443
+2019-01-30 15:59:08.533-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/webhooks HTTP/1.1" 200 None
+2019-01-30 15:59:08.535-INFO-[cl_webhook]-[delete_webhooks_with_name]-Deleting Webhook:webhook_quiz_cl_memberships http://5653e82c.ngrok.io/memberships
+2019-01-30 15:59:08.718-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "DELETE /v1/webhooks/Y2lzY29zcGFyazovL3VzL1dFQkhPT0svYTA0NmRkNWItMDg2Ny00ODYyLWFmNTUtZTFmNDAxY2JhYWY2 HTTP/1.1" 204 0
+2019-01-30 15:59:08.719-INFO-[cl_webhook]-[delete_webhooks_with_name]-Deleting Webhook:webhook_quiz_cl http://5653e82c.ngrok.io/events
+2019-01-30 15:59:09.536-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "DELETE /v1/webhooks/Y2lzY29zcGFyazovL3VzL1dFQkhPT0svYzFhMjEyNmYtNDk4ZS00YWU3LWJkNTUtZWRhNmRlMzYyNGY3 HTTP/1.1" 204 0
+2019-01-30 15:59:09.540-DEBUG-[connectionpool]-[_new_conn]-Starting new HTTP connection (1): localhost:4040
+2019-01-30 15:59:10.928-DEBUG-[connectionpool]-[_make_request]-http://localhost:4040 "GET /api/tunnels HTTP/1.1" 200 984
+2019-01-30 15:59:10.930-INFO-[cl_webhook]-[get_ngrok_public_url]-Found ngrok public HTTP URL:http://fe73954c.ngrok.io
+2019-01-30 15:59:10.930-INFO-[cl_webhook]-[create_ngrok_webhook]-Creating Webhook for messages resource...webhook_quiz_cl
+2019-01-30 15:59:11.121-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "POST /v1/webhooks HTTP/1.1" 200 None
+2019-01-30 15:59:11.122-INFO-[cl_webhook]-[create_ngrok_webhook]-Webex Teams Webhook:
+{
+  "id": "Y2lzY29zcGFyazovL3VzL1dFQkhPT0svNTZlYjM3NWQtOWY3OC00YWI0LWE5YzYtYjBiYTUxNjM5NTBj",
+  "name": "webhook_quiz_cl",
+  "targetUrl": "http://fe73954c.ngrok.io/events",
+  "resource": "messages",
+  "event": "created",
+  "orgId": "Y2lzY29zcGFyazovL3VzL09SR0FOSVpBVElPTi8xZWI2NWZkZi05NjQzLTQxN2YtOTk3NC1hZDcyY2FlMGUxMGY",
+  "createdBy": "Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI",
+  "appId": "Y2lzY29zcGFyazovL3VzL0FQUExJQ0FUSU9OL0MzMmM4MDc3NDBjNmU3ZGYxMWRhZjE2ZjIyOGRmNjI4YmJjYTQ5YmE1MmZlY2JiMmM3ZDUxNWNiNGEwY2M5MWFh",
+  "ownedBy": "creator",
+  "status": "active",
+  "created": "2019-01-30T12:59:11.054Z"
+}
+2019-01-30 15:59:11.122-INFO-[cl_webhook]-[create_ngrok_webhook]-Webhook successfully created.
+2019-01-30 15:59:11.123-INFO-[cl_webhook]-[create_ngrok_webhook]-Creating Webhook for memberships resource...webhook_quiz_cl_memberships
+2019-01-30 15:59:11.319-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "POST /v1/webhooks HTTP/1.1" 200 None
+2019-01-30 15:59:11.321-INFO-[cl_webhook]-[create_ngrok_webhook]-Webex Teams Webhook:
+{
+  "id": "Y2lzY29zcGFyazovL3VzL1dFQkhPT0svMDBmMjE0YzUtMzU3Ni00YzBiLTg2MTktNTE3NjJmZWI2YmE3",
+  "name": "webhook_quiz_cl_memberships",
+  "targetUrl": "http://fe73954c.ngrok.io/memberships",
+  "resource": "memberships",
+  "event": "created",
+  "orgId": "Y2lzY29zcGFyazovL3VzL09SR0FOSVpBVElPTi8xZWI2NWZkZi05NjQzLTQxN2YtOTk3NC1hZDcyY2FlMGUxMGY",
+  "createdBy": "Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI",
+  "appId": "Y2lzY29zcGFyazovL3VzL0FQUExJQ0FUSU9OL0MzMmM4MDc3NDBjNmU3ZGYxMWRhZjE2ZjIyOGRmNjI4YmJjYTQ5YmE1MmZlY2JiMmM3ZDUxNWNiNGEwY2M5MWFh",
+  "ownedBy": "creator",
+  "status": "active",
+  "created": "2019-01-30T12:59:11.244Z"
+}
+2019-01-30 15:59:11.321-INFO-[cl_webhook]-[create_ngrok_webhook]-Webhook successfully created.
+2019-01-30 15:59:11.324-DEBUG-[connectionpool]-[_new_conn]-Starting new HTTP connection (1): localhost:4040
+2019-01-30 15:59:12.414-DEBUG-[connectionpool]-[_make_request]-http://localhost:4040 "GET /api/tunnels HTTP/1.1" 200 984
+2019-01-30 15:59:12.415-INFO-[server]-[<module>]-Get ngrok port=5000.Starting Flask server on it
+2019-01-30 15:59:14.002-INFO-[_internal]-[_log]- * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2019-01-30 15:59:50.151-INFO-[server]-[webex_teams_webhook_events]-WEBHOOK POST RECEIVED:
+2019-01-30 15:59:50.151-INFO-[server]-[webex_teams_webhook_events]-{'id': 'Y2lzY29zcGFyazovL3VzL1dFQkhPT0svNTZlYjM3NWQtOWY3OC00YWI0LWE5YzYtYjBiYTUxNjM5NTBj', 'name': 'webhook_quiz_cl', 'targetUrl': 'http://fe73954c.ngrok.io/events', 'resource': 'messages', 'event': 'created', 'orgId': 'Y2lzY29zcGFyazovL3VzL09SR0FOSVpBVElPTi8xZWI2NWZkZi05NjQzLTQxN2YtOTk3NC1hZDcyY2FlMGUxMGY', 'createdBy': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'appId': 'Y2lzY29zcGFyazovL3VzL0FQUExJQ0FUSU9OL0MzMmM4MDc3NDBjNmU3ZGYxMWRhZjE2ZjIyOGRmNjI4YmJjYTQ5YmE1MmZlY2JiMmM3ZDUxNWNiNGEwY2M5MWFh', 'ownedBy': 'creator', 'status': 'active', 'created': '2019-01-30T12:59:11.054Z', 'actorId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg', 'data': {'id': 'Y2lzY29zcGFyazovL3VzL01FU1NBR0UvZWQ0ZDFhODAtMjQ4ZS0xMWU5LTkzZTMtYWI0OTIzM2ZiYjky', 'roomId': 'Y2lzY29zcGFyazovL3VzL1JPT00vOTRiNTNkZDItNjE5MC0zYjIzLTgyY2MtOWNkYTc1NjkzMzA2', 'roomType': 'direct', 'personId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg', 'personEmail': 'asazhin@cisco.com', 'created': '2019-01-30T12:59:49.672Z'}}
+2019-01-30 15:59:50.371-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vOTRiNTNkZDItNjE5MC0zYjIzLTgyY2MtOWNkYTc1NjkzMzA2 HTTP/1.1" 200 None
+2019-01-30 15:59:50.559-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/messages/Y2lzY29zcGFyazovL3VzL01FU1NBR0UvZWQ0ZDFhODAtMjQ4ZS0xMWU5LTkzZTMtYWI0OTIzM2ZiYjky HTTP/1.1" 200 None
+2019-01-30 15:59:50.561-INFO-[bot]-[process_message]-message text received:/start
+2019-01-30 15:59:50.761-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg HTTP/1.1" 200 None
+2019-01-30 15:59:51.752-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/me HTTP/1.1" 200 None
+2019-01-30 15:59:51.753-INFO-[bot]-[process_command]-Not found attached photo, proceeding with commands parsing
+2019-01-30 15:59:51.753-INFO-[bot]-[process_command]-command=/start
+2019-01-30 15:59:51.754-INFO-[bi_template]-[cmd_start]-Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg:FOUND "/start"
+2019-01-30 15:59:52.278-INFO-[PSQL]-[psql_request]-PSQL request: b"SELECT * FROM ciscolive.interview.persons WHERE id = 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg'"
+2019-01-30 15:59:52.279-INFO-[PSQL]-[is_person_exists]-SELECT 0
+2019-01-30 15:59:52.279-DEBUG-[PSQL]-[is_person_exists]-rows:None
+2019-01-30 15:59:52.279-INFO-[bi_template]-[cmd_start]-Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg:This is new user
+2019-01-30 15:59:52.279-INFO-[PSQL]-[add_person]-        INSERT INTO ciscolive.interview.persons
+        (id,name,surname,email)
+        VALUES (%s, %s, %s, %s);
+2019-01-30 15:59:52.471-INFO-[PSQL]-[psql_request]-PSQL request: b"        INSERT INTO ciscolive.interview.persons\n        (id,name,surname,email)\n        VALUES ('Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg', 'Alexey', 'Sazhin', 'asazhin@cisco.com');"
+2019-01-30 15:59:52.471-INFO-[PSQL]-[add_person]-INSERT 0 1
+2019-01-30 15:59:52.471-INFO-[PSQL]-[Commit]-Commit done
+2019-01-30 15:59:52.636-INFO-[bi_template]-[cmd_start]-Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg:User Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg created user successfully
+2019-01-30 15:59:52.984-INFO-[PSQL]-[psql_request]-PSQL request: b'SELECT DISTINCT tech FROM ciscolive.interview.tasks'
+2019-01-30 15:59:52.985-INFO-[tasker]-[get_tech_list]-SELECT 2
+2019-01-30 15:59:52.992-DEBUG-[tasker]-[get_tech_list]-rows:[['Collaboration'], ['Routing']]
+2019-01-30 15:59:53.311-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "POST /v1/messages HTTP/1.1" 200 None
+2019-01-30 15:59:53.659-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "POST /v1/messages HTTP/1.1" 200 None
+2019-01-30 15:59:53.663-INFO-[_internal]-[_log]-127.0.0.1 - - [30/Jan/2019 15:59:53] "POST /events HTTP/1.1" 200 -
+2019-01-30 15:59:53.948-INFO-[server]-[webex_teams_webhook_events]-WEBHOOK POST RECEIVED:
+2019-01-30 15:59:53.948-INFO-[server]-[webex_teams_webhook_events]-{'id': 'Y2lzY29zcGFyazovL3VzL1dFQkhPT0svNTZlYjM3NWQtOWY3OC00YWI0LWE5YzYtYjBiYTUxNjM5NTBj', 'name': 'webhook_quiz_cl', 'targetUrl': 'http://fe73954c.ngrok.io/events', 'resource': 'messages', 'event': 'created', 'orgId': 'Y2lzY29zcGFyazovL3VzL09SR0FOSVpBVElPTi8xZWI2NWZkZi05NjQzLTQxN2YtOTk3NC1hZDcyY2FlMGUxMGY', 'createdBy': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'appId': 'Y2lzY29zcGFyazovL3VzL0FQUExJQ0FUSU9OL0MzMmM4MDc3NDBjNmU3ZGYxMWRhZjE2ZjIyOGRmNjI4YmJjYTQ5YmE1MmZlY2JiMmM3ZDUxNWNiNGEwY2M5MWFh', 'ownedBy': 'creator', 'status': 'active', 'created': '2019-01-30T12:59:11.054Z', 'actorId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'data': {'id': 'Y2lzY29zcGFyazovL3VzL01FU1NBR0UvZWY2ZDNiNjAtMjQ4ZS0xMWU5LThmZmItNzViYWM5M2E1N2I2', 'roomId': 'Y2lzY29zcGFyazovL3VzL1JPT00vOTRiNTNkZDItNjE5MC0zYjIzLTgyY2MtOWNkYTc1NjkzMzA2', 'roomType': 'direct', 'personId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'personEmail': 'asazhin_bot1@webex.bot', 'created': '2019-01-30T12:59:53.238Z'}}
+2019-01-30 15:59:54.160-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vOTRiNTNkZDItNjE5MC0zYjIzLTgyY2MtOWNkYTc1NjkzMzA2 HTTP/1.1" 200 None
+2019-01-30 15:59:54.262-INFO-[server]-[webex_teams_webhook_events]-WEBHOOK POST RECEIVED:
+2019-01-30 15:59:54.262-INFO-[server]-[webex_teams_webhook_events]-{'id': 'Y2lzY29zcGFyazovL3VzL1dFQkhPT0svNTZlYjM3NWQtOWY3OC00YWI0LWE5YzYtYjBiYTUxNjM5NTBj', 'name': 'webhook_quiz_cl', 'targetUrl': 'http://fe73954c.ngrok.io/events', 'resource': 'messages', 'event': 'created', 'orgId': 'Y2lzY29zcGFyazovL3VzL09SR0FOSVpBVElPTi8xZWI2NWZkZi05NjQzLTQxN2YtOTk3NC1hZDcyY2FlMGUxMGY', 'createdBy': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'appId': 'Y2lzY29zcGFyazovL3VzL0FQUExJQ0FUSU9OL0MzMmM4MDc3NDBjNmU3ZGYxMWRhZjE2ZjIyOGRmNjI4YmJjYTQ5YmE1MmZlY2JiMmM3ZDUxNWNiNGEwY2M5MWFh', 'ownedBy': 'creator', 'status': 'active', 'created': '2019-01-30T12:59:11.054Z', 'actorId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'data': {'id': 'Y2lzY29zcGFyazovL3VzL01FU1NBR0UvZWY5YTY1ZTAtMjQ4ZS0xMWU5LWJiN2ItN2ZkOGM4YjBhNzI1', 'roomId': 'Y2lzY29zcGFyazovL3VzL1JPT00vOTRiNTNkZDItNjE5MC0zYjIzLTgyY2MtOWNkYTc1NjkzMzA2', 'roomType': 'direct', 'personId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'personEmail': 'asazhin_bot1@webex.bot', 'created': '2019-01-30T12:59:53.534Z'}}
+2019-01-30 15:59:54.265-DEBUG-[connectionpool]-[_new_conn]-Starting new HTTPS connection (2): api.ciscospark.com:443
+2019-01-30 15:59:54.395-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/messages/Y2lzY29zcGFyazovL3VzL01FU1NBR0UvZWY2ZDNiNjAtMjQ4ZS0xMWU5LThmZmItNzViYWM5M2E1N2I2 HTTP/1.1" 200 None
+2019-01-30 15:59:54.396-INFO-[bot]-[process_message]-message text received:You are new user
+2019-01-30 15:59:54.590-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI HTTP/1.1" 200 None
+2019-01-30 15:59:55.088-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/me HTTP/1.1" 200 None
+2019-01-30 15:59:55.091-INFO-[bot]-[process_message]-Found message sent to me. Do not respond
+2019-01-30 15:59:55.092-INFO-[_internal]-[_log]-127.0.0.1 - - [30/Jan/2019 15:59:55] "POST /events HTTP/1.1" 200 -
+2019-01-30 15:59:55.215-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vOTRiNTNkZDItNjE5MC0zYjIzLTgyY2MtOWNkYTc1NjkzMzA2 HTTP/1.1" 200 None
+2019-01-30 15:59:55.530-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/messages/Y2lzY29zcGFyazovL3VzL01FU1NBR0UvZWY5YTY1ZTAtMjQ4ZS0xMWU5LWJiN2ItN2ZkOGM4YjBhNzI1 HTTP/1.1" 200 None
+2019-01-30 15:59:55.531-INFO-[bot]-[process_message]-message text received:Enter # of technology for which you want to receive tasks: 1. Collaboration 2. Routing
+2019-01-30 15:59:55.703-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI HTTP/1.1" 200 None
+2019-01-30 15:59:56.556-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/me HTTP/1.1" 200 None
+2019-01-30 15:59:56.557-INFO-[bot]-[process_message]-Found message sent to me. Do not respond
+2019-01-30 15:59:56.558-INFO-[_internal]-[_log]-127.0.0.1 - - [30/Jan/2019 15:59:56] "POST /events HTTP/1.1" 200 -
+2019-01-30 16:00:01.974-INFO-[server]-[webex_teams_webhook_events]-WEBHOOK POST RECEIVED:
+2019-01-30 16:00:01.974-INFO-[server]-[webex_teams_webhook_events]-{'id': 'Y2lzY29zcGFyazovL3VzL1dFQkhPT0svNTZlYjM3NWQtOWY3OC00YWI0LWE5YzYtYjBiYTUxNjM5NTBj', 'name': 'webhook_quiz_cl', 'targetUrl': 'http://fe73954c.ngrok.io/events', 'resource': 'messages', 'event': 'created', 'orgId': 'Y2lzY29zcGFyazovL3VzL09SR0FOSVpBVElPTi8xZWI2NWZkZi05NjQzLTQxN2YtOTk3NC1hZDcyY2FlMGUxMGY', 'createdBy': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'appId': 'Y2lzY29zcGFyazovL3VzL0FQUExJQ0FUSU9OL0MzMmM4MDc3NDBjNmU3ZGYxMWRhZjE2ZjIyOGRmNjI4YmJjYTQ5YmE1MmZlY2JiMmM3ZDUxNWNiNGEwY2M5MWFh', 'ownedBy': 'creator', 'status': 'active', 'created': '2019-01-30T12:59:11.054Z', 'actorId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg', 'data': {'id': 'Y2lzY29zcGFyazovL3VzL01FU1NBR0UvZjQzZDNhMDAtMjQ4ZS0xMWU5LWFiZTYtZGYzMGQ1OTUyYmZl', 'roomId': 'Y2lzY29zcGFyazovL3VzL1JPT00vOTRiNTNkZDItNjE5MC0zYjIzLTgyY2MtOWNkYTc1NjkzMzA2', 'roomType': 'direct', 'personId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg', 'personEmail': 'asazhin@cisco.com', 'created': '2019-01-30T13:00:01.312Z'}}
+2019-01-30 16:00:03.046-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vOTRiNTNkZDItNjE5MC0zYjIzLTgyY2MtOWNkYTc1NjkzMzA2 HTTP/1.1" 200 None
+2019-01-30 16:00:03.645-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/messages/Y2lzY29zcGFyazovL3VzL01FU1NBR0UvZjQzZDNhMDAtMjQ4ZS0xMWU5LWFiZTYtZGYzMGQ1OTUyYmZl HTTP/1.1" 200 None
+2019-01-30 16:00:03.657-INFO-[bot]-[process_message]-message text received:2
+2019-01-30 16:00:03.861-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg HTTP/1.1" 200 None
+2019-01-30 16:00:04.538-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/me HTTP/1.1" 200 None
+2019-01-30 16:00:04.539-INFO-[bot]-[process_command]-Not found attached photo, proceeding with commands parsing
+2019-01-30 16:00:04.540-INFO-[bot]-[process_command]-command=2
+2019-01-30 16:00:04.762-INFO-[PSQL]-[psql_request2]-PSQL request: b"SELECT * FROM ciscolive.interview.persons WHERE id = 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg'"
+2019-01-30 16:00:04.762-INFO-[tasker]-[get_person]-SELECT 1
+2019-01-30 16:00:04.762-DEBUG-[tasker]-[get_person]-rows:[{'current_task': None, 'name': 'Alexey', 'surname': 'Sazhin', 'email': 'asazhin@cisco.com', 'id': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg', 'tech': None}]
+2019-01-30 16:00:04.963-INFO-[PSQL]-[psql_request2]-PSQL request: b"SELECT * FROM ciscolive.interview.persons WHERE id = 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg'"
+2019-01-30 16:00:04.963-INFO-[tasker]-[get_person]-SELECT 1
+2019-01-30 16:00:04.964-DEBUG-[tasker]-[get_person]-rows:[{'current_task': None, 'name': 'Alexey', 'surname': 'Sazhin', 'email': 'asazhin@cisco.com', 'id': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg', 'tech': None}]
+2019-01-30 16:00:05.125-INFO-[PSQL]-[psql_request]-PSQL request: b'SELECT DISTINCT tech FROM ciscolive.interview.tasks'
+2019-01-30 16:00:05.125-INFO-[tasker]-[get_tech_list]-SELECT 2
+2019-01-30 16:00:05.126-DEBUG-[tasker]-[get_tech_list]-rows:[['Collaboration'], ['Routing']]
+2019-01-30 16:00:05.361-INFO-[PSQL]-[psql_request2]-PSQL request: b"UPDATE ciscolive.interview.persons SET tech = 'Routing' WHERE id = 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg'"
+2019-01-30 16:00:05.361-INFO-[tasker]-[save_tech]-UPDATE 1
+2019-01-30 16:00:05.362-INFO-[PSQL]-[Commit]-Commit done
+2019-01-30 16:00:05.887-INFO-[PSQL]-[psql_request2]-PSQL request: b"SELECT * FROM ciscolive.interview.persons WHERE id = 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg'"
+2019-01-30 16:00:05.887-INFO-[tasker]-[get_person]-SELECT 1
+2019-01-30 16:00:05.887-DEBUG-[tasker]-[get_person]-rows:[{'current_task': None, 'name': 'Alexey', 'surname': 'Sazhin', 'email': 'asazhin@cisco.com', 'id': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg', 'tech': 'Routing'}]
+2019-01-30 16:00:06.081-INFO-[PSQL]-[psql_request]-PSQL request: b"SELECT task_id,loc_answer,epoch,user_answer FROM ciscolive.interview.assigned_tasks\n         WHERE person_id = 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg' ORDER BY epoch DESC"
+2019-01-30 16:00:06.081-INFO-[tasker]-[get_assigned_tasks_by_person]-SELECT 0
+2019-01-30 16:00:06.082-DEBUG-[tasker]-[get_assigned_tasks_by_person]-rows:[]
+2019-01-30 16:00:06.082-INFO-[bi_template]-[assign_new_task]-Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg:All user tasks:[]
+2019-01-30 16:00:06.257-INFO-[PSQL]-[psql_request]-PSQL request: b"SELECT\n        id, task, answer, variants, picture_path\n        FROM\n        ciscolive.interview.tasks\n        WHERE id\n        NOT\n        IN(\n        SELECT task_id\n        FROM\n        ciscolive.interview.assigned_tasks\n        WHERE\n        person_id = 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg'\n        ) AND tech = 'Routing';"
+2019-01-30 16:00:06.257-INFO-[tasker]-[get_random_task]-SELECT 6
+2019-01-30 16:00:06.258-DEBUG-[tasker]-[get_random_task]-rows:[[27, 'What types of encapsulation is used inside SDA Fabric?', 3, ['GRE', 'MPLS', 'VXLAN', 'LISP'], None], [28, 'To what VRF (VN) are Access points and SDA Extension nodes placed in SDA Fabric?', 2, ['DEFAULT_VN', 'INFRA_VN', 'Should be configure by admin', 'JUMP_VN'], None], [29, 'What is maximum delay between WLC and AP inside SDA site?', 1, ['20 ms', '40 ms', '35 ms', 'not limited'], None], [30, 'Customer asks your opinion about per-packet load-balancing, what you will answer?', 3, ['It can be used for VoIP applications to prioritize that type of traffic', 'It was supported only on old platforms and should be avoided', 'It can cause out-of-sequence packets and should be avoided'], None], [31, 'If the packet fragments somewhere along the path, which device will reassamble fragments?', 3, ['last-hop router along the path', 'next-hop router for the fragmented router', 'receiving host', 'last-hop switch device'], None], [32, 'What is considered to be best practice in placing Multicast RP for running Multicast over DMVPN?', 1, ['Place RP behind the hub', 'Place RP on the huge spoke', 'Place it on hub and also spokes'], None]]
+2019-01-30 16:00:06.258-INFO-[tasker]-[assign_task]-        INSERT INTO ciscolive.interview.assigned_tasks
+        (person_id,task_id,loc_answer)
+        VALUES (%s, %s, %s);
+2019-01-30 16:00:06.421-INFO-[PSQL]-[psql_request]-PSQL request: b"        INSERT INTO ciscolive.interview.assigned_tasks\n        (person_id,task_id,loc_answer)\n        VALUES ('Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg', 29, 1);"
+2019-01-30 16:00:06.421-INFO-[tasker]-[assign_task]-INSERT 0 1
+2019-01-30 16:00:06.422-INFO-[PSQL]-[Commit]-Commit done
+2019-01-30 16:00:06.570-INFO-[bi_template]-[assign_new_task]-Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg:Added task to the assigned_tasks table successfully
+2019-01-30 16:00:06.916-INFO-[PSQL]-[psql_request]-PSQL request: b"SELECT task_id,loc_answer,epoch,user_answer FROM ciscolive.interview.assigned_tasks\n         WHERE person_id = 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg' ORDER BY epoch DESC"
+2019-01-30 16:00:06.917-INFO-[tasker]-[get_assigned_tasks_by_person]-SELECT 1
+2019-01-30 16:00:06.917-DEBUG-[tasker]-[get_assigned_tasks_by_person]-rows:[[29, 1, 190, None]]
+2019-01-30 16:00:06.917-INFO-[bi_template]-[get_current_task]-Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg:All user tasks:[[29, 1, 190, None]]
+2019-01-30 16:00:07.199-INFO-[PSQL]-[psql_request]-PSQL request: b'SELECT id,task,answer,variants,picture_path,explain FROM ciscolive.interview.tasks WHERE id = 29'
+2019-01-30 16:00:07.200-INFO-[tasker]-[get_assigned_task_by_id]-SELECT 1
+2019-01-30 16:00:07.200-DEBUG-[tasker]-[get_assigned_task_by_id]-row:[29, 'What is maximum delay between WLC and AP inside SDA site?', 1, ['20 ms', '40 ms', '35 ms', 'not limited'], None, 'Check Controller chapter: https://www.cisco.com/c/en/us/td/docs/wireless/controller/technotes/8-5/b_SD_Access_Wireless_Deployment_Guide.html']
+2019-01-30 16:00:07.200-INFO-[bi_template]-[get_current_task]-Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg:Picture path is null, sending task without attachment
+2019-01-30 16:00:07.201-INFO-[bi_template]-[create_first_task]-Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg:Picture path is null, sending task without attachment
+2019-01-30 16:00:07.812-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "POST /v1/messages HTTP/1.1" 200 None
+2019-01-30 16:00:08.046-INFO-[server]-[webex_teams_webhook_events]-WEBHOOK POST RECEIVED:
+2019-01-30 16:00:08.047-INFO-[server]-[webex_teams_webhook_events]-{'id': 'Y2lzY29zcGFyazovL3VzL1dFQkhPT0svNTZlYjM3NWQtOWY3OC00YWI0LWE5YzYtYjBiYTUxNjM5NTBj', 'name': 'webhook_quiz_cl', 'targetUrl': 'http://fe73954c.ngrok.io/events', 'resource': 'messages', 'event': 'created', 'orgId': 'Y2lzY29zcGFyazovL3VzL09SR0FOSVpBVElPTi8xZWI2NWZkZi05NjQzLTQxN2YtOTk3NC1hZDcyY2FlMGUxMGY', 'createdBy': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'appId': 'Y2lzY29zcGFyazovL3VzL0FQUExJQ0FUSU9OL0MzMmM4MDc3NDBjNmU3ZGYxMWRhZjE2ZjIyOGRmNjI4YmJjYTQ5YmE1MmZlY2JiMmM3ZDUxNWNiNGEwY2M5MWFh', 'ownedBy': 'creator', 'status': 'active', 'created': '2019-01-30T12:59:11.054Z', 'actorId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'data': {'id': 'Y2lzY29zcGFyazovL3VzL01FU1NBR0UvZjdlOTAzZjAtMjQ4ZS0xMWU5LTk1ZjMtZjkxNGIyMGUwYjYx', 'roomId': 'Y2lzY29zcGFyazovL3VzL1JPT00vOTRiNTNkZDItNjE5MC0zYjIzLTgyY2MtOWNkYTc1NjkzMzA2', 'roomType': 'direct', 'personId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'personEmail': 'asazhin_bot1@webex.bot', 'created': '2019-01-30T13:00:07.471Z'}}
+2019-01-30 16:00:08.079-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "POST /v1/messages HTTP/1.1" 200 None
+2019-01-30 16:00:08.082-INFO-[_internal]-[_log]-127.0.0.1 - - [30/Jan/2019 16:00:08] "POST /events HTTP/1.1" 200 -
+2019-01-30 16:00:08.224-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vOTRiNTNkZDItNjE5MC0zYjIzLTgyY2MtOWNkYTc1NjkzMzA2 HTTP/1.1" 200 None
+2019-01-30 16:00:08.429-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/messages/Y2lzY29zcGFyazovL3VzL01FU1NBR0UvZjdlOTAzZjAtMjQ4ZS0xMWU5LTk1ZjMtZjkxNGIyMGUwYjYx HTTP/1.1" 200 None
+2019-01-30 16:00:08.431-INFO-[bot]-[process_message]-message text received:Chosen technology: Routing
+2019-01-30 16:00:08.619-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI HTTP/1.1" 200 None
+2019-01-30 16:00:08.624-INFO-[server]-[webex_teams_webhook_events]-WEBHOOK POST RECEIVED:
+2019-01-30 16:00:08.625-INFO-[server]-[webex_teams_webhook_events]-{'id': 'Y2lzY29zcGFyazovL3VzL1dFQkhPT0svNTZlYjM3NWQtOWY3OC00YWI0LWE5YzYtYjBiYTUxNjM5NTBj', 'name': 'webhook_quiz_cl', 'targetUrl': 'http://fe73954c.ngrok.io/events', 'resource': 'messages', 'event': 'created', 'orgId': 'Y2lzY29zcGFyazovL3VzL09SR0FOSVpBVElPTi8xZWI2NWZkZi05NjQzLTQxN2YtOTk3NC1hZDcyY2FlMGUxMGY', 'createdBy': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'appId': 'Y2lzY29zcGFyazovL3VzL0FQUExJQ0FUSU9OL0MzMmM4MDc3NDBjNmU3ZGYxMWRhZjE2ZjIyOGRmNjI4YmJjYTQ5YmE1MmZlY2JiMmM3ZDUxNWNiNGEwY2M5MWFh', 'ownedBy': 'creator', 'status': 'active', 'created': '2019-01-30T12:59:11.054Z', 'actorId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'data': {'id': 'Y2lzY29zcGFyazovL3VzL01FU1NBR0UvZjgzOWJjMDAtMjQ4ZS0xMWU5LTkzNTctOTUxMzVkNjI1YTU2', 'roomId': 'Y2lzY29zcGFyazovL3VzL1JPT00vOTRiNTNkZDItNjE5MC0zYjIzLTgyY2MtOWNkYTc1NjkzMzA2', 'roomType': 'direct', 'personId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'personEmail': 'asazhin_bot1@webex.bot', 'created': '2019-01-30T13:00:08.000Z'}}
+2019-01-30 16:00:08.931-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vOTRiNTNkZDItNjE5MC0zYjIzLTgyY2MtOWNkYTc1NjkzMzA2 HTTP/1.1" 200 None
+2019-01-30 16:00:09.198-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/messages/Y2lzY29zcGFyazovL3VzL01FU1NBR0UvZjgzOWJjMDAtMjQ4ZS0xMWU5LTkzNTctOTUxMzVkNjI1YTU2 HTTP/1.1" 200 None
+2019-01-30 16:00:09.235-INFO-[bot]-[process_message]-message text received:The #1 question for you: —————————————————- What is maximum delay between WLC and AP inside SDA site? —————————————————- 1. 20 ms 2. 40 ms 3. 35 ms 4. not limited —————————————————- Choose your answer (1 to 4):
+2019-01-30 16:00:09.563-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/me HTTP/1.1" 200 None
+2019-01-30 16:00:09.565-INFO-[bot]-[process_message]-Found message sent to me. Do not respond
+2019-01-30 16:00:09.566-INFO-[_internal]-[_log]-127.0.0.1 - - [30/Jan/2019 16:00:09] "POST /events HTTP/1.1" 200 -
+2019-01-30 16:00:09.902-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI HTTP/1.1" 200 None
+2019-01-30 16:00:10.100-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/me HTTP/1.1" 200 None
+2019-01-30 16:00:10.100-INFO-[bot]-[process_message]-Found message sent to me. Do not respond
+2019-01-30 16:00:10.101-INFO-[_internal]-[_log]-127.0.0.1 - - [30/Jan/2019 16:00:10] "POST /events HTTP/1.1" 200 -
+2019-01-30 16:00:14.611-INFO-[server]-[webex_teams_webhook_events]-WEBHOOK POST RECEIVED:
+2019-01-30 16:00:14.612-INFO-[server]-[webex_teams_webhook_events]-{'id': 'Y2lzY29zcGFyazovL3VzL1dFQkhPT0svNTZlYjM3NWQtOWY3OC00YWI0LWE5YzYtYjBiYTUxNjM5NTBj', 'name': 'webhook_quiz_cl', 'targetUrl': 'http://fe73954c.ngrok.io/events', 'resource': 'messages', 'event': 'created', 'orgId': 'Y2lzY29zcGFyazovL3VzL09SR0FOSVpBVElPTi8xZWI2NWZkZi05NjQzLTQxN2YtOTk3NC1hZDcyY2FlMGUxMGY', 'createdBy': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'appId': 'Y2lzY29zcGFyazovL3VzL0FQUExJQ0FUSU9OL0MzMmM4MDc3NDBjNmU3ZGYxMWRhZjE2ZjIyOGRmNjI4YmJjYTQ5YmE1MmZlY2JiMmM3ZDUxNWNiNGEwY2M5MWFh', 'ownedBy': 'creator', 'status': 'active', 'created': '2019-01-30T12:59:11.054Z', 'actorId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg', 'data': {'id': 'Y2lzY29zcGFyazovL3VzL01FU1NBR0UvZmI1MGMwMDAtMjQ4ZS0xMWU5LThjZTgtZmY5YTE3ZjcwMGI2', 'roomId': 'Y2lzY29zcGFyazovL3VzL1JPT00vOTRiNTNkZDItNjE5MC0zYjIzLTgyY2MtOWNkYTc1NjkzMzA2', 'roomType': 'direct', 'personId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg', 'personEmail': 'asazhin@cisco.com', 'created': '2019-01-30T13:00:13.184Z'}}
+2019-01-30 16:00:14.914-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vOTRiNTNkZDItNjE5MC0zYjIzLTgyY2MtOWNkYTc1NjkzMzA2 HTTP/1.1" 200 None
+2019-01-30 16:00:15.148-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/messages/Y2lzY29zcGFyazovL3VzL01FU1NBR0UvZmI1MGMwMDAtMjQ4ZS0xMWU5LThjZTgtZmY5YTE3ZjcwMGI2 HTTP/1.1" 200 None
+2019-01-30 16:00:15.161-INFO-[bot]-[process_message]-message text received:1
+2019-01-30 16:00:15.428-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg HTTP/1.1" 200 None
+2019-01-30 16:00:15.692-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/me HTTP/1.1" 200 None
+2019-01-30 16:00:15.733-INFO-[bot]-[process_command]-Not found attached photo, proceeding with commands parsing
+2019-01-30 16:00:15.734-INFO-[bot]-[process_command]-command=1
+2019-01-30 16:00:15.882-INFO-[PSQL]-[psql_request2]-PSQL request: b"SELECT * FROM ciscolive.interview.persons WHERE id = 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg'"
+2019-01-30 16:00:15.883-INFO-[tasker]-[get_person]-SELECT 1
+2019-01-30 16:00:15.883-DEBUG-[tasker]-[get_person]-rows:[{'current_task': None, 'name': 'Alexey', 'surname': 'Sazhin', 'email': 'asazhin@cisco.com', 'id': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg', 'tech': 'Routing'}]
+2019-01-30 16:00:15.883-INFO-[bi_template]-[process_input_digit]-Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg:FOUND "[digit]" in message:1
+2019-01-30 16:00:16.046-INFO-[PSQL]-[psql_request]-PSQL request: b"SELECT task_id,loc_answer,epoch,user_answer FROM ciscolive.interview.assigned_tasks\n         WHERE person_id = 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg' ORDER BY epoch DESC"
+2019-01-30 16:00:16.047-INFO-[tasker]-[get_assigned_tasks_by_person]-SELECT 1
+2019-01-30 16:00:16.047-DEBUG-[tasker]-[get_assigned_tasks_by_person]-rows:[[29, 1, 190, None]]
+2019-01-30 16:00:16.047-INFO-[bi_template]-[check_answer_in_range]-Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg:Latest task_id for the user Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg:29
+2019-01-30 16:00:16.290-INFO-[PSQL]-[psql_request]-PSQL request: b'SELECT id,task,answer,variants,picture_path,explain FROM ciscolive.interview.tasks WHERE id = 29'
+2019-01-30 16:00:16.291-INFO-[tasker]-[get_assigned_task_by_id]-SELECT 1
+2019-01-30 16:00:16.291-DEBUG-[tasker]-[get_assigned_task_by_id]-row:[29, 'What is maximum delay between WLC and AP inside SDA site?', 1, ['20 ms', '40 ms', '35 ms', 'not limited'], None, 'Check Controller chapter: https://www.cisco.com/c/en/us/td/docs/wireless/controller/technotes/8-5/b_SD_Access_Wireless_Deployment_Guide.html']
+2019-01-30 16:00:16.462-INFO-[PSQL]-[psql_request]-PSQL request: b"SELECT task_id,loc_answer,epoch,user_answer FROM ciscolive.interview.assigned_tasks\n         WHERE person_id = 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg' ORDER BY epoch DESC"
+2019-01-30 16:00:16.463-INFO-[tasker]-[get_assigned_tasks_by_person]-SELECT 1
+2019-01-30 16:00:16.463-DEBUG-[tasker]-[get_assigned_tasks_by_person]-rows:[[29, 1, 190, None]]
+2019-01-30 16:00:16.463-INFO-[bi_template]-[is_enough]-Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg:All user tasks:[[29, 1, 190, None]]
+2019-01-30 16:00:16.620-INFO-[PSQL]-[psql_request]-PSQL request: b"SELECT task_id,loc_answer,epoch,user_answer FROM ciscolive.interview.assigned_tasks\n         WHERE person_id = 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg' ORDER BY epoch DESC"
+2019-01-30 16:00:16.621-INFO-[tasker]-[get_assigned_tasks_by_person]-SELECT 1
+2019-01-30 16:00:16.621-DEBUG-[tasker]-[get_assigned_tasks_by_person]-rows:[[29, 1, 190, None]]
+2019-01-30 16:00:16.621-INFO-[tasker]-[has_task]-        SELECT task_id FROM ciscolive.interview.assigned_tasks
+        WHERE person_id = %s ORDER BY epoch DESC;
+2019-01-30 16:00:16.774-INFO-[PSQL]-[psql_request]-PSQL request: b"        SELECT task_id FROM ciscolive.interview.assigned_tasks\n        WHERE person_id = 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg' ORDER BY epoch DESC;"
+2019-01-30 16:00:16.775-INFO-[tasker]-[has_task]-SELECT 1
+2019-01-30 16:00:16.775-DEBUG-[tasker]-[has_task]-rows:[[29]]
+2019-01-30 16:00:16.775-DEBUG-[bi_template]-[save_user_answer]-Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg:Found current task id:29
+2019-01-30 16:00:16.924-INFO-[PSQL]-[psql_request]-PSQL request: b'SELECT id,task,answer,variants,picture_path,explain FROM ciscolive.interview.tasks WHERE id = 29'
+2019-01-30 16:00:16.925-INFO-[tasker]-[get_assigned_task_by_id]-SELECT 1
+2019-01-30 16:00:16.925-DEBUG-[tasker]-[get_assigned_task_by_id]-row:[29, 'What is maximum delay between WLC and AP inside SDA site?', 1, ['20 ms', '40 ms', '35 ms', 'not limited'], None, 'Check Controller chapter: https://www.cisco.com/c/en/us/td/docs/wireless/controller/technotes/8-5/b_SD_Access_Wireless_Deployment_Guide.html']
+2019-01-30 16:00:17.076-INFO-[PSQL]-[psql_request]-PSQL request: b"UPDATE \n                     ciscolive.interview.assigned_tasks  SET user_answer = '1' \n                     WHERE task_id = '29' AND person_id = 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg';\n                  "
+2019-01-30 16:00:17.077-INFO-[tasker]-[save_user_answer]-UPDATE 1
+2019-01-30 16:00:17.077-INFO-[PSQL]-[Commit]-Commit done
+2019-01-30 16:00:17.233-INFO-[bi_template]-[save_user_answer]-Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg:Successfully saved user answer
+2019-01-30 16:00:17.602-INFO-[PSQL]-[psql_request2]-PSQL request: b"SELECT * FROM ciscolive.interview.persons WHERE id = 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg'"
+2019-01-30 16:00:17.603-INFO-[tasker]-[get_person]-SELECT 1
+2019-01-30 16:00:17.603-DEBUG-[tasker]-[get_person]-rows:[{'current_task': None, 'name': 'Alexey', 'surname': 'Sazhin', 'email': 'asazhin@cisco.com', 'id': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg', 'tech': 'Routing'}]
+2019-01-30 16:00:17.760-INFO-[PSQL]-[psql_request]-PSQL request: b"SELECT task_id,loc_answer,epoch,user_answer FROM ciscolive.interview.assigned_tasks\n         WHERE person_id = 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg' ORDER BY epoch DESC"
+2019-01-30 16:00:17.761-INFO-[tasker]-[get_assigned_tasks_by_person]-SELECT 1
+2019-01-30 16:00:17.761-DEBUG-[tasker]-[get_assigned_tasks_by_person]-rows:[[29, 1, 190, 1]]
+2019-01-30 16:00:17.761-INFO-[bi_template]-[assign_new_task]-Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg:All user tasks:[[29, 1, 190, 1]]
+2019-01-30 16:00:17.933-INFO-[PSQL]-[psql_request]-PSQL request: b"SELECT\n        id, task, answer, variants, picture_path\n        FROM\n        ciscolive.interview.tasks\n        WHERE id\n        NOT\n        IN(\n        SELECT task_id\n        FROM\n        ciscolive.interview.assigned_tasks\n        WHERE\n        person_id = 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg'\n        ) AND tech = 'Routing';"
+2019-01-30 16:00:17.934-INFO-[tasker]-[get_random_task]-SELECT 5
+2019-01-30 16:00:17.934-DEBUG-[tasker]-[get_random_task]-rows:[[27, 'What types of encapsulation is used inside SDA Fabric?', 3, ['GRE', 'MPLS', 'VXLAN', 'LISP'], None], [28, 'To what VRF (VN) are Access points and SDA Extension nodes placed in SDA Fabric?', 2, ['DEFAULT_VN', 'INFRA_VN', 'Should be configure by admin', 'JUMP_VN'], None], [30, 'Customer asks your opinion about per-packet load-balancing, what you will answer?', 3, ['It can be used for VoIP applications to prioritize that type of traffic', 'It was supported only on old platforms and should be avoided', 'It can cause out-of-sequence packets and should be avoided'], None], [31, 'If the packet fragments somewhere along the path, which device will reassamble fragments?', 3, ['last-hop router along the path', 'next-hop router for the fragmented router', 'receiving host', 'last-hop switch device'], None], [32, 'What is considered to be best practice in placing Multicast RP for running Multicast over DMVPN?', 1, ['Place RP behind the hub', 'Place RP on the huge spoke', 'Place it on hub and also spokes'], None]]
+2019-01-30 16:00:17.934-INFO-[tasker]-[assign_task]-        INSERT INTO ciscolive.interview.assigned_tasks
+        (person_id,task_id,loc_answer)
+        VALUES (%s, %s, %s);
+2019-01-30 16:00:18.079-INFO-[PSQL]-[psql_request]-PSQL request: b"        INSERT INTO ciscolive.interview.assigned_tasks\n        (person_id,task_id,loc_answer)\n        VALUES ('Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg', 30, 3);"
+2019-01-30 16:00:18.080-INFO-[tasker]-[assign_task]-INSERT 0 1
+2019-01-30 16:00:18.080-INFO-[PSQL]-[Commit]-Commit done
+2019-01-30 16:00:18.237-INFO-[bi_template]-[assign_new_task]-Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg:Added task to the assigned_tasks table successfully
+2019-01-30 16:00:18.594-INFO-[PSQL]-[psql_request]-PSQL request: b"SELECT task_id,loc_answer,epoch,user_answer FROM ciscolive.interview.assigned_tasks\n         WHERE person_id = 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg' ORDER BY epoch DESC"
+2019-01-30 16:00:18.595-INFO-[tasker]-[get_assigned_tasks_by_person]-SELECT 2
+2019-01-30 16:00:18.595-DEBUG-[tasker]-[get_assigned_tasks_by_person]-rows:[[30, 3, 191, None], [29, 1, 190, 1]]
+2019-01-30 16:00:18.595-INFO-[bi_template]-[get_current_task]-Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg:All user tasks:[[30, 3, 191, None], [29, 1, 190, 1]]
+2019-01-30 16:00:19.074-INFO-[PSQL]-[psql_request]-PSQL request: b'SELECT id,task,answer,variants,picture_path,explain FROM ciscolive.interview.tasks WHERE id = 30'
+2019-01-30 16:00:19.075-INFO-[tasker]-[get_assigned_task_by_id]-SELECT 1
+2019-01-30 16:00:19.075-DEBUG-[tasker]-[get_assigned_task_by_id]-row:[30, 'Customer asks your opinion about per-packet load-balancing, what you will answer?', 3, ['It can be used for VoIP applications to prioritize that type of traffic', 'It was supported only on old platforms and should be avoided', 'It can cause out-of-sequence packets and should be avoided'], None, 'Using per-packet load balancing to share the traffic load across available paths to a given destination can cause out-of-sequence packets in a particular data flow. This can result in unsatisfactory data transmission for video and voice streaming.']
+2019-01-30 16:00:19.075-INFO-[bi_template]-[get_current_task]-Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg:Picture path is null, sending task without attachment
+2019-01-30 16:00:19.075-INFO-[bi_template]-[process_input_digit]-Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg:Picture path is null, sending task without attachment
+2019-01-30 16:00:19.614-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "POST /v1/messages HTTP/1.1" 200 None
+2019-01-30 16:00:19.842-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "POST /v1/messages HTTP/1.1" 200 None
+2019-01-30 16:00:19.870-INFO-[_internal]-[_log]-127.0.0.1 - - [30/Jan/2019 16:00:19] "POST /events HTTP/1.1" 200 -
+2019-01-30 16:00:20.626-INFO-[server]-[webex_teams_webhook_events]-WEBHOOK POST RECEIVED:
+2019-01-30 16:00:20.627-INFO-[server]-[webex_teams_webhook_events]-{'id': 'Y2lzY29zcGFyazovL3VzL1dFQkhPT0svNTZlYjM3NWQtOWY3OC00YWI0LWE5YzYtYjBiYTUxNjM5NTBj', 'name': 'webhook_quiz_cl', 'targetUrl': 'http://fe73954c.ngrok.io/events', 'resource': 'messages', 'event': 'created', 'orgId': 'Y2lzY29zcGFyazovL3VzL09SR0FOSVpBVElPTi8xZWI2NWZkZi05NjQzLTQxN2YtOTk3NC1hZDcyY2FlMGUxMGY', 'createdBy': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'appId': 'Y2lzY29zcGFyazovL3VzL0FQUExJQ0FUSU9OL0MzMmM4MDc3NDBjNmU3ZGYxMWRhZjE2ZjIyOGRmNjI4YmJjYTQ5YmE1MmZlY2JiMmM3ZDUxNWNiNGEwY2M5MWFh', 'ownedBy': 'creator', 'status': 'active', 'created': '2019-01-30T12:59:11.054Z', 'actorId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'data': {'id': 'Y2lzY29zcGFyazovL3VzL01FU1NBR0UvZmYzY2EwMzAtMjQ4ZS0xMWU5LTgyNzAtMjVhNTljNzExMzE4', 'roomId': 'Y2lzY29zcGFyazovL3VzL1JPT00vOTRiNTNkZDItNjE5MC0zYjIzLTgyY2MtOWNkYTc1NjkzMzA2', 'roomType': 'direct', 'personId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'personEmail': 'asazhin_bot1@webex.bot', 'created': '2019-01-30T13:00:19.763Z'}}
+2019-01-30 16:00:20.799-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vOTRiNTNkZDItNjE5MC0zYjIzLTgyY2MtOWNkYTc1NjkzMzA2 HTTP/1.1" 200 None
+2019-01-30 16:00:20.988-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/messages/Y2lzY29zcGFyazovL3VzL01FU1NBR0UvZmYzY2EwMzAtMjQ4ZS0xMWU5LTgyNzAtMjVhNTljNzExMzE4 HTTP/1.1" 200 None
+2019-01-30 16:00:20.999-INFO-[bot]-[process_message]-message text received:The #2 question for you: —————————————————- Customer asks your opinion about per-packet load-balancing, what you will answer? —————————————————- 1. It can be used for VoIP applications to prioritize that type of traffic 2. It was supported only on old platforms and should be avoided 3. It can cause out-of-sequence packets and should be avoided —————————————————- Choose your answer (1 to 3):
+2019-01-30 16:00:21.095-INFO-[server]-[webex_teams_webhook_events]-WEBHOOK POST RECEIVED:
+2019-01-30 16:00:21.096-INFO-[server]-[webex_teams_webhook_events]-{'id': 'Y2lzY29zcGFyazovL3VzL1dFQkhPT0svNTZlYjM3NWQtOWY3OC00YWI0LWE5YzYtYjBiYTUxNjM5NTBj', 'name': 'webhook_quiz_cl', 'targetUrl': 'http://fe73954c.ngrok.io/events', 'resource': 'messages', 'event': 'created', 'orgId': 'Y2lzY29zcGFyazovL3VzL09SR0FOSVpBVElPTi8xZWI2NWZkZi05NjQzLTQxN2YtOTk3NC1hZDcyY2FlMGUxMGY', 'createdBy': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'appId': 'Y2lzY29zcGFyazovL3VzL0FQUExJQ0FUSU9OL0MzMmM4MDc3NDBjNmU3ZGYxMWRhZjE2ZjIyOGRmNjI4YmJjYTQ5YmE1MmZlY2JiMmM3ZDUxNWNiNGEwY2M5MWFh', 'ownedBy': 'creator', 'status': 'active', 'created': '2019-01-30T12:59:11.054Z', 'actorId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'data': {'id': 'Y2lzY29zcGFyazovL3VzL01FU1NBR0UvZmVlYzVkNTAtMjQ4ZS0xMWU5LTgyNzAtMjVhNTljNzExMzE4', 'roomId': 'Y2lzY29zcGFyazovL3VzL1JPT00vOTRiNTNkZDItNjE5MC0zYjIzLTgyY2MtOWNkYTc1NjkzMzA2', 'roomType': 'direct', 'personId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'personEmail': 'asazhin_bot1@webex.bot', 'created': '2019-01-30T13:00:19.237Z'}}
+2019-01-30 16:00:21.188-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI HTTP/1.1" 200 None
+2019-01-30 16:00:21.282-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vOTRiNTNkZDItNjE5MC0zYjIzLTgyY2MtOWNkYTc1NjkzMzA2 HTTP/1.1" 200 None
+2019-01-30 16:00:21.689-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/messages/Y2lzY29zcGFyazovL3VzL01FU1NBR0UvZmVlYzVkNTAtMjQ4ZS0xMWU5LTgyNzAtMjVhNTljNzExMzE4 HTTP/1.1" 200 None
+2019-01-30 16:00:21.690-INFO-[bot]-[process_message]-message text received:Thank you, your answer was accepted
+2019-01-30 16:00:21.869-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI HTTP/1.1" 200 None
+2019-01-30 16:00:21.998-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/me HTTP/1.1" 200 None
+2019-01-30 16:00:21.998-INFO-[bot]-[process_message]-Found message sent to me. Do not respond
+2019-01-30 16:00:21.999-INFO-[_internal]-[_log]-127.0.0.1 - - [30/Jan/2019 16:00:21] "POST /events HTTP/1.1" 200 -
+2019-01-30 16:00:22.745-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/me HTTP/1.1" 200 None
+2019-01-30 16:00:22.930-INFO-[bot]-[process_message]-Found message sent to me. Do not respond
+2019-01-30 16:00:22.930-INFO-[_internal]-[_log]-127.0.0.1 - - [30/Jan/2019 16:00:22] "POST /events HTTP/1.1" 200 -
+2019-01-30 16:00:42.655-INFO-[server]-[webex_teams_webhook_events]-WEBHOOK POST RECEIVED:
+2019-01-30 16:00:42.656-INFO-[server]-[webex_teams_webhook_events]-{'id': 'Y2lzY29zcGFyazovL3VzL1dFQkhPT0svNTZlYjM3NWQtOWY3OC00YWI0LWE5YzYtYjBiYTUxNjM5NTBj', 'name': 'webhook_quiz_cl', 'targetUrl': 'http://fe73954c.ngrok.io/events', 'resource': 'messages', 'event': 'created', 'orgId': 'Y2lzY29zcGFyazovL3VzL09SR0FOSVpBVElPTi8xZWI2NWZkZi05NjQzLTQxN2YtOTk3NC1hZDcyY2FlMGUxMGY', 'createdBy': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'appId': 'Y2lzY29zcGFyazovL3VzL0FQUExJQ0FUSU9OL0MzMmM4MDc3NDBjNmU3ZGYxMWRhZjE2ZjIyOGRmNjI4YmJjYTQ5YmE1MmZlY2JiMmM3ZDUxNWNiNGEwY2M5MWFh', 'ownedBy': 'creator', 'status': 'active', 'created': '2019-01-30T12:59:11.054Z', 'actorId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg', 'data': {'id': 'Y2lzY29zcGFyazovL3VzL01FU1NBR0UvMGM5OWE1NzAtMjQ4Zi0xMWU5LTljODAtNjE0M2YwMmU2YmNl', 'roomId': 'Y2lzY29zcGFyazovL3VzL1JPT00vOTRiNTNkZDItNjE5MC0zYjIzLTgyY2MtOWNkYTc1NjkzMzA2', 'roomType': 'direct', 'personId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg', 'personEmail': 'asazhin@cisco.com', 'created': '2019-01-30T13:00:42.183Z'}}
+2019-01-30 16:00:42.829-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vOTRiNTNkZDItNjE5MC0zYjIzLTgyY2MtOWNkYTc1NjkzMzA2 HTTP/1.1" 200 None
+2019-01-30 16:00:43.080-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/messages/Y2lzY29zcGFyazovL3VzL01FU1NBR0UvMGM5OWE1NzAtMjQ4Zi0xMWU5LTljODAtNjE0M2YwMmU2YmNl HTTP/1.1" 200 None
+2019-01-30 16:00:43.115-INFO-[bot]-[process_message]-message text received:3
+2019-01-30 16:00:43.293-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg HTTP/1.1" 200 None
+2019-01-30 16:00:43.503-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/me HTTP/1.1" 200 None
+2019-01-30 16:00:43.552-INFO-[bot]-[process_command]-Not found attached photo, proceeding with commands parsing
+2019-01-30 16:00:43.553-INFO-[bot]-[process_command]-command=3
+2019-01-30 16:00:43.702-INFO-[PSQL]-[psql_request2]-PSQL request: b"SELECT * FROM ciscolive.interview.persons WHERE id = 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg'"
+2019-01-30 16:00:43.703-INFO-[tasker]-[get_person]-SELECT 1
+2019-01-30 16:00:43.704-DEBUG-[tasker]-[get_person]-rows:[{'current_task': None, 'name': 'Alexey', 'surname': 'Sazhin', 'email': 'asazhin@cisco.com', 'id': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg', 'tech': 'Routing'}]
+2019-01-30 16:00:43.704-INFO-[bi_template]-[process_input_digit]-Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg:FOUND "[digit]" in message:3
+2019-01-30 16:00:43.864-INFO-[PSQL]-[psql_request]-PSQL request: b"SELECT task_id,loc_answer,epoch,user_answer FROM ciscolive.interview.assigned_tasks\n         WHERE person_id = 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg' ORDER BY epoch DESC"
+2019-01-30 16:00:43.865-INFO-[tasker]-[get_assigned_tasks_by_person]-SELECT 2
+2019-01-30 16:00:43.865-DEBUG-[tasker]-[get_assigned_tasks_by_person]-rows:[[30, 3, 191, None], [29, 1, 190, 1]]
+2019-01-30 16:00:43.865-INFO-[bi_template]-[check_answer_in_range]-Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg:Latest task_id for the user Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg:30
+2019-01-30 16:00:44.028-INFO-[PSQL]-[psql_request]-PSQL request: b'SELECT id,task,answer,variants,picture_path,explain FROM ciscolive.interview.tasks WHERE id = 30'
+2019-01-30 16:00:44.028-INFO-[tasker]-[get_assigned_task_by_id]-SELECT 1
+2019-01-30 16:00:44.029-DEBUG-[tasker]-[get_assigned_task_by_id]-row:[30, 'Customer asks your opinion about per-packet load-balancing, what you will answer?', 3, ['It can be used for VoIP applications to prioritize that type of traffic', 'It was supported only on old platforms and should be avoided', 'It can cause out-of-sequence packets and should be avoided'], None, 'Using per-packet load balancing to share the traffic load across available paths to a given destination can cause out-of-sequence packets in a particular data flow. This can result in unsatisfactory data transmission for video and voice streaming.']
+2019-01-30 16:00:44.194-INFO-[PSQL]-[psql_request]-PSQL request: b"SELECT task_id,loc_answer,epoch,user_answer FROM ciscolive.interview.assigned_tasks\n         WHERE person_id = 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg' ORDER BY epoch DESC"
+2019-01-30 16:00:44.195-INFO-[tasker]-[get_assigned_tasks_by_person]-SELECT 2
+2019-01-30 16:00:44.195-DEBUG-[tasker]-[get_assigned_tasks_by_person]-rows:[[30, 3, 191, None], [29, 1, 190, 1]]
+2019-01-30 16:00:44.195-INFO-[bi_template]-[is_enough]-Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg:All user tasks:[[30, 3, 191, None], [29, 1, 190, 1]]
+2019-01-30 16:00:44.389-INFO-[PSQL]-[psql_request]-PSQL request: b"SELECT task_id,loc_answer,epoch,user_answer FROM ciscolive.interview.assigned_tasks\n         WHERE person_id = 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg' ORDER BY epoch DESC"
+2019-01-30 16:00:44.390-INFO-[tasker]-[get_assigned_tasks_by_person]-SELECT 2
+2019-01-30 16:00:44.390-DEBUG-[tasker]-[get_assigned_tasks_by_person]-rows:[[30, 3, 191, None], [29, 1, 190, 1]]
+2019-01-30 16:00:44.390-INFO-[tasker]-[has_task]-        SELECT task_id FROM ciscolive.interview.assigned_tasks
+        WHERE person_id = %s ORDER BY epoch DESC;
+2019-01-30 16:00:44.542-INFO-[PSQL]-[psql_request]-PSQL request: b"        SELECT task_id FROM ciscolive.interview.assigned_tasks\n        WHERE person_id = 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg' ORDER BY epoch DESC;"
+2019-01-30 16:00:44.542-INFO-[tasker]-[has_task]-SELECT 2
+2019-01-30 16:00:44.543-DEBUG-[tasker]-[has_task]-rows:[[30], [29]]
+2019-01-30 16:00:44.543-DEBUG-[bi_template]-[save_user_answer]-Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg:Found current task id:30
+2019-01-30 16:00:44.693-INFO-[PSQL]-[psql_request]-PSQL request: b'SELECT id,task,answer,variants,picture_path,explain FROM ciscolive.interview.tasks WHERE id = 30'
+2019-01-30 16:00:44.694-INFO-[tasker]-[get_assigned_task_by_id]-SELECT 1
+2019-01-30 16:00:44.694-DEBUG-[tasker]-[get_assigned_task_by_id]-row:[30, 'Customer asks your opinion about per-packet load-balancing, what you will answer?', 3, ['It can be used for VoIP applications to prioritize that type of traffic', 'It was supported only on old platforms and should be avoided', 'It can cause out-of-sequence packets and should be avoided'], None, 'Using per-packet load balancing to share the traffic load across available paths to a given destination can cause out-of-sequence packets in a particular data flow. This can result in unsatisfactory data transmission for video and voice streaming.']
+2019-01-30 16:00:44.845-INFO-[PSQL]-[psql_request]-PSQL request: b"UPDATE \n                     ciscolive.interview.assigned_tasks  SET user_answer = '3' \n                     WHERE task_id = '30' AND person_id = 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg';\n                  "
+2019-01-30 16:00:44.846-INFO-[tasker]-[save_user_answer]-UPDATE 1
+2019-01-30 16:00:44.846-INFO-[PSQL]-[Commit]-Commit done
+2019-01-30 16:00:45.000-INFO-[bi_template]-[save_user_answer]-Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg:Successfully saved user answer
+2019-01-30 16:00:45.307-INFO-[PSQL]-[psql_request2]-PSQL request: b"SELECT * FROM ciscolive.interview.persons WHERE id = 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg'"
+2019-01-30 16:00:45.307-INFO-[tasker]-[get_person]-SELECT 1
+2019-01-30 16:00:45.307-DEBUG-[tasker]-[get_person]-rows:[{'current_task': None, 'name': 'Alexey', 'surname': 'Sazhin', 'email': 'asazhin@cisco.com', 'id': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg', 'tech': 'Routing'}]
+2019-01-30 16:00:45.502-INFO-[PSQL]-[psql_request]-PSQL request: b"SELECT task_id,loc_answer,epoch,user_answer FROM ciscolive.interview.assigned_tasks\n         WHERE person_id = 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg' ORDER BY epoch DESC"
+2019-01-30 16:00:45.503-INFO-[tasker]-[get_assigned_tasks_by_person]-SELECT 2
+2019-01-30 16:00:45.503-DEBUG-[tasker]-[get_assigned_tasks_by_person]-rows:[[30, 3, 191, 3], [29, 1, 190, 1]]
+2019-01-30 16:00:45.503-INFO-[bi_template]-[assign_new_task]-Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg:All user tasks:[[30, 3, 191, 3], [29, 1, 190, 1]]
+2019-01-30 16:00:45.728-INFO-[PSQL]-[psql_request]-PSQL request: b"SELECT\n        id, task, answer, variants, picture_path\n        FROM\n        ciscolive.interview.tasks\n        WHERE id\n        NOT\n        IN(\n        SELECT task_id\n        FROM\n        ciscolive.interview.assigned_tasks\n        WHERE\n        person_id = 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg'\n        ) AND tech = 'Routing';"
+2019-01-30 16:00:45.729-INFO-[tasker]-[get_random_task]-SELECT 4
+2019-01-30 16:00:45.729-DEBUG-[tasker]-[get_random_task]-rows:[[27, 'What types of encapsulation is used inside SDA Fabric?', 3, ['GRE', 'MPLS', 'VXLAN', 'LISP'], None], [28, 'To what VRF (VN) are Access points and SDA Extension nodes placed in SDA Fabric?', 2, ['DEFAULT_VN', 'INFRA_VN', 'Should be configure by admin', 'JUMP_VN'], None], [31, 'If the packet fragments somewhere along the path, which device will reassamble fragments?', 3, ['last-hop router along the path', 'next-hop router for the fragmented router', 'receiving host', 'last-hop switch device'], None], [32, 'What is considered to be best practice in placing Multicast RP for running Multicast over DMVPN?', 1, ['Place RP behind the hub', 'Place RP on the huge spoke', 'Place it on hub and also spokes'], None]]
+2019-01-30 16:00:45.729-INFO-[tasker]-[assign_task]-        INSERT INTO ciscolive.interview.assigned_tasks
+        (person_id,task_id,loc_answer)
+        VALUES (%s, %s, %s);
+2019-01-30 16:00:45.891-INFO-[PSQL]-[psql_request]-PSQL request: b"        INSERT INTO ciscolive.interview.assigned_tasks\n        (person_id,task_id,loc_answer)\n        VALUES ('Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg', 27, 3);"
+2019-01-30 16:00:45.893-INFO-[tasker]-[assign_task]-INSERT 0 1
+2019-01-30 16:00:45.893-INFO-[PSQL]-[Commit]-Commit done
+2019-01-30 16:00:46.107-INFO-[bi_template]-[assign_new_task]-Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg:Added task to the assigned_tasks table successfully
+2019-01-30 16:00:46.475-INFO-[PSQL]-[psql_request]-PSQL request: b"SELECT task_id,loc_answer,epoch,user_answer FROM ciscolive.interview.assigned_tasks\n         WHERE person_id = 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg' ORDER BY epoch DESC"
+2019-01-30 16:00:46.475-INFO-[tasker]-[get_assigned_tasks_by_person]-SELECT 3
+2019-01-30 16:00:46.475-DEBUG-[tasker]-[get_assigned_tasks_by_person]-rows:[[27, 3, 192, None], [30, 3, 191, 3], [29, 1, 190, 1]]
+2019-01-30 16:00:46.475-INFO-[bi_template]-[get_current_task]-Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg:All user tasks:[[27, 3, 192, None], [30, 3, 191, 3], [29, 1, 190, 1]]
+2019-01-30 16:00:46.655-INFO-[PSQL]-[psql_request]-PSQL request: b'SELECT id,task,answer,variants,picture_path,explain FROM ciscolive.interview.tasks WHERE id = 27'
+2019-01-30 16:00:46.656-INFO-[tasker]-[get_assigned_task_by_id]-SELECT 1
+2019-01-30 16:00:46.656-DEBUG-[tasker]-[get_assigned_task_by_id]-row:[27, 'What types of encapsulation is used inside SDA Fabric?', 3, ['GRE', 'MPLS', 'VXLAN', 'LISP'], None, 'Check SDA whitepaper https://www.cisco.com/c/dam/en/us/solutions/collateral/enterprise-networks/software-defined-access/white-paper-c11-740585.pdf']
+2019-01-30 16:00:46.656-INFO-[bi_template]-[get_current_task]-Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg:Picture path is null, sending task without attachment
+2019-01-30 16:00:46.656-INFO-[bi_template]-[process_input_digit]-Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg:Picture path is null, sending task without attachment
+2019-01-30 16:00:47.159-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "POST /v1/messages HTTP/1.1" 200 None
+2019-01-30 16:00:47.450-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "POST /v1/messages HTTP/1.1" 200 None
+2019-01-30 16:00:47.453-INFO-[_internal]-[_log]-127.0.0.1 - - [30/Jan/2019 16:00:47] "POST /events HTTP/1.1" 200 -
+2019-01-30 16:00:47.479-INFO-[server]-[webex_teams_webhook_events]-WEBHOOK POST RECEIVED:
+2019-01-30 16:00:47.480-INFO-[server]-[webex_teams_webhook_events]-{'id': 'Y2lzY29zcGFyazovL3VzL1dFQkhPT0svNTZlYjM3NWQtOWY3OC00YWI0LWE5YzYtYjBiYTUxNjM5NTBj', 'name': 'webhook_quiz_cl', 'targetUrl': 'http://fe73954c.ngrok.io/events', 'resource': 'messages', 'event': 'created', 'orgId': 'Y2lzY29zcGFyazovL3VzL09SR0FOSVpBVElPTi8xZWI2NWZkZi05NjQzLTQxN2YtOTk3NC1hZDcyY2FlMGUxMGY', 'createdBy': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'appId': 'Y2lzY29zcGFyazovL3VzL0FQUExJQ0FUSU9OL0MzMmM4MDc3NDBjNmU3ZGYxMWRhZjE2ZjIyOGRmNjI4YmJjYTQ5YmE1MmZlY2JiMmM3ZDUxNWNiNGEwY2M5MWFh', 'ownedBy': 'creator', 'status': 'active', 'created': '2019-01-30T12:59:11.054Z', 'actorId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'data': {'id': 'Y2lzY29zcGFyazovL3VzL01FU1NBR0UvMGY2OWI1NjAtMjQ4Zi0xMWU5LTk3ODMtYTkyZGVhZmUyNGMw', 'roomId': 'Y2lzY29zcGFyazovL3VzL1JPT00vOTRiNTNkZDItNjE5MC0zYjIzLTgyY2MtOWNkYTc1NjkzMzA2', 'roomType': 'direct', 'personId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'personEmail': 'asazhin_bot1@webex.bot', 'created': '2019-01-30T13:00:46.902Z'}}
+2019-01-30 16:00:47.694-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vOTRiNTNkZDItNjE5MC0zYjIzLTgyY2MtOWNkYTc1NjkzMzA2 HTTP/1.1" 200 None
+2019-01-30 16:00:47.862-INFO-[server]-[webex_teams_webhook_events]-WEBHOOK POST RECEIVED:
+2019-01-30 16:00:47.862-INFO-[server]-[webex_teams_webhook_events]-{'id': 'Y2lzY29zcGFyazovL3VzL1dFQkhPT0svNTZlYjM3NWQtOWY3OC00YWI0LWE5YzYtYjBiYTUxNjM5NTBj', 'name': 'webhook_quiz_cl', 'targetUrl': 'http://fe73954c.ngrok.io/events', 'resource': 'messages', 'event': 'created', 'orgId': 'Y2lzY29zcGFyazovL3VzL09SR0FOSVpBVElPTi8xZWI2NWZkZi05NjQzLTQxN2YtOTk3NC1hZDcyY2FlMGUxMGY', 'createdBy': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'appId': 'Y2lzY29zcGFyazovL3VzL0FQUExJQ0FUSU9OL0MzMmM4MDc3NDBjNmU3ZGYxMWRhZjE2ZjIyOGRmNjI4YmJjYTQ5YmE1MmZlY2JiMmM3ZDUxNWNiNGEwY2M5MWFh', 'ownedBy': 'creator', 'status': 'active', 'created': '2019-01-30T12:59:11.054Z', 'actorId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'data': {'id': 'Y2lzY29zcGFyazovL3VzL01FU1NBR0UvMGZhODkzMjAtMjQ4Zi0xMWU5LTgzYjAtMDFkNzY4ZjFmNWU5', 'roomId': 'Y2lzY29zcGFyazovL3VzL1JPT00vOTRiNTNkZDItNjE5MC0zYjIzLTgyY2MtOWNkYTc1NjkzMzA2', 'roomType': 'direct', 'personId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'personEmail': 'asazhin_bot1@webex.bot', 'created': '2019-01-30T13:00:47.314Z'}}
+2019-01-30 16:00:47.914-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/messages/Y2lzY29zcGFyazovL3VzL01FU1NBR0UvMGY2OWI1NjAtMjQ4Zi0xMWU5LTk3ODMtYTkyZGVhZmUyNGMw HTTP/1.1" 200 None
+2019-01-30 16:00:47.915-INFO-[bot]-[process_message]-message text received:Thank you, your answer was accepted
+2019-01-30 16:00:48.586-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vOTRiNTNkZDItNjE5MC0zYjIzLTgyY2MtOWNkYTc1NjkzMzA2 HTTP/1.1" 200 None
+2019-01-30 16:00:48.598-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI HTTP/1.1" 200 None
+2019-01-30 16:00:48.785-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/messages/Y2lzY29zcGFyazovL3VzL01FU1NBR0UvMGZhODkzMjAtMjQ4Zi0xMWU5LTgzYjAtMDFkNzY4ZjFmNWU5 HTTP/1.1" 200 None
+2019-01-30 16:00:48.789-INFO-[bot]-[process_message]-message text received:The #3 question for you: —————————————————- What types of encapsulation is used inside SDA Fabric? —————————————————- 1. GRE 2. MPLS 3. VXLAN 4. LISP —————————————————- Choose your answer (1 to 4):
+2019-01-30 16:00:48.811-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/me HTTP/1.1" 200 None
+2019-01-30 16:00:48.813-INFO-[bot]-[process_message]-Found message sent to me. Do not respond
+2019-01-30 16:00:48.813-INFO-[_internal]-[_log]-127.0.0.1 - - [30/Jan/2019 16:00:48] "POST /events HTTP/1.1" 200 -
+2019-01-30 16:00:49.308-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI HTTP/1.1" 200 None
+2019-01-30 16:00:49.596-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/me HTTP/1.1" 200 None
+2019-01-30 16:00:49.597-INFO-[bot]-[process_message]-Found message sent to me. Do not respond
+2019-01-30 16:00:49.598-INFO-[_internal]-[_log]-127.0.0.1 - - [30/Jan/2019 16:00:49] "POST /events HTTP/1.1" 200 -
+2019-01-30 16:00:57.339-INFO-[server]-[webex_teams_webhook_events]-WEBHOOK POST RECEIVED:
+2019-01-30 16:00:57.340-INFO-[server]-[webex_teams_webhook_events]-{'id': 'Y2lzY29zcGFyazovL3VzL1dFQkhPT0svNTZlYjM3NWQtOWY3OC00YWI0LWE5YzYtYjBiYTUxNjM5NTBj', 'name': 'webhook_quiz_cl', 'targetUrl': 'http://fe73954c.ngrok.io/events', 'resource': 'messages', 'event': 'created', 'orgId': 'Y2lzY29zcGFyazovL3VzL09SR0FOSVpBVElPTi8xZWI2NWZkZi05NjQzLTQxN2YtOTk3NC1hZDcyY2FlMGUxMGY', 'createdBy': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'appId': 'Y2lzY29zcGFyazovL3VzL0FQUExJQ0FUSU9OL0MzMmM4MDc3NDBjNmU3ZGYxMWRhZjE2ZjIyOGRmNjI4YmJjYTQ5YmE1MmZlY2JiMmM3ZDUxNWNiNGEwY2M5MWFh', 'ownedBy': 'creator', 'status': 'active', 'created': '2019-01-30T12:59:11.054Z', 'actorId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg', 'data': {'id': 'Y2lzY29zcGFyazovL3VzL01FU1NBR0UvMTU0MWFlMjAtMjQ4Zi0xMWU5LTg1MmQtYmIyYjJlYjUxYzJh', 'roomId': 'Y2lzY29zcGFyazovL3VzL1JPT00vOTRiNTNkZDItNjE5MC0zYjIzLTgyY2MtOWNkYTc1NjkzMzA2', 'roomType': 'direct', 'personId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg', 'personEmail': 'asazhin@cisco.com', 'created': '2019-01-30T13:00:56.706Z'}}
+2019-01-30 16:00:57.672-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vOTRiNTNkZDItNjE5MC0zYjIzLTgyY2MtOWNkYTc1NjkzMzA2 HTTP/1.1" 200 None
+2019-01-30 16:00:58.042-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/messages/Y2lzY29zcGFyazovL3VzL01FU1NBR0UvMTU0MWFlMjAtMjQ4Zi0xMWU5LTg1MmQtYmIyYjJlYjUxYzJh HTTP/1.1" 200 None
+2019-01-30 16:00:58.043-INFO-[bot]-[process_message]-message text received:3
+2019-01-30 16:00:58.221-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg HTTP/1.1" 200 None
+2019-01-30 16:00:58.430-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/me HTTP/1.1" 200 None
+2019-01-30 16:00:58.431-INFO-[bot]-[process_command]-Not found attached photo, proceeding with commands parsing
+2019-01-30 16:00:58.431-INFO-[bot]-[process_command]-command=3
+2019-01-30 16:00:58.702-INFO-[PSQL]-[psql_request2]-PSQL request: b"SELECT * FROM ciscolive.interview.persons WHERE id = 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg'"
+2019-01-30 16:00:58.703-INFO-[tasker]-[get_person]-SELECT 1
+2019-01-30 16:00:58.703-DEBUG-[tasker]-[get_person]-rows:[{'current_task': None, 'name': 'Alexey', 'surname': 'Sazhin', 'email': 'asazhin@cisco.com', 'id': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg', 'tech': 'Routing'}]
+2019-01-30 16:00:58.703-INFO-[bi_template]-[process_input_digit]-Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg:FOUND "[digit]" in message:3
+2019-01-30 16:00:58.847-INFO-[PSQL]-[psql_request]-PSQL request: b"SELECT task_id,loc_answer,epoch,user_answer FROM ciscolive.interview.assigned_tasks\n         WHERE person_id = 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg' ORDER BY epoch DESC"
+2019-01-30 16:00:58.848-INFO-[tasker]-[get_assigned_tasks_by_person]-SELECT 3
+2019-01-30 16:00:58.848-DEBUG-[tasker]-[get_assigned_tasks_by_person]-rows:[[27, 3, 192, None], [30, 3, 191, 3], [29, 1, 190, 1]]
+2019-01-30 16:00:58.848-INFO-[bi_template]-[check_answer_in_range]-Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg:Latest task_id for the user Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg:27
+2019-01-30 16:00:59.029-INFO-[PSQL]-[psql_request]-PSQL request: b'SELECT id,task,answer,variants,picture_path,explain FROM ciscolive.interview.tasks WHERE id = 27'
+2019-01-30 16:00:59.030-INFO-[tasker]-[get_assigned_task_by_id]-SELECT 1
+2019-01-30 16:00:59.030-DEBUG-[tasker]-[get_assigned_task_by_id]-row:[27, 'What types of encapsulation is used inside SDA Fabric?', 3, ['GRE', 'MPLS', 'VXLAN', 'LISP'], None, 'Check SDA whitepaper https://www.cisco.com/c/dam/en/us/solutions/collateral/enterprise-networks/software-defined-access/white-paper-c11-740585.pdf']
+2019-01-30 16:00:59.414-INFO-[PSQL]-[psql_request]-PSQL request: b"SELECT task_id,loc_answer,epoch,user_answer FROM ciscolive.interview.assigned_tasks\n         WHERE person_id = 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg' ORDER BY epoch DESC"
+2019-01-30 16:00:59.414-INFO-[tasker]-[get_assigned_tasks_by_person]-SELECT 3
+2019-01-30 16:00:59.414-DEBUG-[tasker]-[get_assigned_tasks_by_person]-rows:[[27, 3, 192, None], [30, 3, 191, 3], [29, 1, 190, 1]]
+2019-01-30 16:00:59.415-INFO-[bi_template]-[is_enough]-Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg:All user tasks:[[27, 3, 192, None], [30, 3, 191, 3], [29, 1, 190, 1]]
+2019-01-30 16:00:59.578-INFO-[PSQL]-[psql_request]-PSQL request: b"SELECT task_id,loc_answer,epoch,user_answer FROM ciscolive.interview.assigned_tasks\n         WHERE person_id = 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg' ORDER BY epoch DESC"
+2019-01-30 16:00:59.578-INFO-[tasker]-[get_assigned_tasks_by_person]-SELECT 3
+2019-01-30 16:00:59.579-DEBUG-[tasker]-[get_assigned_tasks_by_person]-rows:[[27, 3, 192, None], [30, 3, 191, 3], [29, 1, 190, 1]]
+2019-01-30 16:00:59.579-INFO-[tasker]-[has_task]-        SELECT task_id FROM ciscolive.interview.assigned_tasks
+        WHERE person_id = %s ORDER BY epoch DESC;
+2019-01-30 16:00:59.747-INFO-[PSQL]-[psql_request]-PSQL request: b"        SELECT task_id FROM ciscolive.interview.assigned_tasks\n        WHERE person_id = 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg' ORDER BY epoch DESC;"
+2019-01-30 16:00:59.748-INFO-[tasker]-[has_task]-SELECT 3
+2019-01-30 16:00:59.748-DEBUG-[tasker]-[has_task]-rows:[[27], [30], [29]]
+2019-01-30 16:00:59.748-DEBUG-[bi_template]-[save_user_answer]-Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg:Found current task id:27
+2019-01-30 16:00:59.903-INFO-[PSQL]-[psql_request]-PSQL request: b'SELECT id,task,answer,variants,picture_path,explain FROM ciscolive.interview.tasks WHERE id = 27'
+2019-01-30 16:00:59.903-INFO-[tasker]-[get_assigned_task_by_id]-SELECT 1
+2019-01-30 16:00:59.904-DEBUG-[tasker]-[get_assigned_task_by_id]-row:[27, 'What types of encapsulation is used inside SDA Fabric?', 3, ['GRE', 'MPLS', 'VXLAN', 'LISP'], None, 'Check SDA whitepaper https://www.cisco.com/c/dam/en/us/solutions/collateral/enterprise-networks/software-defined-access/white-paper-c11-740585.pdf']
+2019-01-30 16:01:00.082-INFO-[PSQL]-[psql_request]-PSQL request: b"UPDATE \n                     ciscolive.interview.assigned_tasks  SET user_answer = '3' \n                     WHERE task_id = '27' AND person_id = 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg';\n                  "
+2019-01-30 16:01:00.083-INFO-[tasker]-[save_user_answer]-UPDATE 1
+2019-01-30 16:01:00.083-INFO-[PSQL]-[Commit]-Commit done
+2019-01-30 16:01:00.276-INFO-[bi_template]-[save_user_answer]-Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg:Successfully saved user answer
+2019-01-30 16:01:00.578-INFO-[PSQL]-[psql_request]-PSQL request: b"SELECT task_id,loc_answer,epoch,user_answer FROM ciscolive.interview.assigned_tasks\n         WHERE person_id = 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg' ORDER BY epoch DESC"
+2019-01-30 16:01:00.579-INFO-[tasker]-[get_assigned_tasks_by_person]-SELECT 3
+2019-01-30 16:01:00.579-DEBUG-[tasker]-[get_assigned_tasks_by_person]-rows:[[27, 3, 192, 3], [30, 3, 191, 3], [29, 1, 190, 1]]
+2019-01-30 16:01:00.580-INFO-[bi_template]-[generate_report_dict]-Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg:All user tasks:[[27, 3, 192, 3], [30, 3, 191, 3], [29, 1, 190, 1]]
+2019-01-30 16:01:00.780-INFO-[PSQL]-[psql_request2]-PSQL request: b"SELECT * FROM ciscolive.interview.assigned_tasks \n        WHERE loc_answer = user_answer\n        AND person_id = 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg' ORDER BY epoch ASC"
+2019-01-30 16:01:00.781-INFO-[tasker]-[get_correct_answers]-SELECT 3
+2019-01-30 16:01:00.781-DEBUG-[tasker]-[get_correct_answers]-rows:[{'task_id': 29, 'loc_answer': 1, 'epoch': 190, 'person_id': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg', 'user_answer': 1}, {'task_id': 30, 'loc_answer': 3, 'epoch': 191, 'person_id': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg', 'user_answer': 3}, {'task_id': 27, 'loc_answer': 3, 'epoch': 192, 'person_id': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg', 'user_answer': 3}]
+2019-01-30 16:01:00.959-INFO-[PSQL]-[psql_request2]-PSQL request: b"SELECT * FROM ciscolive.interview.assigned_tasks \n        WHERE loc_answer != user_answer\n        AND person_id = 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS85MjI1MGE0OC1jOTU1LTQ0YzEtOTMxMi0zNjMxNWMzMDJlMjg' ORDER BY epoch ASC"
+2019-01-30 16:01:00.960-INFO-[tasker]-[get_wrong_answers]-SELECT 0
+2019-01-30 16:01:00.960-DEBUG-[tasker]-[get_wrong_answers]-rows:[]
+2019-01-30 16:01:01.170-INFO-[PSQL]-[psql_request]-PSQL request: b'SELECT id,task,answer,variants,picture_path,explain FROM ciscolive.interview.tasks WHERE id = 29'
+2019-01-30 16:01:01.170-INFO-[tasker]-[get_assigned_task_by_id]-SELECT 1
+2019-01-30 16:01:01.170-DEBUG-[tasker]-[get_assigned_task_by_id]-row:[29, 'What is maximum delay between WLC and AP inside SDA site?', 1, ['20 ms', '40 ms', '35 ms', 'not limited'], None, 'Check Controller chapter: https://www.cisco.com/c/en/us/td/docs/wireless/controller/technotes/8-5/b_SD_Access_Wireless_Deployment_Guide.html']
+2019-01-30 16:01:01.329-INFO-[PSQL]-[psql_request]-PSQL request: b'SELECT id,task,answer,variants,picture_path,explain FROM ciscolive.interview.tasks WHERE id = 30'
+2019-01-30 16:01:01.329-INFO-[tasker]-[get_assigned_task_by_id]-SELECT 1
+2019-01-30 16:01:01.329-DEBUG-[tasker]-[get_assigned_task_by_id]-row:[30, 'Customer asks your opinion about per-packet load-balancing, what you will answer?', 3, ['It can be used for VoIP applications to prioritize that type of traffic', 'It was supported only on old platforms and should be avoided', 'It can cause out-of-sequence packets and should be avoided'], None, 'Using per-packet load balancing to share the traffic load across available paths to a given destination can cause out-of-sequence packets in a particular data flow. This can result in unsatisfactory data transmission for video and voice streaming.']
+2019-01-30 16:01:01.510-INFO-[PSQL]-[psql_request]-PSQL request: b'SELECT id,task,answer,variants,picture_path,explain FROM ciscolive.interview.tasks WHERE id = 27'
+2019-01-30 16:01:01.510-INFO-[tasker]-[get_assigned_task_by_id]-SELECT 1
+2019-01-30 16:01:01.510-DEBUG-[tasker]-[get_assigned_task_by_id]-row:[27, 'What types of encapsulation is used inside SDA Fabric?', 3, ['GRE', 'MPLS', 'VXLAN', 'LISP'], None, 'Check SDA whitepaper https://www.cisco.com/c/dam/en/us/solutions/collateral/enterprise-networks/software-defined-access/white-paper-c11-740585.pdf']
+2019-01-30 16:01:01.768-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "POST /v1/messages HTTP/1.1" 200 None
+2019-01-30 16:01:02.144-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "POST /v1/messages HTTP/1.1" 200 None
+2019-01-30 16:01:02.249-INFO-[server]-[webex_teams_webhook_events]-WEBHOOK POST RECEIVED:
+2019-01-30 16:01:02.249-INFO-[server]-[webex_teams_webhook_events]-{'id': 'Y2lzY29zcGFyazovL3VzL1dFQkhPT0svNTZlYjM3NWQtOWY3OC00YWI0LWE5YzYtYjBiYTUxNjM5NTBj', 'name': 'webhook_quiz_cl', 'targetUrl': 'http://fe73954c.ngrok.io/events', 'resource': 'messages', 'event': 'created', 'orgId': 'Y2lzY29zcGFyazovL3VzL09SR0FOSVpBVElPTi8xZWI2NWZkZi05NjQzLTQxN2YtOTk3NC1hZDcyY2FlMGUxMGY', 'createdBy': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'appId': 'Y2lzY29zcGFyazovL3VzL0FQUExJQ0FUSU9OL0MzMmM4MDc3NDBjNmU3ZGYxMWRhZjE2ZjIyOGRmNjI4YmJjYTQ5YmE1MmZlY2JiMmM3ZDUxNWNiNGEwY2M5MWFh', 'ownedBy': 'creator', 'status': 'active', 'created': '2019-01-30T12:59:11.054Z', 'actorId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'data': {'id': 'Y2lzY29zcGFyazovL3VzL01FU1NBR0UvMTgzN2UzYjAtMjQ4Zi0xMWU5LWJhZDgtNjMyYTk5OWZlOGUw', 'roomId': 'Y2lzY29zcGFyazovL3VzL1JPT00vOTRiNTNkZDItNjE5MC0zYjIzLTgyY2MtOWNkYTc1NjkzMzA2', 'roomType': 'direct', 'personId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'personEmail': 'asazhin_bot1@webex.bot', 'created': '2019-01-30T13:01:01.675Z'}}
+2019-01-30 16:01:02.429-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "POST /v1/messages HTTP/1.1" 200 None
+2019-01-30 16:01:02.466-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vOTRiNTNkZDItNjE5MC0zYjIzLTgyY2MtOWNkYTc1NjkzMzA2 HTTP/1.1" 200 None
+2019-01-30 16:01:02.517-INFO-[server]-[webex_teams_webhook_events]-WEBHOOK POST RECEIVED:
+2019-01-30 16:01:02.518-INFO-[server]-[webex_teams_webhook_events]-{'id': 'Y2lzY29zcGFyazovL3VzL1dFQkhPT0svNTZlYjM3NWQtOWY3OC00YWI0LWE5YzYtYjBiYTUxNjM5NTBj', 'name': 'webhook_quiz_cl', 'targetUrl': 'http://fe73954c.ngrok.io/events', 'resource': 'messages', 'event': 'created', 'orgId': 'Y2lzY29zcGFyazovL3VzL09SR0FOSVpBVElPTi8xZWI2NWZkZi05NjQzLTQxN2YtOTk3NC1hZDcyY2FlMGUxMGY', 'createdBy': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'appId': 'Y2lzY29zcGFyazovL3VzL0FQUExJQ0FUSU9OL0MzMmM4MDc3NDBjNmU3ZGYxMWRhZjE2ZjIyOGRmNjI4YmJjYTQ5YmE1MmZlY2JiMmM3ZDUxNWNiNGEwY2M5MWFh', 'ownedBy': 'creator', 'status': 'active', 'created': '2019-01-30T12:59:11.054Z', 'actorId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'data': {'id': 'Y2lzY29zcGFyazovL3VzL01FU1NBR0UvMTg2ZmUzYTAtMjQ4Zi0xMWU5LThjODYtZGQyMmU4MjBhNjhj', 'roomId': 'Y2lzY29zcGFyazovL3VzL1JPT00vOTRiNTNkZDItNjE5MC0zYjIzLTgyY2MtOWNkYTc1NjkzMzA2', 'roomType': 'direct', 'personId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'personEmail': 'asazhin_bot1@webex.bot', 'created': '2019-01-30T13:01:02.042Z'}}
+2019-01-30 16:01:02.521-DEBUG-[connectionpool]-[_new_conn]-Starting new HTTPS connection (3): api.ciscospark.com:443
+2019-01-30 16:01:02.718-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/messages/Y2lzY29zcGFyazovL3VzL01FU1NBR0UvMTgzN2UzYjAtMjQ4Zi0xMWU5LWJhZDgtNjMyYTk5OWZlOGUw HTTP/1.1" 200 None
+2019-01-30 16:01:02.719-INFO-[bot]-[process_message]-message text received:Thank you, your answer was accepted
+2019-01-30 16:01:02.722-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "POST /v1/messages HTTP/1.1" 200 None
+2019-01-30 16:01:02.833-INFO-[server]-[webex_teams_webhook_events]-WEBHOOK POST RECEIVED:
+2019-01-30 16:01:02.833-INFO-[server]-[webex_teams_webhook_events]-{'id': 'Y2lzY29zcGFyazovL3VzL1dFQkhPT0svNTZlYjM3NWQtOWY3OC00YWI0LWE5YzYtYjBiYTUxNjM5NTBj', 'name': 'webhook_quiz_cl', 'targetUrl': 'http://fe73954c.ngrok.io/events', 'resource': 'messages', 'event': 'created', 'orgId': 'Y2lzY29zcGFyazovL3VzL09SR0FOSVpBVElPTi8xZWI2NWZkZi05NjQzLTQxN2YtOTk3NC1hZDcyY2FlMGUxMGY', 'createdBy': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'appId': 'Y2lzY29zcGFyazovL3VzL0FQUExJQ0FUSU9OL0MzMmM4MDc3NDBjNmU3ZGYxMWRhZjE2ZjIyOGRmNjI4YmJjYTQ5YmE1MmZlY2JiMmM3ZDUxNWNiNGEwY2M5MWFh', 'ownedBy': 'creator', 'status': 'active', 'created': '2019-01-30T12:59:11.054Z', 'actorId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'data': {'id': 'Y2lzY29zcGFyazovL3VzL01FU1NBR0UvMTg5NzQxYzAtMjQ4Zi0xMWU5LTk3MzgtZWYwZTEyYzA2ZGIy', 'roomId': 'Y2lzY29zcGFyazovL3VzL1JPT00vOTRiNTNkZDItNjE5MC0zYjIzLTgyY2MtOWNkYTc1NjkzMzA2', 'roomType': 'direct', 'personId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'personEmail': 'asazhin_bot1@webex.bot', 'created': '2019-01-30T13:01:02.300Z'}}
+2019-01-30 16:01:02.836-DEBUG-[connectionpool]-[_new_conn]-Starting new HTTPS connection (4): api.ciscospark.com:443
+2019-01-30 16:01:03.021-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI HTTP/1.1" 200 None
+2019-01-30 16:01:03.022-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "POST /v1/messages HTTP/1.1" 200 None
+2019-01-30 16:01:03.245-INFO-[server]-[webex_teams_webhook_events]-WEBHOOK POST RECEIVED:
+2019-01-30 16:01:03.246-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/me HTTP/1.1" 200 None
+2019-01-30 16:01:03.247-INFO-[server]-[webex_teams_webhook_events]-{'id': 'Y2lzY29zcGFyazovL3VzL1dFQkhPT0svNTZlYjM3NWQtOWY3OC00YWI0LWE5YzYtYjBiYTUxNjM5NTBj', 'name': 'webhook_quiz_cl', 'targetUrl': 'http://fe73954c.ngrok.io/events', 'resource': 'messages', 'event': 'created', 'orgId': 'Y2lzY29zcGFyazovL3VzL09SR0FOSVpBVElPTi8xZWI2NWZkZi05NjQzLTQxN2YtOTk3NC1hZDcyY2FlMGUxMGY', 'createdBy': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'appId': 'Y2lzY29zcGFyazovL3VzL0FQUExJQ0FUSU9OL0MzMmM4MDc3NDBjNmU3ZGYxMWRhZjE2ZjIyOGRmNjI4YmJjYTQ5YmE1MmZlY2JiMmM3ZDUxNWNiNGEwY2M5MWFh', 'ownedBy': 'creator', 'status': 'active', 'created': '2019-01-30T12:59:11.054Z', 'actorId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'data': {'id': 'Y2lzY29zcGFyazovL3VzL01FU1NBR0UvMThjNzc5ODAtMjQ4Zi0xMWU5LTg3OTQtZmY4YWM4OTc2ZWZk', 'roomId': 'Y2lzY29zcGFyazovL3VzL1JPT00vOTRiNTNkZDItNjE5MC0zYjIzLTgyY2MtOWNkYTc1NjkzMzA2', 'roomType': 'direct', 'personId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'personEmail': 'asazhin_bot1@webex.bot', 'created': '2019-01-30T13:01:02.616Z'}}
+2019-01-30 16:01:03.254-INFO-[bot]-[process_message]-Found message sent to me. Do not respond
+2019-01-30 16:01:03.255-INFO-[_internal]-[_log]-127.0.0.1 - - [30/Jan/2019 16:01:03] "POST /events HTTP/1.1" 200 -
+2019-01-30 16:01:03.393-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "POST /v1/messages HTTP/1.1" 200 None
+2019-01-30 16:01:03.492-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vOTRiNTNkZDItNjE5MC0zYjIzLTgyY2MtOWNkYTc1NjkzMzA2 HTTP/1.1" 200 None
+2019-01-30 16:01:03.588-INFO-[server]-[webex_teams_webhook_events]-WEBHOOK POST RECEIVED:
+2019-01-30 16:01:03.588-INFO-[server]-[webex_teams_webhook_events]-{'id': 'Y2lzY29zcGFyazovL3VzL1dFQkhPT0svNTZlYjM3NWQtOWY3OC00YWI0LWE5YzYtYjBiYTUxNjM5NTBj', 'name': 'webhook_quiz_cl', 'targetUrl': 'http://fe73954c.ngrok.io/events', 'resource': 'messages', 'event': 'created', 'orgId': 'Y2lzY29zcGFyazovL3VzL09SR0FOSVpBVElPTi8xZWI2NWZkZi05NjQzLTQxN2YtOTk3NC1hZDcyY2FlMGUxMGY', 'createdBy': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'appId': 'Y2lzY29zcGFyazovL3VzL0FQUExJQ0FUSU9OL0MzMmM4MDc3NDBjNmU3ZGYxMWRhZjE2ZjIyOGRmNjI4YmJjYTQ5YmE1MmZlY2JiMmM3ZDUxNWNiNGEwY2M5MWFh', 'ownedBy': 'creator', 'status': 'active', 'created': '2019-01-30T12:59:11.054Z', 'actorId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'data': {'id': 'Y2lzY29zcGFyazovL3VzL01FU1NBR0UvMThlZjczZTAtMjQ4Zi0xMWU5LThkNTItODkwNWE4MDQwODAw', 'roomId': 'Y2lzY29zcGFyazovL3VzL1JPT00vOTRiNTNkZDItNjE5MC0zYjIzLTgyY2MtOWNkYTc1NjkzMzA2', 'roomType': 'direct', 'personId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'personEmail': 'asazhin_bot1@webex.bot', 'created': '2019-01-30T13:01:02.878Z'}}
+2019-01-30 16:01:03.593-DEBUG-[connectionpool]-[_new_conn]-Starting new HTTPS connection (5): api.ciscospark.com:443
+2019-01-30 16:01:03.641-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vOTRiNTNkZDItNjE5MC0zYjIzLTgyY2MtOWNkYTc1NjkzMzA2 HTTP/1.1" 200 None
+2019-01-30 16:01:03.707-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/messages/Y2lzY29zcGFyazovL3VzL01FU1NBR0UvMThjNzc5ODAtMjQ4Zi0xMWU5LTg3OTQtZmY4YWM4OTc2ZWZk HTTP/1.1" 200 None
+2019-01-30 16:01:03.743-INFO-[bot]-[process_message]-message text received:What is maximum delay between WLC and AP inside SDA site?<...>
+2019-01-30 16:01:03.745-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vOTRiNTNkZDItNjE5MC0zYjIzLTgyY2MtOWNkYTc1NjkzMzA2 HTTP/1.1" 200 None
+2019-01-30 16:01:03.751-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "POST /v1/messages HTTP/1.1" 200 None
+2019-01-30 16:01:03.754-INFO-[_internal]-[_log]-127.0.0.1 - - [30/Jan/2019 16:01:03] "POST /events HTTP/1.1" 200 -
+2019-01-30 16:01:03.854-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/messages/Y2lzY29zcGFyazovL3VzL01FU1NBR0UvMTg2ZmUzYTAtMjQ4Zi0xMWU5LThjODYtZGQyMmU4MjBhNjhj HTTP/1.1" 200 None
+2019-01-30 16:01:03.876-INFO-[bot]-[process_message]-message text received:You have completed the quiz. Preparing score for you
+2019-01-30 16:01:03.915-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI HTTP/1.1" 200 None
+2019-01-30 16:01:03.948-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/messages/Y2lzY29zcGFyazovL3VzL01FU1NBR0UvMTg5NzQxYzAtMjQ4Zi0xMWU5LTk3MzgtZWYwZTEyYzA2ZGIy HTTP/1.1" 200 None
+2019-01-30 16:01:03.950-INFO-[bot]-[process_message]-message text received:Answered correctly:
+2019-01-30 16:01:04.005-INFO-[server]-[webex_teams_webhook_events]-WEBHOOK POST RECEIVED:
+2019-01-30 16:01:04.006-INFO-[server]-[webex_teams_webhook_events]-{'id': 'Y2lzY29zcGFyazovL3VzL1dFQkhPT0svNTZlYjM3NWQtOWY3OC00YWI0LWE5YzYtYjBiYTUxNjM5NTBj', 'name': 'webhook_quiz_cl', 'targetUrl': 'http://fe73954c.ngrok.io/events', 'resource': 'messages', 'event': 'created', 'orgId': 'Y2lzY29zcGFyazovL3VzL09SR0FOSVpBVElPTi8xZWI2NWZkZi05NjQzLTQxN2YtOTk3NC1hZDcyY2FlMGUxMGY', 'createdBy': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'appId': 'Y2lzY29zcGFyazovL3VzL0FQUExJQ0FUSU9OL0MzMmM4MDc3NDBjNmU3ZGYxMWRhZjE2ZjIyOGRmNjI4YmJjYTQ5YmE1MmZlY2JiMmM3ZDUxNWNiNGEwY2M5MWFh', 'ownedBy': 'creator', 'status': 'active', 'created': '2019-01-30T12:59:11.054Z', 'actorId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'data': {'id': 'Y2lzY29zcGFyazovL3VzL01FU1NBR0UvMTkyNmQ3OTAtMjQ4Zi0xMWU5LTk3MzgtZWYwZTEyYzA2ZGIy', 'roomId': 'Y2lzY29zcGFyazovL3VzL1JPT00vOTRiNTNkZDItNjE5MC0zYjIzLTgyY2MtOWNkYTc1NjkzMzA2', 'roomType': 'direct', 'personId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'personEmail': 'asazhin_bot1@webex.bot', 'created': '2019-01-30T13:01:03.241Z'}}
+2019-01-30 16:01:04.058-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI HTTP/1.1" 200 None
+2019-01-30 16:01:04.166-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/me HTTP/1.1" 200 None
+2019-01-30 16:01:04.167-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI HTTP/1.1" 200 None
+2019-01-30 16:01:04.169-INFO-[bot]-[process_message]-Found message sent to me. Do not respond
+2019-01-30 16:01:04.171-INFO-[_internal]-[_log]-127.0.0.1 - - [30/Jan/2019 16:01:04] "POST /events HTTP/1.1" 200 -
+2019-01-30 16:01:04.197-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vOTRiNTNkZDItNjE5MC0zYjIzLTgyY2MtOWNkYTc1NjkzMzA2 HTTP/1.1" 200 None
+2019-01-30 16:01:04.228-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/me HTTP/1.1" 200 None
+2019-01-30 16:01:04.230-INFO-[bot]-[process_message]-Found message sent to me. Do not respond
+2019-01-30 16:01:04.270-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vOTRiNTNkZDItNjE5MC0zYjIzLTgyY2MtOWNkYTc1NjkzMzA2 HTTP/1.1" 200 None
+2019-01-30 16:01:04.338-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/me HTTP/1.1" 200 None
+2019-01-30 16:01:04.544-INFO-[bot]-[process_message]-Found message sent to me. Do not respond
+2019-01-30 16:01:04.484-INFO-[server]-[webex_teams_webhook_events]-WEBHOOK POST RECEIVED:
+2019-01-30 16:01:04.540-INFO-[_internal]-[_log]-127.0.0.1 - - [30/Jan/2019 16:01:04] "POST /events HTTP/1.1" 200 -
+2019-01-30 16:01:04.545-INFO-[server]-[webex_teams_webhook_events]-{'id': 'Y2lzY29zcGFyazovL3VzL1dFQkhPT0svNTZlYjM3NWQtOWY3OC00YWI0LWE5YzYtYjBiYTUxNjM5NTBj', 'name': 'webhook_quiz_cl', 'targetUrl': 'http://fe73954c.ngrok.io/events', 'resource': 'messages', 'event': 'created', 'orgId': 'Y2lzY29zcGFyazovL3VzL09SR0FOSVpBVElPTi8xZWI2NWZkZi05NjQzLTQxN2YtOTk3NC1hZDcyY2FlMGUxMGY', 'createdBy': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'appId': 'Y2lzY29zcGFyazovL3VzL0FQUExJQ0FUSU9OL0MzMmM4MDc3NDBjNmU3ZGYxMWRhZjE2ZjIyOGRmNjI4YmJjYTQ5YmE1MmZlY2JiMmM3ZDUxNWNiNGEwY2M5MWFh', 'ownedBy': 'creator', 'status': 'active', 'created': '2019-01-30T12:59:11.054Z', 'actorId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'data': {'id': 'Y2lzY29zcGFyazovL3VzL01FU1NBR0UvMTk1ZTYyNTAtMjQ4Zi0xMWU5LTg5ZWYtZWY0Y2IzNTk0Mzdk', 'roomId': 'Y2lzY29zcGFyazovL3VzL1JPT00vOTRiNTNkZDItNjE5MC0zYjIzLTgyY2MtOWNkYTc1NjkzMzA2', 'roomType': 'direct', 'personId': 'Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI', 'personEmail': 'asazhin_bot1@webex.bot', 'created': '2019-01-30T13:01:03.605Z'}}
+2019-01-30 16:01:04.431-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/messages/Y2lzY29zcGFyazovL3VzL01FU1NBR0UvMTkyNmQ3OTAtMjQ4Zi0xMWU5LTk3MzgtZWYwZTEyYzA2ZGIy HTTP/1.1" 200 None
+2019-01-30 16:01:04.545-INFO-[_internal]-[_log]-127.0.0.1 - - [30/Jan/2019 16:01:04] "POST /events HTTP/1.1" 200 -
+2019-01-30 16:01:04.553-INFO-[bot]-[process_message]-message text received:What types of encapsulation is used inside SDA Fabric?<...>
+2019-01-30 16:01:04.768-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI HTTP/1.1" 200 None
+2019-01-30 16:01:04.769-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/messages/Y2lzY29zcGFyazovL3VzL01FU1NBR0UvMThlZjczZTAtMjQ4Zi0xMWU5LThkNTItODkwNWE4MDQwODAw HTTP/1.1" 200 None
+2019-01-30 16:01:04.769-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/rooms/Y2lzY29zcGFyazovL3VzL1JPT00vOTRiNTNkZDItNjE5MC0zYjIzLTgyY2MtOWNkYTc1NjkzMzA2 HTTP/1.1" 200 None
+2019-01-30 16:01:04.773-INFO-[bot]-[process_message]-message text received:Customer asks your opinion about per-packet load-balancing, what you will answer?<...>
+2019-01-30 16:01:04.959-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/messages/Y2lzY29zcGFyazovL3VzL01FU1NBR0UvMTk1ZTYyNTAtMjQ4Zi0xMWU5LTg5ZWYtZWY0Y2IzNTk0Mzdk HTTP/1.1" 200 None
+2019-01-30 16:01:04.960-INFO-[bot]-[process_message]-message text received:Answered incorrectly:
+2019-01-30 16:01:05.004-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI HTTP/1.1" 200 None
+2019-01-30 16:01:05.034-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/me HTTP/1.1" 200 None
+2019-01-30 16:01:05.037-INFO-[bot]-[process_message]-Found message sent to me. Do not respond
+2019-01-30 16:01:05.038-INFO-[_internal]-[_log]-127.0.0.1 - - [30/Jan/2019 16:01:05] "POST /events HTTP/1.1" 200 -
+2019-01-30 16:01:05.181-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/Y2lzY29zcGFyazovL3VzL1BFT1BMRS82OTZjN2ExZS0zOTdjLTQwMjYtODcwMi03MmNhYzcwZGQxNDI HTTP/1.1" 200 None
+2019-01-30 16:01:05.235-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/me HTTP/1.1" 200 None
+2019-01-30 16:01:05.236-INFO-[bot]-[process_message]-Found message sent to me. Do not respond
+2019-01-30 16:01:05.238-INFO-[_internal]-[_log]-127.0.0.1 - - [30/Jan/2019 16:01:05] "POST /events HTTP/1.1" 200 -
+2019-01-30 16:01:05.392-DEBUG-[connectionpool]-[_make_request]-https://api.ciscospark.com:443 "GET /v1/people/me HTTP/1.1" 200 None
+2019-01-30 16:01:05.519-INFO-[bot]-[process_message]-Found message sent to me. Do not respond
+2019-01-30 16:01:05.520-INFO-[_internal]-[_log]-127.0.0.1 - - [30/Jan/2019 16:01:05] "POST /events HTTP/1.1" 200 -
