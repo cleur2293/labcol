@@ -55,7 +55,7 @@ def get_ngrok_port():
     #print(response.json())
     #print(response.json()['tunnels']['config']['addr'])
     tunnel0_config = response.json()["tunnels"][0]['config']
-    ngrok_port = tunnel0_config['addr'].split(':')[1]
+    ngrok_port = tunnel0_config['addr'].split(':')[2]
 
     return ngrok_port
 

@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__) # Creating logger for logging across this m
 # To be able to load modules from parent directory
 currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
 parentdir = os.path.dirname(currentdir)
-sys.path.insert(0,parentdir)
+sys.path.insert(0, parentdir)
 
 
 # Core bot functionality

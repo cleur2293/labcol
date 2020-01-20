@@ -82,12 +82,11 @@ def get_ngrok_port():
               "assuming not running.")
         return None
 
-    #print(response.json())
-    #print(response.json()['tunnels']['config']['addr'])
     tunnel0_config = response.json()["tunnels"][0]['config']
-    ngrok_port = tunnel0_config['addr'].split(':')[1]
+    ngrok_port = tunnel0_config['addr'].split(':')[2]
 
     return ngrok_port
+
 
 def delete_webhooks_with_name(api, name):
     """Find a webhook by name."""
