@@ -10,7 +10,7 @@ from urllib.parse import urljoin
 flask_app = Flask(__name__)
 # Create the Webex Teams API connection object
 
-# You need to change bot access token to the value provided by Pinacolada bot
+# You need to change bot access token to the value provided by PinaColada bot
 bot_access_token = 'SAMPLE'
 
 # Constants
@@ -22,20 +22,19 @@ WEBHOOK_EVENT = "created"
 
 
 try:
-    assert(bot_access_token!='SAMPLE')
+    assert(bot_access_token != 'SAMPLE')
 except AssertionError:
-    print('Fatal: Please change \'bot_access_token\' variable in bot-sample.py to the value provided by Pinacolada bot')
+    print('Fatal: Please change \'bot_access_token\' variable in bot-sample.py to the value provided by PinaСolada bot')
     exit(-1)
 
 #
 #
 #
-#<put code for main business logic of the bot here>#
+# <put code for main business logic of the bot here>#
 #
 #
 #
-#
-#
+
 
 def get_ngrok_public_url():
     """Get the ngrok public HTTP URL from the local client API."""
@@ -55,8 +54,9 @@ def get_ngrok_public_url():
                 print('Found ngrok public HTTP URL:{}'.format(tunnel["public_url"]))
                 return tunnel["public_url"]
 
+
 def get_ngrok_port():
-    """Get the ngrok public HTTP URL from the local client API."""
+    """Get the ngrok TCP port from the local client API."""
     try:
         response = requests.get(url=NGROK_CLIENT_API_BASE_URL + "/tunnels",
                                 headers={'content-type': 'application/json'})
@@ -67,12 +67,11 @@ def get_ngrok_port():
               "assuming not running.")
         return None
 
-    #print(response.json())
-    #print(response.json()['tunnels']['config']['addr'])
     tunnel0_config = response.json()["tunnels"][0]['config']
-    ngrok_port = tunnel0_config['addr'].split(':')[1]
+    ngrok_port = tunnel0_config['addr'].split(':')[2]
 
     return ngrok_port
+
 
 def delete_webhooks_with_name(api, name):
     """Find a webhook by name."""
@@ -108,11 +107,12 @@ def create_webhook(api, WEBHOOK_NAME):
     else:
         return False
 
+
 if __name__ == '__main__':
     api = WebexTeamsAPI(bot_access_token)
 
     """Delete previous webhooks. If local ngrok tunnel, create a webhook."""
-    if create_webhook(api,WEBHOOK_NAME):
+    if create_webhook(api, WEBHOOK_NAME):
         ngrok_port = get_ngrok_port()
         print('Get ngrok port={}.Starting Flask server on it'.format(ngrok_port))
 
