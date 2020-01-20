@@ -1,2 +1,3 @@
-# labcol
-WebexTeams bot for Collaboration lab on CLEUR 2020 live here
+# LABCOL-2293
+Bots for WebEx Teams - create your own
+
