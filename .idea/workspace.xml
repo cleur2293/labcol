@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="398e62e4-e756-4ccf-aab4-dd8bf8662f36" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab/bot_sample/webhook.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab/bot_sample/webhook.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab/bot_service/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab/bot_service/bot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab/utils/webhook.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab/utils/webhook.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/bot_sample/webhook.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/bot_sample/webhook.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,6 +97,7 @@
       <option name="presentableId" value="Default" />
       <updated>1548665068632</updated>
       <workItem from="1579445134256" duration="1922000" />
+      <workItem from="1579520709508" duration="246000" />
     </task>
     <task id="LOCAL-00001" summary="ngrok API changes">
       <created>1579519922591</created>
